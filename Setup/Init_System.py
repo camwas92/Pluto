@@ -1,10 +1,12 @@
 from pathlib import Path
 from Setup import Constants as Con
 import datetime as dt
+from Setup import Init_Stock as IS
 
 def init_system():
     Con.paths = collect_paths()
     Con.now = get_date()
+    IS.load_stock(True)
     return
 
 

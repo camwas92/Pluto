@@ -7,4 +7,3 @@ from Setup import Constants as Con
 ISy.init_system()
 
 # load stocks
-IS.load_stock(True)
