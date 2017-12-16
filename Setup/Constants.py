@@ -10,6 +10,11 @@ slipage = 0
 init_investment = 10000
 paths = []
 
+#######################
+# Changing Parameters #
+#######################
+decision_method = ''
+
 ###################
 # Time Parameters #
 ###################
