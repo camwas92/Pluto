@@ -1,9 +1,11 @@
 # this is the main function
-from Setup import Init_Stock as IS
 from Setup import Init_System as ISy
-from Setup import Constants as Con
+from Classes import Simulation as Sim
+
 
 # load file paths
 ISy.init_system()
 
-# load stocks
+# simulate system
+Simulation = Sim.init_simulation(init_investment=1000)
+Simulation.run()
