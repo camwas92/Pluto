@@ -2,6 +2,7 @@
 from Setup import Init_System as ISy
 from Classes import Simulation as Sim
 from Setup import Constants as Con
+from Benchmarking import Evaluate as E
 
 
 # load file paths
@@ -17,3 +18,7 @@ Con.print_sucess_message('Simulation Initialisation')
 Con.print_header_level_1('Running Simulation')
 Simulation.run()
 Con.print_sucess_message('Simulation')
+
+Con.print_header_level_1('Benchmarking')
+E.Evaluate(Simulation)
+Con.print_sucess_message('Benchmarking')

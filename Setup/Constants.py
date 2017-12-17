@@ -56,10 +56,13 @@ def print_sucess_message(text=None):
     return
 
 def print_state(Portfolio,current_date):
+    print('=====================',)
     print(str(current_date.year), str(current_date.month), str(current_date.day), ':',
           calendar.day_name[current_date.weekday()])
-    print('\n     Value = '+str(Portfolio.value),
-            '\n     C I H = ' + str(Portfolio.cash_in_hand),
-            '\n     Asset = ' + str(Portfolio.assets),
-            '\n')
+    print('\n     Value = $'+str(Portfolio.value),
+          '\n=====================',
+            '\n     C I H = $' + str(Portfolio.cash_in_hand),
+          '\n           +             ',
+            '\n     Asset = $' + str(Portfolio.assets))
+    print('=====================\n\n\n', )
     return

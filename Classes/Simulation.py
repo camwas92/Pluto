@@ -42,6 +42,8 @@ class Simulation:
 
 
         return
+
+
     # run simulations
     def run(self):
         # check still within the looping period
@@ -86,11 +88,12 @@ class Simulation:
         if self.current_date.weekday() < 5:
             return True
 
-        # check if week day
-        # check if there is data for the day
-        print(str(self.current_date.year), str(self.current_date.month), str(self.current_date.day), ':',
-              calendar.day_name[self.current_date.weekday()], 'NOT VALID DAY')
+        # check if week day check if there is data for the day print(str(self.current_date.year),
+        # str(self.current_date.month), str(self.current_date.day), ':',calendar.day_name[self.current_date.weekday(
+        # )], 'NOT VALID DAY')
         return False
+
+
 
     # outputs progress as you go, but will show daily/monthly/yearly ('D','M','Y')
     def output_progress(self,period='D'):
