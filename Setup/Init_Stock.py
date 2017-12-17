@@ -18,9 +18,9 @@ def load_stock(flag = False):
         # refresh stock if not the newest
             if not Con.stock_data[x].df['Date'].iloc[-1] == Con.now:
                 try:
-                    start = dt.datetime.strptime(Con.stock_data[x].df['Date'].iloc[-1],'%Y-%m-%d %H:%M:%S')
+                    start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]),'%Y-%m-%d %H:%M:%S')
                 except ValueError:
-                    start = dt.datetime.strptime(Con.stock_data[x].df['Date'].iloc[-1], '%Y-%m-%d')
+                    start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]), '%Y-%m-%d')
                 download_stock_prices(x,start)
 
 
