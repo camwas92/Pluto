@@ -1,8 +1,9 @@
 # the simulation class defines the parameters and settings for the simualtion. The portolio will track the history thorugh time and benchmark calcualted once conlucded
-from Setup import Constants as Con
 import datetime as dt
+
 from Classes import Portfolio as Port
-import calendar
+from Setup import Constants as Con
+
 
 class Simulation:
     commision = 0
@@ -39,8 +40,6 @@ class Simulation:
 
         #portfolio is the current state at the beginning of the current day
         self.portfolio.append(Port.Portfolio(self.current_date,None,self.init_investment,0))
-
-
         return
 
 
@@ -66,7 +65,6 @@ class Simulation:
             self.increment_period()
 
             self.portfolio.append(Port.Portfolio(self.current_date,self.temp_portfolio.holdings,self.temp_portfolio.cash_in_hand,self.temp_portfolio.assets))
-
             self.output_progress('Y')
 
         self.output_progress()
@@ -79,9 +77,11 @@ class Simulation:
         return
 
     def complete_transaction(self):
+        # TODO build transaction rules
         return
 
     def calculate_decision(self):
+        # TODO build decision calls
         return
 
     def check_valid_transaction_day(self):

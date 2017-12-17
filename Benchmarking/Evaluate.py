@@ -1,28 +1,31 @@
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-import plotly.plotly as py
-import plotly.graph_objs as go
+import matplotlib.pyplot as plt
+import pandas as pd
 
 
-def Evaluate (Simulation):
+def Evaluate(Simulation):
     # performance evaluation
     calculate_profit(Simulation)
     graph_performance(Simulation)
     # - graph over time
 
-    #action evaluation
+    # action evaluation
     # - number of trades
     # - number of good trades
 
+    # Prediction Performance
+
     return
 
-def calculate_profit (Simulation):
+
+def calculate_profit(Simulation):
     init = Simulation.init_investment
     final = Simulation.portfolio[-1].value
     profit = final - init
-    profit_per = (profit/init)*100
+    profit_per = (profit / init) * 100
 
     print('{0:0.2f}%'.format(profit_per))
     return
+
 
 def graph_performance(Simulation):
     dates = []
@@ -35,28 +38,15 @@ def graph_performance(Simulation):
         cash_in_hand.append(x.cash_in_hand)
         assets.append(x.assets)
 
-    #create traces
-    valueLine = go.Scatter(
-        x = dates,
-        y = value,
-        mode = 'lines',
-        name = 'Value'
-    )
+    df = pd.DataFrame({'date': dates, 'value': value, 'cash in hand': cash_in_hand, 'assets': assets})
+    df = df.set_index('date')
 
-    cash_in_handLine = go.Scatter(
-        x=dates,
-        y=cash_in_hand,
-        mode='lines',
-        name='Cash In Hand'
-    )
+    stocks = []
+    for key in Simulation.available_stocks:
+        tempdf = pd.DataFrame({'date': Simulation.available_stocks[key].df['Date'],
+                               Simulation.available_stocks[key].name: Simulation.available_stocks[key].df['Open']})
+        tempdf = tempdf.set_index('date')
+        df = pd.merge(df, tempdf, how='outer', left_index=True, right_index=True)
 
-    assetsLine = go.Scatter(
-        x = dates,
-        y = assets,
-        mode='lines',
-        name = 'Assets'
-    )
-
-    data = [valueLine,cash_in_handLine,assetsLine]
-
-    plot(data, filename = 'Performance Graph.html')
+    df.plot(secondary_y=['value', 'cash in hand', 'assets'])
+    plt.show()

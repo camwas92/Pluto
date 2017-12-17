@@ -1,11 +1,16 @@
 # These functions are used to load the required stock values as well as the missing data
-from pandas_datareader._utils import RemoteDataError
-from Setup import Constants as Con
+import datetime as dt
+
 import pandas as pd
 import pandas_datareader.data as web
-import datetime as dt
-from Classes import Stock as S
+from pandas_datareader._utils import RemoteDataError
 
+from Classes import Stock as S
+from Setup import Constants as Con
+
+
+# TODO Fix up inputs to be accurate
+# TODO prevent duplicate data
 # main function called. It will initialise all stocks to be loaded
 # True flag loads the newest data, false will use only from the file
 def load_stock(flag = False):

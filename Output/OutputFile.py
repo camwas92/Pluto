@@ -1,3 +1,6 @@
+# TODO link to google sheets
+# TODO store data in google sheets
+
 class output_data:
     profit = 0
 
