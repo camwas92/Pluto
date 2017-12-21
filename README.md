@@ -1,4 +1,10 @@
-# Pluto
+# Pluto - Take your Finances out of this Solar System
 Financial Transaction Capstone
 
-Need to add structure to this document
+###### Author: Cameron Wasilewsky
+###### Creation Date: 10/10/2017
+
+
+#Purpose
+#System Structure
+#Required Packages

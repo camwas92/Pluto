@@ -1,7 +1,9 @@
+# this function is used to evaluate the perforamnce of the model and produce clear visualisations of the decision method and forecasting accuracy
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
+# main function used to call other evalutation functions
 def Evaluate(Simulation):
     # performance evaluation
     calculate_profit(Simulation)
@@ -32,6 +34,8 @@ def graph_performance(Simulation):
     value = []
     cash_in_hand = []
     assets = []
+
+    # collect all simulation data
     for x in Simulation.portfolio:
         dates.append(x.day)
         value.append(x.value)
@@ -42,11 +46,15 @@ def graph_performance(Simulation):
     df = df.set_index('date')
 
     stocks = []
+    # collect stock data
     for key in Simulation.available_stocks:
         tempdf = pd.DataFrame({'date': Simulation.available_stocks[key].df['Date'],
                                Simulation.available_stocks[key].name: Simulation.available_stocks[key].df['Open']})
         tempdf = tempdf.set_index('date')
         df = pd.merge(df, tempdf, how='outer', left_index=True, right_index=True)
 
+    # plot performance and stocks on the same graph
+    # TODO add a case to only include stocks if it is less than 5
     df.plot(secondary_y=['value', 'cash in hand', 'assets'])
     plt.show()
+    return

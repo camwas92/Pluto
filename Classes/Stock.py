@@ -1,5 +1,7 @@
+# stores the associated data with a stock, as loaded from the source provider
+
 import pandas as pd
-import datetime as dt
+
 
 class Stock:
     name = ''

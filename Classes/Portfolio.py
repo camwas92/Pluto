@@ -1,6 +1,5 @@
-# portfolio is seen as the person. Any information they keep on that day or state they know (ie the agend)
-
-from Setup import Constants as Con
+# portfolio is seen as the person (their holdings) The systems current state. Any information a buyer would
+# have on that day is keep
 
 class Portfolio:
     holdings = None

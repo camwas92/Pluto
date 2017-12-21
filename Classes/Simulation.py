@@ -1,4 +1,5 @@
-# the simulation class defines the parameters and settings for the simualtion. The portolio will track the history thorugh time and benchmark calcualted once conlucded
+# the simulation class defines the parameters and settings for the simulation. The portfolio will track the
+# history through time and benchmark calculated once concluded
 import datetime as dt
 
 from Classes import Portfolio as Port
@@ -45,12 +46,13 @@ class Simulation:
 
     # run simulations
     def run(self):
-        # check still within the looping period
 
+        # check still within the looping period
         while self.current_date != self.end_period:
 
             # get previous days state
             self.temp_portfolio = self.portfolio[-1]
+
             # check if valid
             if self.check_valid_transaction_day():
                 # temp
@@ -61,29 +63,41 @@ class Simulation:
                 self.complete_transaction()
 
             # continue each day
-
             self.increment_period()
 
+            # store previous state
             self.portfolio.append(Port.Portfolio(self.current_date,self.temp_portfolio.holdings,self.temp_portfolio.cash_in_hand,self.temp_portfolio.assets))
+
+            # produce output for tracking progress
             self.output_progress('Y')
 
         self.output_progress()
         return True
 
-
+    # increase the day count
     def increment_period(self):
         self.current_date = self.current_date + dt.timedelta(days=1)
 
         return
 
-    def complete_transaction(self):
+    # actually do the transaction, -1 sell, 0 hold, 1 buy
+    def complete_transaction(self, action):
         # TODO build transaction rules
-        return
+        if action == 1:  # buy
+            return True
+        elif action == -1:  # sell
+            return True
+        elif action == 0:  # hold
+            return True
+        else:
+            return False
 
+    # call the decision method as required
     def calculate_decision(self):
         # TODO build decision calls
         return
 
+    # make sure trades are only taking place on days that are valid
     def check_valid_transaction_day(self):
         if self.current_date.weekday() < 5:
             return True
@@ -92,7 +106,6 @@ class Simulation:
         # str(self.current_date.month), str(self.current_date.day), ':',calendar.day_name[self.current_date.weekday(
         # )], 'NOT VALID DAY')
         return False
-
 
 
     # outputs progress as you go, but will show daily/monthly/yearly ('D','M','Y')
