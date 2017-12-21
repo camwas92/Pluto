@@ -1,5 +1,4 @@
 # this is the main function
-# TODO update commentary
 # TODO fix up README
 from Benchmarking import Evaluate as E
 from Classes import Simulation as Sim
