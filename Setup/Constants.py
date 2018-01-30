@@ -31,6 +31,15 @@ stocks_for_simulation = 'Test'
 # stocks_for_simulation = 'asx200'
 # stocks_for_simulation = 'asx300'
 
+
+#######################
+# Google Drive Output #
+#######################
+scope = ['https://spreadsheets.google.com/feeds']
+outputfile = 'Portfolio Performance'
+creds = ''
+client = None
+
 ###################
 # Print Functions #
 ###################

@@ -1,5 +1,4 @@
 # This function is essential for storing the values and performance of any simulation
-# TODO link to google sheets
 # TODO store data in google sheets
 
 class output_data:
@@ -18,8 +17,4 @@ class output_data:
 
     # add data to metric
     def save_data(self):
-        return
-
-    # initiate the file connection and ensure data is being stored
-    def build_file(self):
         return

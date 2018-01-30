@@ -60,7 +60,7 @@ class Simulation:
                 self.temp_portfolio.cash_in_hand += 1
 
                 self.calculate_decision()
-                self.complete_transaction()
+                self.complete_transaction(0)
 
             # continue each day
             self.increment_period()

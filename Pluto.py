@@ -1,5 +1,4 @@
 # this is the main function
-# TODO fix up README
 from Benchmarking import Evaluate as E
 from Classes import Simulation as Sim
 from Setup import Constants as Con
