@@ -3,6 +3,7 @@
 import datetime as dt
 
 from Classes import Portfolio as Port
+from Output import OutputFile as O
 from Setup import Constants as Con
 
 
@@ -39,8 +40,12 @@ class Simulation:
         self.available_stocks = available_stocks
         self.init_investment = init_investment
 
-        #portfolio is the current state at the beginning of the current day
+        # portfolio is the current state at the beginning of the current day
         self.portfolio.append(Port.Portfolio(self.current_date,None,self.init_investment,0))
+
+        # establish output
+        O.create_output_dict(start_period, end_period, commision, init_investment)
+
         return
 
 

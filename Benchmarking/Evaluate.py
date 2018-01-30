@@ -2,6 +2,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from Output import OutputFile as O
+
 
 # main function used to call other evalutation functions
 def Evaluate(Simulation):
@@ -16,6 +18,9 @@ def Evaluate(Simulation):
 
     # Prediction Performance
 
+    # store final output
+    O.print_data()
+    O.save_data()
     return
 
 
@@ -24,6 +29,10 @@ def calculate_profit(Simulation):
     final = Simulation.portfolio[-1].value
     profit = final - init
     profit_per = (profit / init) * 100
+
+    O.store_metric('Profit', profit)
+    O.store_metric('Profit Percent', profit_per)
+    O.store_metric('Final Portfolio Value', final)
 
     print('{0:0.2f}%'.format(profit_per))
     return

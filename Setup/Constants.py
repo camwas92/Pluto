@@ -39,6 +39,8 @@ scope = ['https://spreadsheets.google.com/feeds']
 outputfile = 'Portfolio Performance'
 creds = ''
 client = None
+row_count = 0
+output_dict = {}
 
 ###################
 # Print Functions #

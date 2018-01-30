@@ -40,8 +40,9 @@ def connect_google_sheets():
     Con.client = gspread.authorize(Con.creds)
 
     Con.sheet = Con.client.open(Con.outputfile).sheet1
-    output = Con.sheet.get_all_records()
-    if output == []:
+    Con.row_count = Con.sheet.row_count
+
+    if Con.row_count < 1:
         print("\n\nOUTPUT IS NOT CONNECTED\n\n")
     else:
         print("\n\nOutput file is connected\n\n")
