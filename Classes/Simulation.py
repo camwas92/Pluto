@@ -114,7 +114,7 @@ class Simulation:
     def calculate_decision(self):
         # all sales, then all purchases
         if Con.decision_method == 'random':
-            return [random.randint(-1, 1), random.choice(list(self.available_stocks.keys()))]
+            return [random.randint(-1, 1), random.choice(list(self.available_stocks.keys())), 0]
         # TODO build decision calls
         return
 

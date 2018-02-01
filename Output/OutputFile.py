@@ -58,6 +58,7 @@ def save_data(option):
     for i in range(1, get_column_count(option) + 1):
         line.append(data[headers[i]])
     write_row(option, line)
+    print('Data Saved')
     return
 
 

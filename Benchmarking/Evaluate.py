@@ -9,8 +9,8 @@ from Output import OutputFile as O
 def Evaluate(Simulation):
     # performance evaluation
     calculate_profit(Simulation)
-    graph_performance(Simulation)
-    # - graph over time
+    # graph_performance(Simulation)
+
 
     # action evaluation
     # - number of trades
