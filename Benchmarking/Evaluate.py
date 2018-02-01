@@ -19,8 +19,8 @@ def Evaluate(Simulation):
     # Prediction Performance
 
     # store final output
-    O.print_data()
-    O.save_data()
+    O.print_data(1)
+    O.save_data(1)  # 1 is simulation
     return
 
 
@@ -35,6 +35,7 @@ def calculate_profit(Simulation):
     O.store_metric('Final Portfolio Value', final)
 
     print('{0:0.2f}%'.format(profit_per))
+
     return
 
 

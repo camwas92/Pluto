@@ -13,7 +13,8 @@ paths = []
 #######################
 # Changing Parameters #
 #######################
-decision_method = ''
+decision_method = 'random'
+# decision_method = 'r'
 
 ###################
 # Time Parameters #
@@ -39,8 +40,14 @@ scope = ['https://spreadsheets.google.com/feeds']
 outputfile = 'Portfolio Performance'
 creds = ''
 client = None
-row_count = 0
-output_dict = {}
+row_count_sim = 0
+row_count_model = 0
+column_count_sim = 0
+column_count_model = 0
+output_dict_sim = {}
+output_dict_model = {}
+sheet_sim = None
+sheet_model = None
 
 ###################
 # Print Functions #

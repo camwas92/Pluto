@@ -39,10 +39,15 @@ def connect_google_sheets():
                                                                  Con.scope)
     Con.client = gspread.authorize(Con.creds)
 
-    Con.sheet = Con.client.open(Con.outputfile).sheet1
-    Con.row_count = Con.sheet.row_count
+    Con.sheet_sim = Con.client.open(Con.outputfile).get_worksheet(0)
+    Con.sheet_model = Con.client.open(Con.outputfile).get_worksheet(1)
 
-    if Con.row_count < 1:
+    Con.row_count_sim = Con.sheet_sim.row_count
+    Con.column_count_sim = Con.sheet_sim.col_count
+    Con.row_count_model = Con.sheet_model.row_count
+    Con.column_count_model = Con.sheet_model.col_count
+
+    if Con.row_count_sim < 1:
         print("\n\nOUTPUT IS NOT CONNECTED\n\n")
     else:
         print("\n\nOutput file is connected\n\n")

@@ -1,6 +1,7 @@
 # the simulation class defines the parameters and settings for the simulation. The portfolio will track the
 # history through time and benchmark calculated once concluded
 import datetime as dt
+import random
 
 from Classes import Portfolio as Port
 from Output import OutputFile as O
@@ -31,6 +32,7 @@ class Simulation:
             Con.decision_method = 'random'
         else:
             Con.decision_method = decision_method
+        random.seed(123)
 
         # set initial variables
         self.commision = commision
@@ -44,7 +46,7 @@ class Simulation:
         self.portfolio.append(Port.Portfolio(self.current_date,None,self.init_investment,0))
 
         # establish output
-        O.create_output_dict(start_period, end_period, commision, init_investment)
+        O.create_output_dict_sim(start_period, end_period, commision, init_investment)
 
         return
 
@@ -64,8 +66,8 @@ class Simulation:
                 self.temp_portfolio.assets += 1
                 self.temp_portfolio.cash_in_hand += 1
 
-                self.calculate_decision()
-                self.complete_transaction(0)
+                decision, stock, quantity = self.calculate_decision()
+                self.complete_transaction(decision, stock, quantity)
 
             # continue each day
             self.increment_period()
@@ -86,19 +88,33 @@ class Simulation:
         return
 
     # actually do the transaction, -1 sell, 0 hold, 1 buy
-    def complete_transaction(self, action):
+    def complete_transaction(self, action, stock, quantity):
         # TODO build transaction rules
         if action == 1:  # buy
+            print('Buying - ', stock)
+            # check any available cash
+            # calculate required value for purchase
+            # if above max cash, then calculate max
+            # calculate number being purchased
             return True
         elif action == -1:  # sell
+            print('Selling - ', stock)
+            # validate have this stock
+            # check have enough to sell
+            # check
+            # convert to cash
             return True
         elif action == 0:  # hold
+            print('Holding - ', stock)
             return True
         else:
             return False
 
     # call the decision method as required
     def calculate_decision(self):
+        # all sales, then all purchases
+        if Con.decision_method == 'random':
+            return [random.randint(-1, 1), random.choice(list(self.available_stocks.keys()))]
         # TODO build decision calls
         return
 
