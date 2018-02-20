@@ -3,7 +3,9 @@
 import datetime as dt
 import random
 
+from Classes import Holding as H
 from Classes import Portfolio as Port
+from Decision import Decision as D
 from Output import OutputFile as O
 from Setup import Constants as Con
 
@@ -13,7 +15,7 @@ class Simulation:
     start_period = False
     end_period = False
     current_date = False
-    available_stocks = [] # list of stock class
+    available_stocks = {}  # dictionary of available stocks, with key stock code
     portfolio = [] # Current Holdings
     temp_portfolio = None
     benchmark = False # Bench Marking Values
@@ -29,7 +31,7 @@ class Simulation:
         if current_date is None:
             current_date = start_period
         if decision_method is None:
-            Con.decision_method = 'random'
+            Con.decision_method = 'random_choice'
         else:
             Con.decision_method = decision_method
         random.seed(123)
@@ -42,8 +44,14 @@ class Simulation:
         self.available_stocks = available_stocks
         self.init_investment = init_investment
 
+        holding_dict = {}
+
+        for key in self.available_stocks.keys():
+            holding_dict[key] = H.Holding(key, 0)
+
         # portfolio is the current state at the beginning of the current day
-        self.portfolio.append(Port.Portfolio(self.current_date,None,self.init_investment,0))
+
+        self.portfolio.append(Port.Portfolio(self.current_date, holding_dict, self.init_investment, 0))
 
         # establish output
         O.create_output_dict_sim(start_period, end_period, commision, init_investment)
@@ -62,21 +70,26 @@ class Simulation:
 
             # check if valid
             if self.check_valid_transaction_day():
-                # temp
-                self.temp_portfolio.assets += 1
-                self.temp_portfolio.cash_in_hand += 1
 
-                decision, stock, quantity = self.calculate_decision()
-                self.complete_transaction(decision, stock, quantity)
+                # run through decision options until a exit value is given
+                action, stock, quantity = getattr(D, Con.decision_method)(self.available_stocks, self.temp_portfolio)
+                # make decision - use a method based on the given initial parameter
+                while self.complete_transaction(action, stock, quantity):
+                    action, stock, quantity = getattr(D, Con.decision_method)(self.available_stocks,
+                                                                              self.temp_portfolio)
 
-            # continue each day
-            self.increment_period()
+
+
+
 
             # store previous state
             self.portfolio.append(Port.Portfolio(self.current_date,self.temp_portfolio.holdings,self.temp_portfolio.cash_in_hand,self.temp_portfolio.assets))
 
             # produce output for tracking progress
             self.output_progress('Y')
+
+            # go to next day
+            self.increment_period()
 
         self.output_progress()
         return True
@@ -91,32 +104,44 @@ class Simulation:
     def complete_transaction(self, action, stock, quantity):
         # TODO build transaction rules
         if action == 1:  # buy
-            print('Buying - ', stock)
-            # check any available cash
-            # calculate required value for purchase
-            # if above max cash, then calculate max
-            # calculate number being purchased
+            # check any available cash and stock data available
+            if self.temp_portfolio.cash_in_hand > 0 and self.available_stocks[stock].start_date <= self.current_date:
+                # find price
+                price = self.available_stocks[stock].df.loc[
+                    self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
+                if len(price) > 0:
+                    price = float(price)
+                    # calculate required value for purchase
+                    if quantity < 0:
+                        quantity = int(self.temp_portfolio.cash_in_hand / price)
+                    # do transaction
+                    self.temp_portfolio.holdings[stock].quantity += quantity
+                    self.temp_portfolio.cash_in_hand -= price * quantity
+                    self.temp_portfolio.assets += price * quantity
+
             return True
         elif action == -1:  # sell
-            print('Selling - ', stock)
-            # validate have this stock
-            # check have enough to sell
-            # check
-            # convert to cash
+            # check any available cash and stock data available
+            if self.temp_portfolio.holdings[stock].quantity > 0 and self.available_stocks[
+                stock].start_date <= self.current_date:
+                # find price
+                price = self.available_stocks[stock].df.loc[
+                    self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
+                if len(price) > 0:
+                    price = float(price)
+                    # ccalculate quantity of sale
+                    if quantity < 0 or quantity > self.temp_portfolio.holdings[stock].quantity:
+                        quantity = self.temp_portfolio.holdings[stock].quantity
+                    # do transaction
+                    self.temp_portfolio.holdings[stock].quantity -= quantity
+                    self.temp_portfolio.cash_in_hand += price * quantity
+                    self.temp_portfolio.assets -= price * quantity
             return True
         elif action == 0:  # hold
-            print('Holding - ', stock)
             return True
         else:
             return False
 
-    # call the decision method as required
-    def calculate_decision(self):
-        # all sales, then all purchases
-        if Con.decision_method == 'random':
-            return [random.randint(-1, 1), random.choice(list(self.available_stocks.keys())), 0]
-        # TODO build decision calls
-        return
 
     # make sure trades are only taking place on days that are valid
     def check_valid_transaction_day(self):

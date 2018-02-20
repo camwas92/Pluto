@@ -2,10 +2,8 @@
 
 class Holding:
     stock = ''
-    purchase_price = 0
     quantity = 0
 
-    def __init__(self, name, price, quantity):
+    def __init__(self, name, quantity):
         self.stock = name
-        self.purchase_price = price
         self.quantity = quantity

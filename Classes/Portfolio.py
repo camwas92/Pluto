@@ -2,7 +2,7 @@
 # have on that day is keep
 
 class Portfolio:
-    holdings = None
+    holdings = {}  # list of stocks
     value = 0
     cash_in_hand = 0
     assets = 0
