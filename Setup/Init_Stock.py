@@ -58,7 +58,7 @@ def load_stock_source(stock):
 def download_stock_prices(stock,start = dt.datetime(1980, 1, 1)):
     start = start + dt.timedelta(days=1)
     try:
-        df = web.DataReader(stock,'yahoo',start,Con.now)
+        df = web.DataReader(stock, 'morningstar', start, Con.now)
     except RemoteDataError:
         print(stock, 'could not be downloaded')
         return False

@@ -26,9 +26,9 @@ now = False
 ###################
 # Data Parameters #
 ###################
-stocks_for_simulation = 'Test'
+# stocks_for_simulation = 'Test'
 # TODO add a 5 option
-#stocks_for_simulation = 'asx20'
+stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'

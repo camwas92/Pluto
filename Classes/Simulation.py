@@ -110,7 +110,11 @@ class Simulation:
                 price = self.available_stocks[stock].df.loc[
                     self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
                 if len(price) > 0:
-                    price = float(price)
+                    try:
+                        price = float(price)
+                    except TypeError:
+                        print("Error Raised")
+                        return True
                     # calculate required value for purchase
                     if quantity < 0:
                         quantity = int(self.temp_portfolio.cash_in_hand / price)
@@ -127,7 +131,6 @@ class Simulation:
                 price = self.available_stocks[stock].df.loc[
                     self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
                 if len(price) > 0:
-                    print(price)
                     try:
                         price = float(price)
                     except TypeError:
@@ -148,7 +151,6 @@ class Simulation:
                 price = self.available_stocks[stock].df.loc[
                     self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
                 if len(price) > 0:
-                    print(price)
                     try:
                         price = float(price)
                     except TypeError:
