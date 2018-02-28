@@ -6,7 +6,7 @@ def random_choice(available_stocks, portfolio):
 
 
 def testing(available_stocks, portfolio):
-    return -2, 'CBA', 0
+    return -2, 'AMP', 0
 
 
 def manual(available_stocks, portfolio):

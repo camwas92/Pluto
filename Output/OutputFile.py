@@ -7,23 +7,35 @@ from Setup import Constants as Con
 
 
 # store metric
-def store_metric(name, value):
-    Con.output_dict_sim[name] = value
+def store_metric(name, value, option):
+    if option == 1:
+        Con.output_dict_sim[name] = value
+    elif option == 2:
+        Con.output_dict_model[name] = value
+    elif option == 3:
+        Con.output_dict_trade[name] = value
+        return
+
     return
 
 
 def select_Data(option):
     if option == 1:
         return (Con.output_dict_sim)
-    else:
+    elif option == 2:
         return (Con.output_dict_model)
-
+    elif option == 3:
+        return (Con.output_dict_trade)
 
 def get_headers(option):
     if option == 1:
         headers = (Con.sheet_sim.row_values(1))
-    else:
+    elif option == 2:
         headers = (Con.sheet_model.row_values(1))
+    elif option == 3:
+        headers = (Con.sheet_trade.row_values(1))
+    else:
+        headers = 0
 
     count = list(range(1, len(headers) + 1))
 
@@ -33,8 +45,11 @@ def get_headers(option):
 def get_column_count(option):
     if option == 1:
         return (Con.column_count_sim)
-    else:
+    elif option == 2:
         return (Con.column_count_model)
+    elif option == 3:
+        return (Con.column_count_trade)
+
 
 
 def print_data(option):
@@ -45,8 +60,10 @@ def print_data(option):
 def write_row(option, line):
     if option == 1:
         Con.sheet_sim.insert_row(line, 2)
-    else:
+    elif option == 2:
         Con.sheet_model.insert_row(line, 2)
+    elif option == 3:
+        Con.sheet.trade.insert_row(line, 2)
     return
 
 # add data to metric
@@ -62,6 +79,7 @@ def save_data(option):
     return
 
 
+# Create Dic
 def create_output_dict_sim(start_period, end_period, commision, init_investment):
     now = datetime.datetime.now()
     Con.output_dict_sim = {
@@ -78,10 +96,49 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
         'Profit': None,
         'Annual Profit': None,
         'Num. Trades': None,
-        'Num. Good Trades': None,
+        'Num. Good Periods': None,
+        'Num. Bad Periods': None,
         'Num. Buy': None,
         'Num. Sell': None,
         'Num. Hold': None,
         'Profit Percent': None
+    }
+    return
+
+
+def create_output_dict_model(start_period, end_period, commision, init_investment):
+    # todo fill in
+    now = datetime.datetime.now()
+    Con.output_dict_model = {
+        'Date': now.strftime('%Y-%m-%d'),
+        'Time': now.strftime('%H:%M'),
+        'Stock Options': Con.stocks_for_simulation,
+        'Decision Method': Con.decision_method,
+        'Inputs': None,
+        'Initial Investment': init_investment,
+        'Commision': commision,
+        'Start Date': start_period.strftime('%Y-%m-%d'),
+        'End Date': end_period.strftime('%Y-%m-%d'),
+        'Final Portfolio Value': None,
+        'Profit': None,
+        'Annual Profit': None,
+        'Num. Trades': None,
+        'Num. Good Periods': None,
+        'Num. Bad Periods': None,
+        'Num. Buy': None,
+        'Num. Sell': None,
+        'Num. Hold': None,
+        'Profit Percent': None
+    }
+    return
+
+
+def create_output_dict_trade():
+    now = datetime.datetime.now()
+    Con.output_dict_trade = {
+        'Date': now.strftime('%Y-%m-%d'),
+        'Time': now.strftime('%H:%M'),
+        'Series': None,
+        'Value': None
     }
     return

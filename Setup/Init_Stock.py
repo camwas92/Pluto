@@ -11,7 +11,6 @@ from Setup import Constants as Con
 
 # TODO Fix up inputs to be accurate
 # TODO prevent duplicate data
-# TODO make all gaps filled by last value
 # main function called. It will initialise all stocks to be loaded
 # True flag loads the newest data, false will use only from the file
 def load_stock(flag = False):

@@ -4,6 +4,6 @@ class Holding:
     stock = ''
     quantity = 0
 
-    def __init__(self, name, quantity):
+    def __init__(self, name, quantity=0):
         self.stock = name
-        self.quantity = quantity
+        self.quantity = float(quantity)

@@ -55,6 +55,7 @@ class Simulation:
 
         # establish output
         O.create_output_dict_sim(start_period, end_period, commision, init_investment)
+        O.create_output_dict_trade()
 
         return
 
@@ -73,6 +74,7 @@ class Simulation:
 
                 # run through decision options until a exit value is given
                 action, stock, quantity = getattr(D, Con.decision_method)(self.available_stocks, self.temp_portfolio)
+                Con.actions.append([self.current_date, action, stock, quantity])
                 # make decision - use a method based on the given initial parameter
                 while self.complete_transaction(action, stock, quantity):
                     action, stock, quantity = getattr(D, Con.decision_method)(self.available_stocks,
@@ -84,7 +86,10 @@ class Simulation:
 
             # store previous state
             self.portfolio.append(Port.Portfolio(self.current_date,self.temp_portfolio.holdings,self.temp_portfolio.cash_in_hand,self.temp_portfolio.assets))
-
+            if self.portfolio[-1].value >= self.portfolio[-2].value:
+                Con.good_period_count += 1
+            else:
+                Con.bad_period_count += 1
             # produce output for tracking progress
             self.output_progress('Y')
 
@@ -102,62 +107,76 @@ class Simulation:
 
     # actually do the transaction, -1 sell, 0 hold, 1 buy
     def complete_transaction(self, action, stock, quantity):
-        # TODO put into functions
+        # BUY STOCK
         if action == 1:  # buy
             # check any available cash and stock data available
             if self.temp_portfolio.cash_in_hand > 0 and self.available_stocks[stock].start_date <= self.current_date:
                 # find price
-                price = self.available_stocks[stock].df.loc[
-                    self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
+                price = list(self.available_stocks[stock].df.loc[
+                                 self.available_stocks[stock].df['Date'] == self.current_date, 'Open'])
                 if len(price) > 0:
                     try:
-                        price = float(price)
+                        price = float(price[0])
                     except TypeError:
                         print("Error Raised")
                         return True
                     # calculate required value for purchase
                     if quantity < 0:
-                        quantity = int(self.temp_portfolio.cash_in_hand / price)
+                        quantity = float(self.temp_portfolio.cash_in_hand / price)
                     # do transaction
                     self.temp_portfolio.holdings[stock].quantity += quantity
                     self.temp_portfolio.cash_in_hand -= price * quantity
+                    Con.buy_count += 1
 
             return True
+
+        # SELL STOCK
         elif action == -1:  # sell
             # check any available cash and stock data available
             if self.temp_portfolio.holdings[stock].quantity > 0 and self.available_stocks[
                 stock].start_date <= self.current_date:
                 # find price
-                price = self.available_stocks[stock].df.loc[
-                    self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
+                price = list(self.available_stocks[stock].df.loc[
+                                 self.available_stocks[stock].df['Date'] == self.current_date, 'Open'])
                 if len(price) > 0:
                     try:
-                        price = float(price)
+                        price = float(price[0])
                     except TypeError:
                         print("Error Raised")
                         return True
                     # ccalculate quantity of sale
                     if quantity < 0 or quantity > self.temp_portfolio.holdings[stock].quantity:
-                        quantity = self.temp_portfolio.holdings[stock].quantity
+                        quantity = float(self.temp_portfolio.holdings[stock].quantity)
                     # do transaction
                     self.temp_portfolio.holdings[stock].quantity -= quantity
                     self.temp_portfolio.cash_in_hand += price * quantity
+                    Con.sell_count += 1
             return True
+
+        # HOLD STOCK
         elif action == 0:  # hold
+            Con.hold_count += 1
             return True
+
+        # MOVE TO NEXT DAY
         else:
+            temp = self.temp_portfolio.assets
             self.temp_portfolio.assets = 0
             for key in self.temp_portfolio.holdings:
-                price = self.available_stocks[stock].df.loc[
-                    self.available_stocks[stock].df['Date'] == self.current_date, 'Close']
+                price = list(self.available_stocks[stock].df.loc[
+                                 self.available_stocks[stock].df['Date'] == self.current_date, 'Open'])
                 if len(price) > 0:
                     try:
-                        price = float(price)
+                        price = float(price[0])
                     except TypeError:
                         print("Error Raised")
                         return True
-                quantity = self.temp_portfolio.holdings[key].quantity
+                else:
+                    price = 0
+                quantity = float(self.temp_portfolio.holdings[key].quantity)
                 self.temp_portfolio.assets += price * quantity
+            if self.temp_portfolio.assets == 0 and self.temp_portfolio.cash_in_hand == 0:
+                self.temp_portfolio.assets = temp
             return False
 
 

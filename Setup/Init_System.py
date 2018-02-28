@@ -14,7 +14,7 @@ def init_system():
     Con.paths = collect_paths()
     connect_google_sheets()
     Con.now = get_date()
-    IS.load_stock(True)  # true load new stock data, false load only from file
+    IS.load_stock(False)  # true load new stock data, false load only from file
     return
 
 
@@ -41,11 +41,16 @@ def connect_google_sheets():
 
     Con.sheet_sim = Con.client.open(Con.outputfile).get_worksheet(0)
     Con.sheet_model = Con.client.open(Con.outputfile).get_worksheet(1)
+    Con.sheet_trade = Con.client.open(Con.outputfile).get_worksheet(2)
 
     Con.row_count_sim = Con.sheet_sim.row_count
     Con.column_count_sim = Con.sheet_sim.col_count
+
     Con.row_count_model = Con.sheet_model.row_count
     Con.column_count_model = Con.sheet_model.col_count
+
+    Con.row_count_trade = Con.sheet_trade.row_count
+    Con.column_count_trade = Con.sheet_trade.col_count
 
     if Con.row_count_sim < 1:
         print("\n\nOUTPUT IS NOT CONNECTED\n\n")

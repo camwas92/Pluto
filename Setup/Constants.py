@@ -26,14 +26,23 @@ now = False
 ###################
 # Data Parameters #
 ###################
-# stocks_for_simulation = 'Test'
-# TODO add a 5 option
-stocks_for_simulation = 'asx20'
+stocks_for_simulation = 'Test'
+# stocks_for_simulation = 'asx5'
+# stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
 # stocks_for_simulation = 'asx300'
 
+############
+# Trackers #
+############
+buy_count = 0
+sell_count = 0
+hold_count = 0
+good_period_count = 0
+bad_period_count = 0
+actions = []
 
 #######################
 # Google Drive Output #
@@ -42,14 +51,24 @@ scope = ['https://spreadsheets.google.com/feeds']
 outputfile = 'Portfolio Performance'
 creds = ''
 client = None
+
+# Sim
 row_count_sim = 0
-row_count_model = 0
 column_count_sim = 0
-column_count_model = 0
 output_dict_sim = {}
-output_dict_model = {}
 sheet_sim = None
+
+# Model
+row_count_model = 0
+column_count_model = 0
+output_dict_model = {}
 sheet_model = None
+
+# Trades
+row_count_trade = 0
+column_count_trade = 0
+output_dict_trade = {}
+sheet_trade = None
 
 ###################
 # Print Functions #

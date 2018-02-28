@@ -16,3 +16,5 @@ class Portfolio:
 
         #calculate Value
         self.value = cash_in_hand + assets
+        if self.value == 0:
+            print(self.value, self.assets, self.cash_in_hand)
