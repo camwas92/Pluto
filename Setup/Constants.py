@@ -10,12 +10,20 @@ slipage = 0
 init_investment = 10000
 paths = []
 
-#######################
-# Changing Parameters #
-#######################
+####################
+# Decision Methods #
+####################
 decision_method = 'random_choice'  # name of the function
 # decision_method = 'testing' # just for testing
 # decision_method = 'manual'
+
+######################
+# Prediction Methods #
+######################
+technical_methods = ['tech_per_change']
+ML_methods = []
+# technical_methods = ['tech_momentum','tech_per_change','tech_MACD','tech_gradient']
+# ML_methods = ['ML_RF','ML_NN']
 
 ###################
 # Time Parameters #

@@ -13,9 +13,7 @@ def Evaluate(Simulation):
     calculate_profit(Simulation)
     trade_calculation(Simulation)
     graph_performance(Simulation)
-    # action evaluation
 
-    # - number of good trades
 
     # store final output
     O.print_data(1)
@@ -23,8 +21,38 @@ def Evaluate(Simulation):
     return
 
 
-def Evaluate_Prediction():
+def Evaluate_Prediction(data, method):
     # todo implement prediction evaluation
+    print('Evaluating', data.name, 'for', method)
+    O.create_output_dict_model(data.name, method)
+    # https://stats.stackexchange.com/questions/114752/forecast-accuracy-calculation
+
+    error = 0
+
+    correct_direction = 0
+    wrong_direction = 0
+    avg_gap = 0
+    RMSE = 0
+    MAE = 0
+    MSE = 0
+    MAPE = 0
+    SMAPE = 0
+    MPE = 0
+    total_error_per = 0
+
+    O.store_metric('Num. Correct Direction', correct_direction, 2)
+    O.store_metric('Num. Wrong Direction', wrong_direction, 2)
+    O.store_metric('MSE', MSE, 2)
+    O.store_metric('RMSE', RMSE, 2)
+    O.store_metric('MAE', MAE, 2)
+    O.store_metric('MAPE', MAPE, 2)
+    O.store_metric('SMAPE', SMAPE, 2)
+    O.store_metric('MPE', MPE, 2)
+    O.store_metric('Total Error Per', total_error_per, 2)
+
+    O.print_data(2)
+    O.save_data(2)  # 2 is model
+
     return
 
 

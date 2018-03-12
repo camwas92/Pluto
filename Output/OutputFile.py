@@ -106,29 +106,24 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
     return
 
 
-def create_output_dict_model(start_period, end_period, commision, init_investment):
+def create_output_dict_model(stock, model):
     # todo fill in
     now = datetime.datetime.now()
     Con.output_dict_model = {
         'Date': now.strftime('%Y-%m-%d'),
         'Time': now.strftime('%H:%M'),
-        'Stock Options': Con.stocks_for_simulation,
-        'Decision Method': Con.decision_method,
-        'Inputs': None,
-        'Initial Investment': init_investment,
-        'Commision': commision,
-        'Start Date': start_period.strftime('%Y-%m-%d'),
-        'End Date': end_period.strftime('%Y-%m-%d'),
-        'Final Portfolio Value': None,
-        'Profit': None,
-        'Annual Profit': None,
-        'Num. Trades': None,
-        'Num. Good Periods': None,
-        'Num. Bad Periods': None,
-        'Num. Buy': None,
-        'Num. Sell': None,
-        'Num. Hold': None,
-        'Profit Percent': None
+        'Stock': stock,
+        'Model': model,
+        'Num. Correct Direction Per': None,
+        'Num. Wrong Direction Per': None,
+        'Average Gap': None,
+        'MSE': None,
+        'RMSE': None,
+        'MAE': None,
+        'MAPE': None,
+        'SMAPE': None,
+        'MPE': None,
+        'Total Error Per': None
     }
     return
 
