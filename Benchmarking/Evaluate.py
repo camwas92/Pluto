@@ -40,8 +40,8 @@ def Evaluate_Prediction(data, method):
     MPE = 0
     total_error_per = 0
 
-    O.store_metric('Num. Correct Direction', correct_direction, 2)
-    O.store_metric('Num. Wrong Direction', wrong_direction, 2)
+    O.store_metric('Num. Correct Direction Per', correct_direction, 2)
+    O.store_metric('Num. Wrong Direction Per', wrong_direction, 2)
     O.store_metric('MSE', MSE, 2)
     O.store_metric('RMSE', RMSE, 2)
     O.store_metric('MAE', MAE, 2)

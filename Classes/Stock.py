@@ -14,6 +14,7 @@ class Stock:
         data['Date']=pd.to_datetime((data['Date']))
         self.name = name
         data = data.replace([0], np.nan)
+        data = data.drop_duplicates(keep=False)
         self.df = data.fillna(method='ffill')
         self.start_date = min(data['Date'])
         self.end_date = max(data['Date'])

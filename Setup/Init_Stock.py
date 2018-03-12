@@ -9,8 +9,8 @@ from Classes import Stock as S
 from Setup import Constants as Con
 
 
-# TODO Fix up inputs to be accurate
-# TODO prevent duplicate data
+# TODO Get input from google sheets
+# TODO store predictions with data
 # main function called. It will initialise all stocks to be loaded
 # True flag loads the newest data, false will use only from the file
 def load_stock(flag = False):
