@@ -107,7 +107,6 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
 
 
 def create_output_dict_model(stock, model):
-    # todo fill in
     now = datetime.datetime.now()
     Con.output_dict_model = {
         'Date': now.strftime('%Y-%m-%d'),
@@ -121,9 +120,9 @@ def create_output_dict_model(stock, model):
         'RMSE': None,
         'MAE': None,
         'MAPE': None,
-        'SMAPE': None,
         'MPE': None,
-        'Total Error Per': None
+        'Overshot': None,
+        'Undershot': None
     }
     return
 

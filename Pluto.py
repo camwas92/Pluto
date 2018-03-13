@@ -1,4 +1,5 @@
 # this is the main function
+# todo update read me
 from Benchmarking import Evaluate as E
 from Classes import Simulation as Sim
 from Prediction import Prediction as P

@@ -1,4 +1,6 @@
 # this function is used to evaluate the perforamnce of the model and produce clear visualisations of the decision method and forecasting accuracy
+import math
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -22,34 +24,54 @@ def Evaluate(Simulation):
 
 
 def Evaluate_Prediction(data, method):
-    # todo implement prediction evaluation
     print('Evaluating', data.name, 'for', method)
     O.create_output_dict_model(data.name, method)
-    # https://stats.stackexchange.com/questions/114752/forecast-accuracy-calculation
 
-    error = 0
+    # calcualte Y, Y_dash and movement direction
+    tempdf = pd.DataFrame({'Y': data.df['Close'], 'Ydash': data.df[method]})
+    tempdf['Y_s(-1)'] = tempdf['Y'].shift(-1)
+    tempdf['Ydash_s(-1)'] = tempdf['Ydash'].shift(-1)
+    tempdf['Y_direction_temp'] = np.where(tempdf['Y'] >= tempdf['Y_s(-1)'], 1, -1)
+    tempdf['Y_direction'] = np.where(tempdf['Y'] == tempdf['Y_s(-1)'], 0, tempdf['Y_direction_temp'])
+    tempdf['Ydash_direction_temp'] = np.where(tempdf['Ydash'] >= tempdf['Ydash_s(-1)'], 1, -1)
+    tempdf['Ydash_direction'] = np.where(tempdf['Y'] == tempdf['Ydash_s(-1)'], 0, tempdf['Ydash_direction_temp'])
+    tempdf['correct'] = np.where(tempdf['Y_direction'] == tempdf['Ydash_direction'], 1, -1)
 
-    correct_direction = 0
-    wrong_direction = 0
-    avg_gap = 0
-    RMSE = 0
-    MAE = 0
-    MSE = 0
-    MAPE = 0
-    SMAPE = 0
-    MPE = 0
-    total_error_per = 0
+    # calculate all error values
+    errordf = pd.DataFrame()
+    errordf['Y-Ydash'] = tempdf['Y'].subtract(tempdf['Ydash'], axis=0)
+    errordf['|Y-Ydash|'] = abs(errordf['Y-Ydash'])
+    errordf['Y-Ydash/Y'] = errordf['Y-Ydash'].divide(tempdf['Y'], axis=0)
+    errordf['|Y-Ydash|/|Y|'] = errordf['|Y-Ydash|'].divide(abs(tempdf['Y']), axis=0)
+    errordf['(Y-Ydash)^2'] = errordf['Y-Ydash'] ** 2
 
+    # valuate direction movement
+    overshot = errordf[errordf['Y-Ydash'] > 0].count()
+    undershot = errordf[errordf['Y-Ydash'] < 0].count()
+    correct_direction = tempdf[tempdf['correct'] > 0].count()
+    wrong_direction = tempdf[tempdf['correct'] < 0].count()
+
+    # calculate error metrics
+    avg_gap = errordf['Y-Ydash'].mean()
+    MSE = errordf['(Y-Ydash)^2'].mean()
+    RMSE = math.sqrt(MSE)
+    MAE = errordf['|Y-Ydash|'].mean()
+    MAPE = (errordf['|Y-Ydash|/|Y|'].mean()) * 100
+    MPE = (errordf['Y-Ydash/Y'].mean()) * 100
+
+    # store all metrics
     O.store_metric('Num. Correct Direction Per', correct_direction, 2)
     O.store_metric('Num. Wrong Direction Per', wrong_direction, 2)
     O.store_metric('MSE', MSE, 2)
     O.store_metric('RMSE', RMSE, 2)
     O.store_metric('MAE', MAE, 2)
     O.store_metric('MAPE', MAPE, 2)
-    O.store_metric('SMAPE', SMAPE, 2)
     O.store_metric('MPE', MPE, 2)
-    O.store_metric('Total Error Per', total_error_per, 2)
+    O.store_metric('Overshot', overshot, 2)
+    O.store_metric('Undershot', undershot, 2)
+    O.store_metric('Average Gap', avg_gap, 2)
 
+    # output metrics
     O.print_data(2)
     O.save_data(2)  # 2 is model
 
