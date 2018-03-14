@@ -16,6 +16,7 @@ def Evaluate(Simulation):
     trade_calculation(Simulation)
     graph_performance(Simulation)
 
+    O.store_metric('Parameters', Con.parameters_decision, 1)
 
     # store final output
     O.print_data(1)
@@ -31,9 +32,9 @@ def Evaluate_Prediction(data, method):
     tempdf = pd.DataFrame({'Y': data.df['Close'], 'Ydash': data.df[method]})
     tempdf['Y_s(-1)'] = tempdf['Y'].shift(-1)
     tempdf['Ydash_s(-1)'] = tempdf['Ydash'].shift(-1)
-    tempdf['Y_direction_temp'] = np.where(tempdf['Y'] >= tempdf['Y_s(-1)'], 1, -1)
+    tempdf['Y_direction_temp'] = np.where(tempdf['Y'] >= tempdf['Y_s(-1)'], -1, 1)
     tempdf['Y_direction'] = np.where(tempdf['Y'] == tempdf['Y_s(-1)'], 0, tempdf['Y_direction_temp'])
-    tempdf['Ydash_direction_temp'] = np.where(tempdf['Ydash'] >= tempdf['Ydash_s(-1)'], 1, -1)
+    tempdf['Ydash_direction_temp'] = np.where(tempdf['Ydash'] >= tempdf['Ydash_s(-1)'], -1, 1)
     tempdf['Ydash_direction'] = np.where(tempdf['Y'] == tempdf['Ydash_s(-1)'], 0, tempdf['Ydash_direction_temp'])
     tempdf['correct'] = np.where(tempdf['Y_direction'] == tempdf['Ydash_direction'], 1, -1)
 
@@ -46,10 +47,10 @@ def Evaluate_Prediction(data, method):
     errordf['(Y-Ydash)^2'] = errordf['Y-Ydash'] ** 2
 
     # valuate direction movement
-    overshot = errordf[errordf['Y-Ydash'] > 0].count()
-    undershot = errordf[errordf['Y-Ydash'] < 0].count()
-    correct_direction = tempdf[tempdf['correct'] > 0].count()
-    wrong_direction = tempdf[tempdf['correct'] < 0].count()
+    overshot = errordf[errordf['Y-Ydash'] < 0].count()[0]
+    undershot = errordf[errordf['Y-Ydash'] > 0].count()[0]
+    correct_direction = tempdf[tempdf['correct'] > 0].count()[0]
+    wrong_direction = tempdf[tempdf['correct'] < 0].count()[0]
 
     # calculate error metrics
     avg_gap = errordf['Y-Ydash'].mean()
@@ -158,4 +159,13 @@ def graph_performance(Simulation):
     dfoutput = pd.concat([df, dfa, dfb])
     dfoutput.to_csv(Con.paths['Output'] / 'PerformacnePoints.csv')
 
+    return
+
+
+def graph_model(df, name):
+    tempdf = df.drop(['Open', 'High', 'Low', 'Adj Close', 'Volume'], axis=1)
+    tempdf = tempdf.set_index('Date')
+    tempdf.plot()
+    plt.title(name)
+    plt.show()
     return

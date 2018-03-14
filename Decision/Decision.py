@@ -1,7 +1,10 @@
 import random as rd
 
+from Setup import Constants as Con
+
 
 def random_choice(available_stocks, portfolio):
+    Con.parameters_decision = {'Chance': 'B1:S1:H1:E2'}
     return rd.randint(-2, 2), rd.choice(list(available_stocks.keys())), -1
 
 

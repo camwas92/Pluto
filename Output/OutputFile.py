@@ -101,13 +101,15 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
         'Num. Buy': None,
         'Num. Sell': None,
         'Num. Hold': None,
-        'Profit Percent': None
+        'Profit Percent': None,
+        'Parameters': None
     }
     return
 
 
 def create_output_dict_model(stock, model):
     now = datetime.datetime.now()
+
     Con.output_dict_model = {
         'Date': now.strftime('%Y-%m-%d'),
         'Time': now.strftime('%H:%M'),
@@ -122,7 +124,8 @@ def create_output_dict_model(stock, model):
         'MAPE': None,
         'MPE': None,
         'Overshot': None,
-        'Undershot': None
+        'Undershot': None,
+        'Parameters': Con.parameters_prediction
     }
     return
 

@@ -9,8 +9,8 @@ from Classes import Stock as S
 from Setup import Constants as Con
 
 
-# TODO Get input from google sheets
-# TODO store predictions with data
+# TODO implement online and offline, online pulls all new data from google sheets and reruns all predictions and saves them to a file, offline loads only from the file
+
 # main function called. It will initialise all stocks to be loaded
 # True flag loads the newest data, false will use only from the file
 def load_stock(flag = False):

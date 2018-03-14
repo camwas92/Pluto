@@ -16,14 +16,18 @@ paths = []
 decision_method = 'random_choice'  # name of the function
 # decision_method = 'testing' # just for testing
 # decision_method = 'manual'
+parameters_decision = None
 
 ######################
 # Prediction Methods #
 ######################
-technical_methods = ['tech_per_change']
+technical_methods = []
+# technical_methods = ['tech_per_change']
+FE_methods = []
+# technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
 ML_methods = []
-# technical_methods = ['tech_momentum','tech_per_change','tech_MACD','tech_gradient']
-# ML_methods = ['ML_RF','ML_NN']
+# ML_methods = ['ML_LR','ML_RF','ML_NN']
+parameters_prediction = {}
 
 ###################
 # Time Parameters #
@@ -113,3 +117,7 @@ def print_state(Portfolio,current_date):
             '\n     Asset = $' + str(Portfolio.assets))
     print('=====================\n\n\n', )
     return
+
+
+def print_progress(current, end):
+    print(current, '')
