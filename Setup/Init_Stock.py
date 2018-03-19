@@ -11,22 +11,106 @@ from Setup import Constants as Con
 
 # TODO implement online and offline, online pulls all new data from google sheets and reruns all predictions and saves them to a file, offline loads only from the file
 
+
+# connect to tab
+def sheets_download_stock():
+    Available_Sheets = Con.sheet_stock.worksheets()
+    for x in Available_Sheets[1:]:
+        data = x.get_all_values()
+        headers = data.pop(0)
+        df = pd.DataFrame(data, columns=headers)
+        df.to_csv(str(Con.paths['Stocks'] / str(x.title[-3:] + '.csv')), index=False)
+
+    # format data and save as csv
+
+    return True
+
+
+def sheets_refresh_stock():
+    # add
+    Con.print_header_level_2('Refreshing Tabs')
+    Con.sheet_stock = Con.client.open(Con.inputfile)
+    Available_Sheets = Con.sheet_stock.worksheets()
+
+    for x in Available_Sheets[1:]:
+        Con.sheet_stock.del_worksheet(x)
+
+    # Add new tabs
+    for x in Con.stock_list:
+        Con.sheet_stock.add_worksheet('ASX:' + x, 10000, 6)
+
+    # set formula
+    Available_Sheets = Con.sheet_stock.worksheets()
+    for x in Available_Sheets:
+        x.update_cell(1, 1, Con.stock_request_text)
+
+    action = input('Have you clicked the macro on google drive? ')
+    if action == 'Y':
+        return True
+    else:
+        return False
+
+
+def sheets_load_stock():
+    for x in Con.stock_list:
+        try:
+            df = pd.read_csv(Con.paths['Stocks'] / str(x + '.csv'), parse_dates=[0], dayfirst=True)
+            Con.stock_data[x] = S.Stock(x, df)
+            print('Loading', x, 'from file')
+        except FileNotFoundError:
+            print('File for', x, 'not found')
+            return False
+
+    return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # main function called. It will initialise all stocks to be loaded
 # True flag loads the newest data, false will use only from the file
-def load_stock(flag = False):
+def load_stock(flag="Offline"):
     print('Loading all stock')
-
     Con.stock_list = get_stock_list(True)
-    for x in Con.stock_list:
-        # load data for stock
-        if load_stock_source(x) and flag:
-        # refresh stock if not the newest
-            if not Con.stock_data[x].df['Date'].iloc[-1] == Con.now:
-                try:
-                    start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]),'%Y-%m-%d %H:%M:%S')
-                except ValueError:
-                    start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]), '%Y-%m-%d')
-                download_stock_prices(x,start)
+    if flag == "Online":
+        if sheets_refresh_stock():
+            sheets_download_stock()
+        sheets_load_stock()
+        return
+    elif flag == "Offline":
+        sheets_load_stock()
+        return
+    else:
+
+        for x in Con.stock_list:
+            # load data for stock
+            if load_stock_source(x) and flag:
+                # refresh stock if not the newest
+                if not Con.stock_data[x].df['Date'].iloc[-1] == Con.now:
+                    try:
+                        start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]), '%Y-%m-%d %H:%M:%S')
+                    except ValueError:
+                        start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]), '%Y-%m-%d')
+                    download_stock_prices(x, start)
+    return
 
 
 # gets list of stocks to be loaded for this simulation

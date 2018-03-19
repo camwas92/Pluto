@@ -1,5 +1,11 @@
 # These are all the constants required for the project
 import calendar
+
+##################
+# Online/Offline #
+##################
+line = 'Online'
+
 #################################
 # Parameters to run the program #
 #################################
@@ -21,11 +27,11 @@ parameters_decision = None
 ######################
 # Prediction Methods #
 ######################
-technical_methods = []
+technical_methods = ['tech_per_change']
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = []
+ML_methods = ['ML_LR']
 # ML_methods = ['ML_LR','ML_RF','ML_NN']
 parameters_prediction = {}
 
@@ -81,6 +87,15 @@ row_count_trade = 0
 column_count_trade = 0
 output_dict_trade = {}
 sheet_trade = None
+
+######################
+# Google Drive Input #
+######################
+inputfile = 'Stock Data'
+
+stock_request_text = "=GOOGLEFINANCE(sheetname(),\"all\",\"01/01/1990\",Today(),\"DAILY\")"
+
+sheet_stock = None
 
 ###################
 # Print Functions #

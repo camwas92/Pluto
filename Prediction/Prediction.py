@@ -1,5 +1,6 @@
 # TODO NN
 # TODO RF
+import datetime as dt
 import sys
 
 import pandas as pd
@@ -26,6 +27,8 @@ def run_predictions():
 
         for x in Con.FE_methods:
             getattr(sys.modules[__name__], x)(data, x)
+
+        data.df.to_csv(str(Con.paths['Stocks'] / str(key + '.csv')), index=False)
 
     return True
 
@@ -88,8 +91,8 @@ def ML_LR(data, method):
         obs = test[t]
         history.append(obs)
         if num > 100:
-            if t % int(num / 100) == 0:
-                print(t, 'of', num, 'periods')
+            if t % int(num / 500) == 0:
+                print(t, 'of', num, 'periods', '@', dt.datetime.now().time())
 
     df = pd.DataFrame({'Prediction': predictions})
 

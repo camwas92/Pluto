@@ -14,7 +14,8 @@ def init_system():
     Con.paths = collect_paths()
     connect_google_sheets()
     Con.now = get_date()
-    IS.load_stock(False)  # true load new stock data, false load only from file
+    IS.load_stock(Con.line)  # true load new stock data, false load only from file
+    # "Online" loads data from sheets, "Offline" loads data from source
     return
 
 

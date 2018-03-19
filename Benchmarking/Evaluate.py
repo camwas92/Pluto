@@ -130,15 +130,24 @@ def graph_performance(Simulation):
 
     columns = ['date']
     df2 = pd.DataFrame(columns=columns)
+    columns = ['date', 'Series', 'value']
+    outputtempdf = pd.DataFrame(columns=columns)
 
     # collect stock data
     if len(Simulation.available_stocks) <= 5:
         for key in Simulation.available_stocks:
             tempdf = pd.DataFrame({'date': Simulation.available_stocks[key].df['Date'],
-                                   Simulation.available_stocks[key].name: Simulation.available_stocks[key].df['Open']})
+                                   Simulation.available_stocks[key].name: Simulation.available_stocks[key].df['Close']})
             tempdf = tempdf.set_index('date')
+
+            temp2 = tempdf
+            temp2['Series'] = key
+            temp2.rename(columns={key: 'value'}, inplace=True)
             df2 = pd.merge(df2, tempdf, how='outer', left_index=True, right_index=True)
-    df2.drop(columns='date')
+            outputtempdf = pd.concat([temp2, outputtempdf])
+    df2 = df2.drop(columns='date')
+    outputtempdf = outputtempdf.drop(columns='date')
+
 
     # plot performance and stocks on the same graph
     fig, axes = plt.subplots(nrows=3, ncols=1, sharex=True)
@@ -156,14 +165,15 @@ def graph_performance(Simulation):
     dfb = tempdf.drop(columns=['assets'])
     dfb['Series'] = 'Assets'
     dfb.columns = ['value', 'Series']
-    dfoutput = pd.concat([df, dfa, dfb])
-    dfoutput.to_csv(Con.paths['Output'] / 'PerformacnePoints.csv')
+    dfoutput = pd.concat([df, dfa, dfb, outputtempdf])
+    dfoutput['date'] = dfoutput.index
+    dfoutput.to_csv(Con.paths['Output'] / 'PerformancePoints.csv')
 
     return
 
 
 def graph_model(df, name):
-    tempdf = df.drop(['Open', 'High', 'Low', 'Adj Close', 'Volume'], axis=1)
+    tempdf = df.drop(['Open', 'High', 'Low', 'Volume'], axis=1)
     tempdf = tempdf.set_index('Date')
     tempdf.plot()
     plt.title(name)

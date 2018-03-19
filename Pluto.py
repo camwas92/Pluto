@@ -12,9 +12,10 @@ ISy.init_system()
 Con.print_sucess_message('Data Prep')
 
 # run predictions
-Con.print_header_level_1('Run Predictions')
-P.run_predictions()
-Con.print_sucess_message('Predictions')
+if Con.line == 'Online':
+    Con.print_header_level_1('Run Predictions')
+    P.run_predictions()
+    Con.print_sucess_message('Predictions')
 
 # simulate system
 Con.print_header_level_1('Initialising Simulation')
