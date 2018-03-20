@@ -167,7 +167,7 @@ def graph_performance(Simulation):
     dfb.columns = ['value', 'Series']
     dfoutput = pd.concat([df, dfa, dfb, outputtempdf])
     dfoutput['date'] = dfoutput.index
-    dfoutput.to_csv(Con.paths['Output'] / 'PerformancePoints.csv')
+    dfoutput.to_csv(Con.paths['Output'] / 'PerformancePoints.csv', index=False)
 
     return
 

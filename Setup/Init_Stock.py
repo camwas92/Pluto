@@ -19,6 +19,16 @@ def sheets_download_stock():
         data = x.get_all_values()
         headers = data.pop(0)
         df = pd.DataFrame(data, columns=headers)
+        try:
+            dfinit = pd.read_csv(Con.paths['Stocks'] / str(x.title[-3:] + '.csv'), parse_dates=[0], dayfirst=True)
+            df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
+            dfinit['Date'] = pd.to_datetime(dfinit['Date'])
+            cols_to_use = list(dfinit.columns.difference(df.columns))
+            cols_to_use.append('Date')
+            result = pd.merge(df, dfinit[cols_to_use], how='left', on=['Date'])
+            df = result
+        except FileNotFoundError:
+            print('No File', x.title[-3:])
         df.to_csv(str(Con.paths['Stocks'] / str(x.title[-3:] + '.csv')), index=False)
 
     # format data and save as csv

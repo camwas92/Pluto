@@ -1,6 +1,7 @@
 # this is the main function
 # todo update read me
 from Benchmarking import Evaluate as E
+from Benchmarking import TableauPrep as TP
 from Classes import Simulation as Sim
 from Prediction import Prediction as P
 from Setup import Constants as Con
@@ -12,9 +13,10 @@ ISy.init_system()
 Con.print_sucess_message('Data Prep')
 
 # run predictions
-if Con.line == 'Online':
+if Con.model_refresh:
     Con.print_header_level_1('Run Predictions')
     P.run_predictions()
+    TP.combine_stock_data()
     Con.print_sucess_message('Predictions')
 
 # simulate system
