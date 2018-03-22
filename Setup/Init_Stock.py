@@ -9,9 +9,6 @@ from Classes import Stock as S
 from Setup import Constants as Con
 
 
-# TODO implement online and offline, online pulls all new data from google sheets and reruns all predictions and saves them to a file, offline loads only from the file
-
-
 # connect to tab
 def sheets_download_stock():
     Available_Sheets = Con.sheet_stock.worksheets()

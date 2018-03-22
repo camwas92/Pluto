@@ -1,5 +1,7 @@
 # this is the main function
 # todo update read me
+# todo add comments
+# todo add in commition
 from Benchmarking import Evaluate as E
 from Benchmarking import TableauPrep as TP
 from Classes import Simulation as Sim

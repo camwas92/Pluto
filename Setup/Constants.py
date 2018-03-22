@@ -20,10 +20,10 @@ paths = []
 ####################
 # Decision Methods #
 ####################
-decision_method = 'random_choice'  # name of the function
+# decision_method = 'random_choice'  # name of the function
 # decision_method = 'testing' # just for testing
-# decision_method = 'manual'
-parameters_decision = None
+decision_method = 'manual'
+parameters_decision = {'manual': 'ML_RF'}
 
 ######################
 # Prediction Methods #
@@ -32,7 +32,7 @@ technical_methods = []
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = ['ML_NN']
+ML_methods = ['ML_RF']
 # ML_methods = ['ML_LR','ML_RF','ML_NN']
 parameters_prediction = {}
 
@@ -45,8 +45,8 @@ now = False
 ###################
 # Data Parameters #
 ###################
-# stocks_for_simulation = 'Test'
-stocks_for_simulation = 'Model-Testing'
+stocks_for_simulation = 'Test'
+# stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
@@ -139,3 +139,11 @@ def print_state(Portfolio,current_date):
 
 def print_progress(current, end):
     print(current, '')
+
+
+def print_error_message(text=None):
+    if text is None:
+        print('ERROR OCCURED!!!!!!!!')
+    else:
+        print(text)
+    return

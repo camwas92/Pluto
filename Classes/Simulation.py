@@ -22,7 +22,8 @@ class Simulation:
     init_investment = 0
 
     #initialise the simulation class
-    def __init__(self,commision=0,start_period=None,end_period=None,current_date=None,available_stocks=Con.stock_data,init_investment=Con.init_investment,decision_method=None):
+    def __init__(self, commision=0, start_period=None, end_period=None, current_date=None,
+                 available_stocks=Con.stock_data, init_investment=Con.init_investment):
         # start should be max date and min date
         if start_period is None:
             start_period = min(available_stocks[x].start_date for x in available_stocks)
@@ -30,10 +31,6 @@ class Simulation:
             end_period = max(available_stocks[x].end_date for x in available_stocks)
         if current_date is None:
             current_date = start_period
-        if decision_method is None:
-            Con.decision_method = 'random_choice'
-        else:
-            Con.decision_method = decision_method
         random.seed(123)
 
         # set initial variables
@@ -73,12 +70,8 @@ class Simulation:
             if self.check_valid_transaction_day():
 
                 # run through decision options until a exit value is given
-                action, stock, quantity = getattr(D, Con.decision_method)(self.available_stocks, self.temp_portfolio)
-                Con.actions.append([self.current_date, action, stock, quantity])
-                # make decision - use a method based on the given initial parameter
-                while self.complete_transaction(action, stock, quantity):
-                    action, stock, quantity = getattr(D, Con.decision_method)(self.available_stocks,
-                                                                              self.temp_portfolio)
+                getattr(D, Con.decision_method)(self)
+
 
 
 
@@ -108,6 +101,7 @@ class Simulation:
     # actually do the transaction, -1 sell, 0 hold, 1 buy
     def complete_transaction(self, action, stock, quantity):
         # BUY STOCK
+        print('Action', action, 'Stock', stock, 'Quantity', quantity)
         if action == 1:  # buy
             # check any available cash and stock data available
             if self.temp_portfolio.cash_in_hand > 0 and self.available_stocks[stock].start_date <= self.current_date:
@@ -132,6 +126,7 @@ class Simulation:
 
         # SELL STOCK
         elif action == -1:  # sell
+            print('Action', action, 'Stock', stock, 'Quantity', quantity)
             # check any available cash and stock data available
             if self.temp_portfolio.holdings[stock].quantity > 0 and self.available_stocks[
                 stock].start_date <= self.current_date:
@@ -155,16 +150,18 @@ class Simulation:
 
         # HOLD STOCK
         elif action == 0:  # hold
+            print('Action', action, 'Stock', stock, 'Quantity', quantity)
             Con.hold_count += 1
             return True
 
         # MOVE TO NEXT DAY
         else:
+            print('\n\nNEW DAY\n\n')
             temp = self.temp_portfolio.assets
             self.temp_portfolio.assets = 0
             for key in self.temp_portfolio.holdings:
-                price = list(self.available_stocks[stock].df.loc[
-                                 self.available_stocks[stock].df['Date'] == self.current_date, 'Open'])
+                price = list(self.available_stocks[key].df.loc[
+                                 self.available_stocks[key].df['Date'] == self.current_date, 'Open'])
                 if len(price) > 0:
                     try:
                         price = float(price[0])

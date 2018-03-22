@@ -1,5 +1,4 @@
-# TODO NN
-# TODO RF
+
 import datetime as dt
 import sys
 
@@ -18,7 +17,7 @@ def run_predictions():
         data = Con.stock_data[key]
         # add in predictions
         Con.skipnum = int(len(data.df['Close']) / 10)
-        print(Con.skipnum)
+
         for x in Con.technical_methods:
             getattr(sys.modules[__name__], x)(data, x)
             E.Evaluate_Prediction(data, x)
@@ -39,6 +38,7 @@ def run_predictions():
 
 # Technical Predictions
 def tech_per_change(data, method):
+    Con.print_header_level_2('Percent Change')
     Con.parameters_prediction = {'Number_Of_Periods': 5}
 
     tempdf = pd.DataFrame({'Today': data.df['Close']})
@@ -73,12 +73,13 @@ def FE_gradient(data, method):
 
 # ML Predictions
 def ML_LR(data, method):
+    Con.print_header_level_2('Linear Regression')
     Con.parameters_prediction = {'Lag_Value': 5,
-                                 'Difference_Order': 1,
-                                 'Moving_Average': 0}
+                                 'Difference_Order': 2,
+                                 'Moving_Average': 2}
 
     X = list(data.df['Close'])
-    size = int(len(X) * 0.05)
+    size = int(len(X) * 0.10)
     train, test = X[0:size], X[size:len(X)]
     history = [x for x in train]
     predictions = list()
@@ -95,7 +96,7 @@ def ML_LR(data, method):
         obs = test[t]
         history.append(obs)
         if num > 100:
-            if t % int(num / Con.skipnum) == 0:
+            if t % int(Con.skipnum) == 0:
                 print(t, 'of', num, 'periods', '@', dt.datetime.now().time())
 
     df = pd.DataFrame({'Prediction': predictions})
@@ -105,6 +106,7 @@ def ML_LR(data, method):
     return
 
 def ML_RF(data, method):
+    Con.print_header_level_2('Random Forest')
     Con.parameters_prediction = {}
 
     X = list(data.df['Close'])
@@ -130,7 +132,7 @@ def ML_RF(data, method):
         history.append(obs)
 
         if num > 100:
-            if t % int(num / Con.skipnum) == 0:
+            if t % int(Con.skipnum) == 0:
                 print(t, 'of', num, 'periods')
 
     df = pd.DataFrame({'Prediction': predictions})
@@ -141,6 +143,7 @@ def ML_RF(data, method):
 
 
 def ML_NN(data, method):
+    Con.print_header_level_2('Neural Network')
     Con.parameters_prediction = {'hidden_layer_sizes': (100,),
                                  'activation': 'relu',
                                  'solver': 'adam',
@@ -175,7 +178,7 @@ def ML_NN(data, method):
         history.append(obs)
 
         if num > 100:
-            if t % int(num / Con.skipnum) == 0:
+            if t % int(Con.skipnum) == 0:
                 print(t, 'of', num, 'periods')
 
     df = pd.DataFrame({'Prediction': predictions})
