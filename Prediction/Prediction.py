@@ -3,8 +3,10 @@
 import datetime as dt
 import sys
 
+import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.neural_network import MLPRegressor
 from statsmodels.tsa.arima_model import ARIMA
 
 from Benchmarking import Evaluate as E
@@ -15,6 +17,8 @@ def run_predictions():
     for key in Con.stock_data:
         data = Con.stock_data[key]
         # add in predictions
+        Con.skipnum = int(len(data.df['Close']) / 10)
+        print(Con.skipnum)
         for x in Con.technical_methods:
             getattr(sys.modules[__name__], x)(data, x)
             E.Evaluate_Prediction(data, x)
@@ -91,7 +95,7 @@ def ML_LR(data, method):
         obs = test[t]
         history.append(obs)
         if num > 100:
-            if t % int(num / 500) == 0:
+            if t % int(num / Con.skipnum) == 0:
                 print(t, 'of', num, 'periods', '@', dt.datetime.now().time())
 
     df = pd.DataFrame({'Prediction': predictions})
@@ -110,27 +114,72 @@ def ML_RF(data, method):
     predictions = list()
     num = len(test)
     for t in range(num):
-        model = RandomForestRegressor()
+        model = RandomForestRegressor(random_state=0)
+        x = np.asarray(list(range(0, len(history))))
+        x = x.reshape(len(x), 1)
+        y = np.asarray(history)
+        y = y.reshape(len(y), )
 
-        model_fit = model.fit(disp=0)
-        output = model_fit.forecast()
-        yhat = output[0]
+        model.fit(x, y)
+
+        yhat = model.predict(len(history) + 1)
+
         predictions.append(float(yhat))
+
         obs = test[t]
         history.append(obs)
+
         if num > 100:
-            if t % int(num / 100) == 0:
+            if t % int(num / Con.skipnum) == 0:
                 print(t, 'of', num, 'periods')
 
     df = pd.DataFrame({'Prediction': predictions})
 
     data.df[method] = df
     data.df[method] = data.df[method].shift(+size)
-    data.df[method] = 0
     return True
 
 
 def ML_NN(data, method):
-    # placeholder
-    data.df[method] = 0
+    Con.parameters_prediction = {'hidden_layer_sizes': (100,),
+                                 'activation': 'relu',
+                                 'solver': 'adam',
+                                 'alpha': 0.00001,
+                                 'random_state': 0
+                                 }
+
+    X = list(data.df['Close'])
+    size = int(len(X) * 0.05)
+    train, test = X[0:size], X[size:len(X)]
+    history = [x for x in train]
+    predictions = list()
+    num = len(test)
+    for t in range(num):
+        model = MLPRegressor(hidden_layer_sizes=Con.parameters_prediction['hidden_layer_sizes'],
+                             activation=Con.parameters_prediction['activation'],
+                             solver=Con.parameters_prediction['solver'],
+                             alpha=Con.parameters_prediction['alpha'],
+                             random_state=Con.parameters_prediction['random_state'])
+        x = np.asarray(list(range(0, len(history))))
+        x = x.reshape(len(x), 1)
+        y = np.asarray(history)
+        y = y.reshape(len(y), )
+
+        model.fit(x, y)
+
+        yhat = model.predict(len(history) + 1)
+
+        predictions.append(float(yhat))
+
+        obs = test[t]
+        history.append(obs)
+
+        if num > 100:
+            if t % int(num / Con.skipnum) == 0:
+                print(t, 'of', num, 'periods')
+
+    df = pd.DataFrame({'Prediction': predictions})
+
+    data.df[method] = df
+    data.df[method] = data.df[method].shift(+size)
     return True

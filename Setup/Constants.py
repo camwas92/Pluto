@@ -5,7 +5,7 @@ import calendar
 # Online/Offline #
 ##################
 line = 'Offline'
-model_refresh = False
+model_refresh = True
 
 #################################
 # Parameters to run the program #
@@ -28,11 +28,11 @@ parameters_decision = None
 ######################
 # Prediction Methods #
 ######################
-technical_methods = ['tech_per_change']
+technical_methods = []
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = []
+ML_methods = ['ML_NN']
 # ML_methods = ['ML_LR','ML_RF','ML_NN']
 parameters_prediction = {}
 
@@ -45,8 +45,8 @@ now = False
 ###################
 # Data Parameters #
 ###################
-stocks_for_simulation = 'Test'
-# stocks_for_simulation = 'Model-Testing'
+# stocks_for_simulation = 'Test'
+stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
@@ -63,6 +63,7 @@ hold_count = 0
 good_period_count = 0
 bad_period_count = 0
 actions = []
+skipnum = 0
 
 #######################
 # Google Drive Output #
