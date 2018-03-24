@@ -25,7 +25,7 @@ def sheets_download_stock():
             result = pd.merge(df, dfinit[cols_to_use], how='left', on=['Date'])
             df = result
         except FileNotFoundError:
-            print('No File', x.title[-3:])
+            print('No previous file for', x.title[-3:])
         df.to_csv(str(Con.paths['Stocks'] / str(x.title[-3:] + '.csv')), index=False)
 
     # format data and save as csv

@@ -94,6 +94,7 @@ def manual(Simulation):
         action, stock, quantity = list(x)
         actions.append([action, stock, quantity])
         Simulation.complete_transaction(action, stock, quantity)
+        # todo figure out why you can make negative purchases on AMP
 
     holdactions = hold[['action', 'stock', 'quantity']].values.tolist()
 

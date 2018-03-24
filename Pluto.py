@@ -2,6 +2,8 @@
 # todo update read me
 # todo add comments
 # todo add in commition
+# todo save actions
+# todo add toggle between display graphs and not
 from Benchmarking import Evaluate as E
 from Benchmarking import TableauPrep as TP
 from Classes import Simulation as Sim
