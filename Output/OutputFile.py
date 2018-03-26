@@ -19,6 +19,7 @@ def store_metric(name, value, option):
     return
 
 
+# get the required data file
 def select_Data(option):
     if option == 1:
         return (Con.output_dict_sim)
@@ -27,6 +28,8 @@ def select_Data(option):
     elif option == 3:
         return (Con.output_dict_trade)
 
+
+# prepare dictionary header
 def get_headers(option):
     if option == 1:
         headers = (Con.sheet_sim.row_values(1))
@@ -42,6 +45,7 @@ def get_headers(option):
     return dict(zip(count, headers))
 
 
+# prepare columns
 def get_column_count(option):
     if option == 1:
         return (Con.column_count_sim)
@@ -51,12 +55,13 @@ def get_column_count(option):
         return (Con.column_count_trade)
 
 
-
+# show output
 def print_data(option):
     pp = pprint.PrettyPrinter()
     pp.pprint(select_Data(option))
 
 
+# add data to google sheet
 def write_row(option, line):
     if option == 1:
         Con.sheet_sim.insert_row(line, 2)
@@ -65,6 +70,7 @@ def write_row(option, line):
     elif option == 3:
         Con.sheet.trade.insert_row(line, 2)
     return
+
 
 # add data to metric
 def save_data(option):
@@ -79,7 +85,7 @@ def save_data(option):
     return
 
 
-# Create Dic
+# Create sim dictionary
 def create_output_dict_sim(start_period, end_period, commision, init_investment):
     now = datetime.datetime.now()
     Con.output_dict_sim = {
@@ -107,6 +113,7 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
     return
 
 
+# Create model performance dictionary
 def create_output_dict_model(stock, model):
     now = datetime.datetime.now()
 
@@ -130,6 +137,7 @@ def create_output_dict_model(stock, model):
     return
 
 
+# create trade dictionary
 def create_output_dict_trade():
     now = datetime.datetime.now()
     Con.output_dict_trade = {

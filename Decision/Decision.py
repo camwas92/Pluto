@@ -1,3 +1,4 @@
+# this function will calcualte which stocks to invest in
 import math
 import random as rd
 
@@ -8,10 +9,15 @@ from Setup import Constants as Con
 
 
 def random_choice(Simulation):
+    # set variable for storing actions
     actions = []
     Con.parameters_decision = {'Chance': 'B1:S1:H1:E2'}
+
+    # calculate random action
     action, stock, quantity = rd.randint(-2, 2), rd.choice(list(Simulation.available_stocks.keys())), -1
     actions.append([action, stock, quantity])
+
+    # continue to calculate and do random action until exit signal is given
     while Simulation.complete_transaction(action, stock, quantity):
         action, stock, quantity = rd.randint(-2, 2), rd.choice(list(Simulation.available_stocks.keys())), -1
         actions.append([action, stock, quantity])
@@ -19,23 +25,27 @@ def random_choice(Simulation):
     return
 
 
-def testing(Simulation):
-    return -2, 'AMP', 0
-
-
+# buy proportion when predicted to go up, sell all when predicted to go down
 def manual(Simulation):
-    actions = []
+    # establish storage variables
+    Con.actions = []
     stocks = []
     per_changes = []
     buy_price = []
+
     df_columns = ['Date', Con.parameters_decision['manual'], 'Close']
 
+    # go through stocks and get RF predictions, formating tem correctly and accessing difference between days
     for key in Simulation.available_stocks:
+        # get predicted prices
         predict_prices = Simulation.available_stocks[key].df[df_columns]
+
+        # get only today and tomorrows value
         current_value = predict_prices['Date'] == Simulation.current_date
         close_value = predict_prices['Date'] == Simulation.current_date
         next_value = current_value.shift(+1).fillna(False)
 
+        # clean up and prepare data ensure it is valid
         close_value = list(predict_prices.Close[close_value].values)
         if len(close_value) < 1:
             buy_price.append(0)
@@ -60,26 +70,20 @@ def manual(Simulation):
         stocks.append(key)
         per_changes.append(per_change)
 
+    # prepare data frame to calculate actions
     df = pd.DataFrame({'stock': stocks, 'per_changes': per_changes, 'buy_price': buy_price})
 
     df['action'] = np.where(df['per_changes'] < 1, -1, np.where(df['per_changes'] > 1, 1, 0))
     df['action'] = np.where(df['per_changes'] == 0, 0, df['action'])
     df['quantity'] = np.where(df['action'] < 0, -1, 0)
 
+    # split data frames by action
     sell = df[df.action < 0]
-    buy = df[df.action > 0]
-    buy['Per_Total'] = buy.per_changes / buy.per_changes.sum()
     hold = df[df.action == 0]
+    buy = df[df.action > 0]
 
-    sellactions = sell[['action', 'stock', 'quantity']].values.tolist()
-    print(sellactions)
-
-    for x in sellactions:
-        action, stock, quantity = list(x)
-        actions.append([action, stock, quantity])
-        Simulation.complete_transaction(action, stock, quantity)
-        # todo figure out why double sell
-
+    # calcualte buy propostions
+    buy['Per_Total'] = buy.per_changes / buy.per_changes.sum()
     buy['cash_in_hand'] = Simulation.temp_portfolio.cash_in_hand
     buy['dollar_value'] = buy['Per_Total'] * buy['cash_in_hand']
     try:
@@ -87,20 +91,18 @@ def manual(Simulation):
     except ZeroDivisionError:
         buy['quantity'] = 0
 
+    # convert actions to list
+    sellactions = sell[['action', 'stock', 'quantity']].values.tolist()
     buyactions = buy[['action', 'stock', 'quantity']].values.tolist()
-    print(buyactions)
-
-    for x in buyactions:
-        action, stock, quantity = list(x)
-        actions.append([action, stock, quantity])
-        Simulation.complete_transaction(action, stock, quantity)
-        # todo figure out why you can make negative purchases on AMP
-
     holdactions = hold[['action', 'stock', 'quantity']].values.tolist()
 
-    for x in holdactions:
-        action, stock, quantity = list(x)
-        actions.append([action, stock, quantity])
+    # run actions
+    print(sellactions)
+    run_action_list(sellactions, Simulation)
+    print(buyactions)
+    run_action_list(buyactions, Simulation)
+    run_action_list(holdactions, Simulation)
+
 
     # print('Sell', sell, '\nbuy', buy, '\nhold', hold)
 
@@ -110,11 +112,23 @@ def manual(Simulation):
     return
 
 
+# do the required action
+def run_action_list(list, Simulation):
+    for x in list:
+        action, stock, quantity = list(x)
+        Con.actions.append([action, stock, quantity])
+        Simulation.complete_transaction(action, stock, quantity)
+        # todo figure out why you can make negative purchases on AMP
+        # todo figure out why double sell
+    return
+
+
+# check actions list is valid
 def validate_list_of_actions(actions):
     if not actions:
         return False
     for x in actions[:-1]:
-        if x[0] != 1 or x[0] != -1:
+        if x[0] != 1 or x[0] != -1 or x[0] != 0:
             return False
 
     return True

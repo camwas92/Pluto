@@ -68,21 +68,21 @@ class Simulation:
 
             # check if valid
             if self.check_valid_transaction_day():
-
-                # run through decision options until a exit value is given
+                # establish list of actions and do them
                 getattr(D, Con.decision_method)(self)
 
-
-
-
-
+                # store actions that just completed
+                self.temp_portfolio.actions = Con.actions
 
             # store previous state
             self.portfolio.append(Port.Portfolio(self.current_date,self.temp_portfolio.holdings,self.temp_portfolio.cash_in_hand,self.temp_portfolio.assets))
+
+            # increment performance counts
             if self.portfolio[-1].value >= self.portfolio[-2].value:
                 Con.good_period_count += 1
             else:
                 Con.bad_period_count += 1
+
             # produce output for tracking progress
             self.output_progress('Y')
 
@@ -159,6 +159,8 @@ class Simulation:
             print('\n\nNEW DAY\n\n')
             temp = self.temp_portfolio.assets
             self.temp_portfolio.assets = 0
+
+            # go through all stocks and get price
             for key in self.temp_portfolio.holdings:
                 price = list(self.available_stocks[key].df.loc[
                                  self.available_stocks[key].df['Date'] == self.current_date, 'Open'])
@@ -170,12 +172,14 @@ class Simulation:
                         return True
                 else:
                     price = 0
+                # calculate value of the stock being held
                 quantity = float(self.temp_portfolio.holdings[key].quantity)
                 self.temp_portfolio.assets += price * quantity
+
+            # Error case
             if self.temp_portfolio.assets == 0 and self.temp_portfolio.cash_in_hand == 0:
                 self.temp_portfolio.assets = temp
             return False
-
 
     # make sure trades are only taking place on days that are valid
     def check_valid_transaction_day(self):

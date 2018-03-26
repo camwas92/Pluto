@@ -1,4 +1,5 @@
 # this is the main function
+# todo change load to be max 10 sheets, then switch back
 # todo update read me
 # todo add comments
 # todo add in commition
@@ -24,17 +25,9 @@ if Con.model_refresh:
     TP.combine_stock_data()
     Con.print_sucess_message('Predictions')
 
-# simulate system
-Con.print_header_level_1('Initialising Simulation')
-Simulation = Sim.Simulation(init_investment=1000)
-Con.print_sucess_message('Simulation Initialisation')
-
 # run simulation
 Con.print_header_level_1('Running Simulation')
+Simulation = Sim.Simulation(init_investment=1000)
 Simulation.run()
-Con.print_sucess_message('Simulation')
-
-# run benchmarking
-Con.print_header_level_1('Benchmarking')
 E.Evaluate(Simulation)
-Con.print_sucess_message('Benchmarking')
+Con.print_sucess_message('Simulation')

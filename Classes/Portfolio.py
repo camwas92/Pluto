@@ -7,6 +7,7 @@ class Portfolio:
     cash_in_hand = 0
     assets = 0
     day = None
+    actions = None
 
     def __init__(self, current_date, holdings = None,cash_in_hand = 0, assets = 0):
         self.day = current_date

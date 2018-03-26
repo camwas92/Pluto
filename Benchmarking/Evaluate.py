@@ -9,13 +9,16 @@ from Output import OutputFile as O
 from Setup import Constants as Con
 
 
-# main function used to call other evalutation functions
+# Simulation evaluation main function used to call other evalutation functions
 def Evaluate(Simulation):
     # performance evaluation
     calculate_profit(Simulation)
+    # counts on actual trades
     trade_calculation(Simulation)
+    # visualise performance
     graph_performance(Simulation)
 
+    # record the paramters for the decision method
     O.store_metric('Parameters', Con.parameters_decision, 1)
 
     # store final output
@@ -24,8 +27,10 @@ def Evaluate(Simulation):
     return
 
 
+# Evaluation of a models prediction
 def Evaluate_Prediction(data, method):
     print('Evaluating', data.name, 'for', method)
+    # set up dictionary
     O.create_output_dict_model(data.name, method)
 
     # calcualte Y, Y_dash and movement direction
@@ -79,6 +84,7 @@ def Evaluate_Prediction(data, method):
     return
 
 
+# profit calculations
 def calculate_profit(Simulation):
     init = Simulation.init_investment
     final = Simulation.portfolio[-1].value
@@ -98,6 +104,7 @@ def calculate_profit(Simulation):
     return
 
 
+# storing transaction counts
 def trade_calculation(Simulation):
     O.store_metric('Num. Buy', Con.buy_count, 1)
     O.store_metric('Num. Sell', Con.sell_count, 1)
@@ -109,8 +116,8 @@ def trade_calculation(Simulation):
     return
 
 
+# graph of simulation
 def graph_performance(Simulation):
-
     dates = []
     value = []
     cash_in_hand = []
@@ -123,11 +130,13 @@ def graph_performance(Simulation):
         cash_in_hand.append(x.cash_in_hand)
         assets.append(x.assets)
 
+    # split of up data from and format
     df = pd.DataFrame({'date': dates, 'value': value})
     df = df.set_index('date')
     df3 = pd.DataFrame({'date': dates, 'cash in hand': cash_in_hand, 'assets': assets})
     df3 = df3.set_index('date')
 
+    # prepare individual stocks
     columns = ['date']
     df2 = pd.DataFrame(columns=columns)
     columns = ['date', 'Series', 'value']
@@ -167,11 +176,14 @@ def graph_performance(Simulation):
     dfb.columns = ['value', 'Series']
     dfoutput = pd.concat([df, dfa, dfb, outputtempdf])
     dfoutput['date'] = dfoutput.index
+
+    # save all data points as output to be used by tableau
     dfoutput.to_csv(Con.paths['Output'] / 'PerformancePoints.csv', index=False)
 
     return
 
 
+# visualisation of the prediction model
 def graph_model(df, name):
     tempdf = df.drop(['Open', 'High', 'Low', 'Volume'], axis=1)
     tempdf = tempdf.set_index('Date')

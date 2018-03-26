@@ -1,5 +1,6 @@
 # These functions are used to load the required stock values as well as the missing data
 import datetime as dt
+
 import pandas as pd
 import pandas_datareader.data as web
 from pandas_datareader._utils import RemoteDataError
@@ -8,7 +9,15 @@ from Classes import Stock as S
 from Setup import Constants as Con
 
 
-# connect to tab
+#########################################
+#                                       #
+#    ###############################    #
+#    # NEW METHOD FOR LOADING DATA #    #
+#    ###############################    #
+#                                       #
+#########################################
+
+# connect to google sheets source and download data once formated
 def sheets_download_stock():
     Available_Sheets = Con.sheet_stock.worksheets()
     for x in Available_Sheets[1:]:
@@ -27,11 +36,10 @@ def sheets_download_stock():
             print('No previous file for', x.title[-3:])
         df.to_csv(str(Con.paths['Stocks'] / str(x.title[-3:] + '.csv')), index=False)
 
-    # format data and save as csv
-
     return True
 
 
+# create all google drive sheets and replace the content
 def sheets_refresh_stock():
     # add
     Con.print_header_level_2('Refreshing Tabs')
@@ -57,6 +65,7 @@ def sheets_refresh_stock():
         return False
 
 
+# load all data from file
 def sheets_load_stock():
     for x in Con.stock_list:
         try:
@@ -70,26 +79,13 @@ def sheets_load_stock():
     return True
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#########################################
+#                                       #
+#    ###############################    #
+#    # OLD METHOD FOR LOADING DATA #    #
+#    ###############################    #
+#                                       #
+#########################################
 
 # main function called. It will initialise all stocks to be loaded
 # True flag loads the newest data, false will use only from the file

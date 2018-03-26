@@ -35,15 +35,19 @@ def get_date():
     return(dt.datetime(now.year, now.month, now.day))
 
 
+# connect and prepare google sheets
 def connect_google_sheets():
     Con.creds = ServiceAccountCredentials.from_json_keyfile_name(Con.paths['Storage'] / str('client_secret.json'),
                                                                  Con.scope)
+    # connect
     Con.client = gspread.authorize(Con.creds)
 
+    # get work sheets
     Con.sheet_sim = Con.client.open(Con.outputfile).get_worksheet(0)
     Con.sheet_model = Con.client.open(Con.outputfile).get_worksheet(1)
     Con.sheet_trade = Con.client.open(Con.outputfile).get_worksheet(2)
 
+    # establish shseets and prepare
     Con.row_count_sim = Con.sheet_sim.row_count
     Con.column_count_sim = Con.sheet_sim.col_count
 

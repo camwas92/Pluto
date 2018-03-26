@@ -21,7 +21,6 @@ paths = []
 # Decision Methods #
 ####################
 decision_method = 'random_choice'  # name of the function
-# decision_method = 'testing' # just for testing
 # decision_method = 'manual'
 parameters_decision = {'manual': 'ML_RF'}
 
@@ -48,8 +47,8 @@ now = False
 # stocks_for_simulation = 'Test'
 # stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
-# stocks_for_simulation = 'asx20'
-stocks_for_simulation = 'asx50'
+stocks_for_simulation = 'asx20'
+# stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
 # stocks_for_simulation = 'asx300'
