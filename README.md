@@ -47,7 +47,8 @@ To run the code an individual
 #### Reinforcement Learning ####
 
 ## Code Details ##
-
+![alt text](Images/Code Structure.png "The data structure is defined in this image")
+![alt text](Images/Process Flow.png "Simulations are structured utlising this process")
 
 ### Required Library ###
 For this code to work we need to a user will need to ensure the following libraries are installed.
