@@ -1,6 +1,5 @@
 # These functions are used to load the required stock values as well as the missing data
 import datetime as dt
-
 import pandas as pd
 import pandas_datareader.data as web
 from pandas_datareader._utils import RemoteDataError
@@ -44,7 +43,7 @@ def sheets_refresh_stock():
 
     # Add new tabs
     for x in Con.stock_list:
-        Con.sheet_stock.add_worksheet('ASX:' + x, 10000, 6)
+        Con.sheet_stock.add_worksheet('ASX:' + x, 5000, 6)
 
     # set formula
     Available_Sheets = Con.sheet_stock.worksheets()

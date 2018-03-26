@@ -4,6 +4,7 @@
 # todo add in commition
 # todo save actions
 # todo add toggle between display graphs and not
+# todo choice to only load data from drive
 from Benchmarking import Evaluate as E
 from Benchmarking import TableauPrep as TP
 from Classes import Simulation as Sim
