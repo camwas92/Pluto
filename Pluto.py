@@ -1,9 +1,4 @@
 # this is the main function
-# todo 1) add toggle between display graphs and not
-# todo 2) choice to only load data from drive
-# todo 3) change load to be max 10 sheets, then switch back
-# todo (Backlog) save actions
-# todo (Backlog) add in commission
 from Benchmarking import Evaluate as E
 from Benchmarking import TableauPrep as TP
 from Classes import Simulation as Sim

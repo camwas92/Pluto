@@ -19,6 +19,8 @@ from Setup import Constants as Con
 
 # connect to google sheets source and download data once formated
 def sheets_download_stock():
+    Con.print_header_level_2('Downloading Drive Tabs')
+    Con.sheet_stock = Con.client.open(Con.inputfile)
     Available_Sheets = Con.sheet_stock.worksheets()
     for x in Available_Sheets[1:]:
         data = x.get_all_values()
@@ -92,7 +94,11 @@ def sheets_load_stock():
 def load_stock(flag="Offline"):
     print('Loading all stock')
     Con.stock_list = get_stock_list(True)
-    if flag == "Online":
+    if Con.load_only_from_drive:
+        sheets_download_stock()
+        sheets_load_stock()
+        return
+    elif flag == "Online":
         if sheets_refresh_stock():
             sheets_download_stock()
         sheets_load_stock()

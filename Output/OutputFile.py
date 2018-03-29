@@ -108,7 +108,8 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
         'Num. Sell': None,
         'Num. Hold': None,
         'Profit Percent': None,
-        'Parameters': None
+        'Parameters': None,
+        'Period Performance Ratio': None
     }
     return
 
@@ -132,7 +133,9 @@ def create_output_dict_model(stock, model):
         'MPE': None,
         'Overshot': None,
         'Undershot': None,
-        'Parameters': Con.parameters_prediction
+        'Parameters': Con.parameters_prediction,
+        'Direction Ratio': None,
+        'Shot Ratio': None
     }
     return
 

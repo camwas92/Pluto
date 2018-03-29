@@ -24,6 +24,9 @@ def Evaluate(Simulation):
     # store final output
     O.print_data(1)
     O.save_data(1)  # 1 is simulation
+
+    store_actions(Simulation)
+
     return
 
 
@@ -76,6 +79,13 @@ def Evaluate_Prediction(data, method):
     O.store_metric('Overshot', overshot, 2)
     O.store_metric('Undershot', undershot, 2)
     O.store_metric('Average Gap', avg_gap, 2)
+    if undershot <= 0:
+        undershot = 0.000001
+    if wrong_direction <= 0:
+        wrong_direction = 0.000001
+    O.store_metric('Direction Ratio', correct_direction / wrong_direction, 2)
+    O.store_metric('Shot Ratio', overshot / undershot, 2)
+
 
     # output metrics
     O.print_data(2)
@@ -111,7 +121,11 @@ def trade_calculation(Simulation):
     O.store_metric('Num. Hold', Con.hold_count, 1)
     O.store_metric('Num. Trades', Con.sell_count + Con.buy_count, 1)
     O.store_metric('Num. Good Periods', Con.good_period_count, 1)
+
     O.store_metric('Num. Bad Periods', Con.bad_period_count, 1)
+    if Con.bad_period_count <= 0:
+        Con.good_period_count = 0.00001
+    O.store_metric('Period Performance Ratio', Con.good_period_count / Con.bad_period_count, 1)
 
     return
 
@@ -143,17 +157,17 @@ def graph_performance(Simulation):
     outputtempdf = pd.DataFrame(columns=columns)
 
     # collect stock data
-    if len(Simulation.available_stocks) <= 5:
-        for key in Simulation.available_stocks:
-            tempdf = pd.DataFrame({'date': Simulation.available_stocks[key].df['Date'],
-                                   Simulation.available_stocks[key].name: Simulation.available_stocks[key].df['Close']})
-            tempdf = tempdf.set_index('date')
 
-            temp2 = tempdf
-            temp2['Series'] = key
-            temp2.rename(columns={key: 'value'}, inplace=True)
-            df2 = pd.merge(df2, tempdf, how='outer', left_index=True, right_index=True)
-            outputtempdf = pd.concat([temp2, outputtempdf])
+    for key in Simulation.available_stocks:
+        tempdf = pd.DataFrame({'date': Simulation.available_stocks[key].df['Date'],
+                               Simulation.available_stocks[key].name: Simulation.available_stocks[key].df['Close']})
+        tempdf = tempdf.set_index('date')
+
+        temp2 = tempdf
+        temp2['Series'] = key
+        temp2.rename(columns={key: 'value'}, inplace=True)
+        df2 = pd.merge(df2, tempdf, how='outer', left_index=True, right_index=True)
+        outputtempdf = pd.concat([temp2, outputtempdf])
     df2 = df2.drop(columns='date')
     outputtempdf = outputtempdf.drop(columns='date')
 
@@ -162,8 +176,11 @@ def graph_performance(Simulation):
     fig, axes = plt.subplots(nrows=3, ncols=1, sharex=True)
     df.plot(ax=axes[0], style='.')
     df3.plot(ax=axes[1], style='.')
-    df2.plot(ax=axes[2])
-    plt.show()
+    if len(Simulation.available_stocks) <= 5:
+        df2.plot(ax=axes[2])
+    plt.savefig(str(Con.paths['Output'] / 'Simulation.png'))
+    if Con.display_graph:
+        plt.show()
 
     df['Series'] = 'Value'
     tempdf = df3
@@ -189,5 +206,21 @@ def graph_model(df, name):
     tempdf = tempdf.set_index('Date')
     tempdf.plot()
     plt.title(name)
-    plt.show()
+    plt.savefig(str(Con.paths['Output'] / 'Model.png'))
+    if Con.display_graph:
+        plt.show()
     return
+
+
+def store_actions(Simulation):
+    actions = []
+    for x in Simulation.portfolio:
+        for y in x.actions:
+            action, stock, value, outcome, quantity, price = y[0], y[1], y[2], y[3], y[4], y[5]
+            actions.append([x.day, action, stock, value, outcome, quantity, price])
+
+    date_list, action_list, stock_list, value_list, outcome_list, quantity_list, price_list = list(zip(*actions))
+    df = pd.DataFrame(
+        {'date': date_list, 'action': action_list, 'stock': stock_list, 'value': value_list, 'outcome': outcome_list,
+         'quantity': quantity_list, 'price': price_list})
+    df.to_csv(Con.paths['Output'] / 'Actions.csv', index=False)

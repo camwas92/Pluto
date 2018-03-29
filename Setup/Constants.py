@@ -4,8 +4,10 @@ import calendar
 ##################
 # Online/Offline #
 ##################
-line = 'Online'
+line = 'Offline'
+load_only_from_drive = False
 model_refresh = False
+display_graph = False
 
 #################################
 # Parameters to run the program #
@@ -20,8 +22,8 @@ paths = []
 ####################
 # Decision Methods #
 ####################
-decision_method = 'random_choice'  # name of the function
-# decision_method = 'manual'
+# decision_method = 'random_choice'  # name of the function
+decision_method = 'manual'
 parameters_decision = {'manual': 'ML_RF'}
 
 ######################
@@ -31,7 +33,7 @@ technical_methods = ['tech_per_change']
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = []
+ML_methods = ['ML_RF']
 # ML_methods = ['ML_LR','ML_RF','ML_NN']
 parameters_prediction = {}
 
@@ -45,9 +47,9 @@ now = False
 # Data Parameters #
 ###################
 # stocks_for_simulation = 'Test'
-# stocks_for_simulation = 'Model-Testing'
+stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
-stocks_for_simulation = 'asx20'
+# stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
@@ -63,6 +65,7 @@ good_period_count = 0
 bad_period_count = 0
 actions = []
 skipnum = 0
+commision_current = 0
 
 #######################
 # Google Drive Output #

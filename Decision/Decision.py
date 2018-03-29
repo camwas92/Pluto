@@ -83,11 +83,16 @@ def manual(Simulation):
     buy = df[df.action > 0]
 
     # calcualte buy propostions
-    buy['Per_Total'] = buy.per_changes / buy.per_changes.sum()
-    buy['cash_in_hand'] = Simulation.temp_portfolio.cash_in_hand
-    buy['dollar_value'] = buy['Per_Total'] * buy['cash_in_hand']
+    pd.options.mode.chained_assignment = None
+    buy_total = buy.per_changes / buy.per_changes.sum()
+    buy['Per_Total'] = buy_total
+    cash_in_hand = Simulation.temp_portfolio.cash_in_hand
+    buy['cash_in_hand'] = cash_in_hand
+    dollar_value = buy['Per_Total'] * buy['cash_in_hand']
+    buy['dollar_value'] = dollar_value
     try:
-        buy['quantity'] = buy['dollar_value'] / buy['buy_price']
+        quantity = buy['dollar_value'] / buy['buy_price']
+        buy['quantity'] = quantity
     except ZeroDivisionError:
         buy['quantity'] = 0
 
@@ -97,11 +102,10 @@ def manual(Simulation):
     holdactions = hold[['action', 'stock', 'quantity']].values.tolist()
 
     # run actions
-    print(sellactions)
     run_action_list(sellactions, Simulation)
-    print(buyactions)
     run_action_list(buyactions, Simulation)
-    run_action_list(holdactions, Simulation)
+    if len(holdactions) > 0:
+        run_action_list(holdactions, Simulation)
 
 
     # print('Sell', sell, '\nbuy', buy, '\nhold', hold)
@@ -115,11 +119,8 @@ def manual(Simulation):
 # do the required action
 def run_action_list(list, Simulation):
     for x in list:
-        action, stock, quantity = list(x)
-        Con.actions.append([action, stock, quantity])
+        action, stock, quantity = x
         Simulation.complete_transaction(action, stock, quantity)
-        # todo figure out why you can make negative purchases on AMP
-        # todo figure out why double sell
     return
 
 
