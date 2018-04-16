@@ -1,11 +1,11 @@
+#  TODO fix the over 2 million issue
 # These are all the constants required for the project
 import calendar
 
 ##################
 # Online/Offline #
 ##################
-line = 'Offline'
-load_only_from_drive = False
+line = 'Online'
 model_refresh = False
 display_graph = False
 
@@ -47,13 +47,13 @@ now = False
 # Data Parameters #
 ###################
 # stocks_for_simulation = 'Test'
-stocks_for_simulation = 'Model-Testing'
+# stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
-# stocks_for_simulation = 'asx300'
+stocks_for_simulation = 'asx300'
 
 ############
 # Trackers #
@@ -66,6 +66,7 @@ bad_period_count = 0
 actions = []
 skipnum = 0
 commision_current = 0
+num_to_load = 20
 
 #######################
 # Google Drive Output #

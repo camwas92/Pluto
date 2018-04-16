@@ -1,4 +1,5 @@
 # These functions are used to load the required stock values as well as the missing data
+import ctypes
 import datetime as dt
 
 import pandas as pd
@@ -22,7 +23,9 @@ def sheets_download_stock():
     Con.print_header_level_2('Downloading Drive Tabs')
     Con.sheet_stock = Con.client.open(Con.inputfile)
     Available_Sheets = Con.sheet_stock.worksheets()
+    Con.print_header_level_1('Downloading...')
     for x in Available_Sheets[1:]:
+        Con.print_header_level_2(x.title[-3:])
         data = x.get_all_values()
         headers = data.pop(0)
         df = pd.DataFrame(data, columns=headers)
@@ -46,26 +49,40 @@ def sheets_refresh_stock():
     # add
     Con.print_header_level_2('Refreshing Tabs')
     Con.sheet_stock = Con.client.open(Con.inputfile)
-    Available_Sheets = Con.sheet_stock.worksheets()
 
-    for x in Available_Sheets[1:]:
-        Con.sheet_stock.del_worksheet(x)
+    placeholder_stock_list = Con.stock_list
+    chunked_stock_list = list(chunks(Con.stock_list, Con.num_to_load))
 
-    # Add new tabs
-    for x in Con.stock_list:
-        Con.sheet_stock.add_worksheet('ASX:' + x, 5000, 6)
+    for Con.stock_list in chunked_stock_list:
+        Con.print_header_level_1('Preparing sheets...')
+        Con.print_header_level_2(Con.stock_list)
 
-    # set formula
-    Available_Sheets = Con.sheet_stock.worksheets()
-    for x in Available_Sheets:
-        x.update_cell(1, 1, Con.stock_request_text)
+        # delete sheets
+        Available_Sheets = Con.sheet_stock.worksheets()
+        for x in Available_Sheets[1:]:
+            Con.sheet_stock.del_worksheet(x)
 
-    action = input('Have you clicked the macro on google drive? ')
-    if action == 'Y':
-        return True
-    else:
-        return False
+        # Add new tabs
+        for x in Con.stock_list:
+            Con.sheet_stock.add_worksheet('ASX:' + x, 5000, 6)
 
+        # set formula
+        Available_Sheets = Con.sheet_stock.worksheets()
+        for x in Available_Sheets:
+            x.update_cell(1, 1, Con.stock_request_text)
+
+        while ctypes.windll.user32.MessageBoxW(0, "Have you run the macro", "Macro Check", 4) != 6:
+            print('Please run the macro')
+        sheets_download_stock()
+
+    Con.stock_list = placeholder_stock_list
+    return
+
+
+def chunks(l, n):
+    """Yield successive n-sized chunks from l."""
+    for i in range(0, len(l), n):
+        yield l[i:i + n]
 
 # load all data from file
 def sheets_load_stock():
@@ -94,14 +111,8 @@ def sheets_load_stock():
 def load_stock(flag="Offline"):
     print('Loading all stock')
     Con.stock_list = get_stock_list(True)
-    if Con.load_only_from_drive:
-        sheets_download_stock()
-        sheets_load_stock()
-        return
-    elif flag == "Online":
-        if sheets_refresh_stock():
-            sheets_download_stock()
-        sheets_load_stock()
+    if flag == "Online":
+        sheets_refresh_stock()
         return
     elif flag == "Offline":
         sheets_load_stock()
