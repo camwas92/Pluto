@@ -1,6 +1,6 @@
 # These functions are used to load the required stock values as well as the missing data
-import ctypes
 import datetime as dt
+import time
 
 import pandas as pd
 import pandas_datareader.data as web
@@ -8,6 +8,7 @@ from pandas_datareader._utils import RemoteDataError
 
 from Classes import Stock as S
 from Setup import Constants as Con
+from Setup import Init_System as IS
 
 
 #########################################
@@ -47,33 +48,60 @@ def sheets_download_stock():
 # create all google drive sheets and replace the content
 def sheets_refresh_stock():
     # add
-    Con.print_header_level_2('Refreshing Tabs')
-    Con.sheet_stock = Con.client.open(Con.inputfile)
 
+    skip = True
+    skip_to = 'OSH'
     placeholder_stock_list = Con.stock_list
     chunked_stock_list = list(chunks(Con.stock_list, Con.num_to_load))
-
+    count = 0
     for Con.stock_list in chunked_stock_list:
-        Con.print_header_level_1('Preparing sheets...')
-        Con.print_header_level_2(Con.stock_list)
+        if skip:
+            if skip_to in Con.stock_list:
+                skip = False
+                print('Skipping', Con.stock_list)
+                print('Ending Skipping')
+            else:
+                print('Skipping', Con.stock_list)
+        else:
+            Con.print_header_level_2('Refreshing Tabs')
+            Con.sheet_stock = Con.client.open(Con.inputfile)
 
-        # delete sheets
-        Available_Sheets = Con.sheet_stock.worksheets()
-        for x in Available_Sheets[1:]:
-            Con.sheet_stock.del_worksheet(x)
+            Con.print_header_level_1('Preparing sheets...')
+            Con.print_header_level_2(Con.stock_list)
 
-        # Add new tabs
-        for x in Con.stock_list:
-            Con.sheet_stock.add_worksheet('ASX:' + x, 5000, 6)
+            # delete sheets
+            Available_Sheets = Con.sheet_stock.worksheets()
+            for x in Available_Sheets[1:]:
+                Con.sheet_stock.del_worksheet(x)
 
-        # set formula
-        Available_Sheets = Con.sheet_stock.worksheets()
-        for x in Available_Sheets:
-            x.update_cell(1, 1, Con.stock_request_text)
+            # Add new tabs
+            for x in Con.stock_list:
+                Con.sheet_stock.add_worksheet('ASX:' + x, 5000, 6)
 
-        while ctypes.windll.user32.MessageBoxW(0, "Have you run the macro", "Macro Check", 4) != 6:
-            print('Please run the macro')
-        sheets_download_stock()
+            # set formula
+            Available_Sheets = Con.sheet_stock.worksheets()
+            for x in Available_Sheets:
+                x.update_cell(1, 1, Con.stock_request_text)
+
+            # run macro
+            Available_Sheets[0].update_cell(6, 6, 'Run')
+            check = Available_Sheets[0].cell(6, 6).value
+            wait_length = 10
+            waited = 0
+            while check != 'Was Run':
+                time.sleep(wait_length)
+                waited += 10
+                print('waited {0:2d}s for macro'.format(waited))
+                check = Available_Sheets[0].cell(6, 6).value
+            sheets_download_stock()
+            count += 1
+            if count > 10:
+                IS.connect_google_sheets()
+                count = 0
+        # old method
+        # while ctypes.windll.user32.MessageBoxW(0, "Have you run the macro", "Macro Check", 4) != 6:
+        #    print('Please run the macro')
+        # sheets_download_stock()
 
     Con.stock_list = placeholder_stock_list
     return
@@ -86,14 +114,23 @@ def chunks(l, n):
 
 # load all data from file
 def sheets_load_stock():
+    no_data = []
     for x in Con.stock_list:
         try:
-            df = pd.read_csv(Con.paths['Stocks'] / str(x + '.csv'), parse_dates=[0], dayfirst=True)
-            Con.stock_data[x] = S.Stock(x, df)
             print('Loading', x, 'from file')
+            df = pd.read_csv(Con.paths['Stocks'] / str(x + '.csv'), parse_dates=[0], dayfirst=True)
+            try:
+                df['Date']
+                Con.stock_data[x] = S.Stock(x, df)
+            except KeyError:
+                print('No Data for', x)
+                no_data.append(x)
+
         except FileNotFoundError:
             print('File for', x, 'not found')
-            return False
+
+    print('Stocks with no data -> ', no_data)
+    Con.stock_list = [x for x in Con.stock_list if x not in no_data]
 
     return True
 
@@ -113,6 +150,7 @@ def load_stock(flag="Offline"):
     Con.stock_list = get_stock_list(True)
     if flag == "Online":
         sheets_refresh_stock()
+        sheets_load_stock()
         return
     elif flag == "Offline":
         sheets_load_stock()

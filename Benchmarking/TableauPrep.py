@@ -18,6 +18,7 @@ def combine_stock_data():
 
     # collect all available files
     for x in glob.glob(str(Con.paths['Stocks'] / '*.csv')):
+        Con.print_header_level_1('Saving output: ' + x)
         df = pd.read_csv(x, parse_dates=[0], dayfirst=True)
         df['series'] = x[-7:-4]
         tempdf = pd.concat([tempdf, df])

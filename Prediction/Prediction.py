@@ -10,33 +10,50 @@ from statsmodels.tsa.arima_model import ARIMA
 
 from Benchmarking import Evaluate as E
 from Setup import Constants as Con
+from Setup import Init_System as IS
 
 
 # run all predictions
 def run_predictions():
+    count = 0
+    skip = True
+    skip_to = 'SAR'
     for key in Con.stock_data:
-        data = Con.stock_data[key]
-        # add in predictions
-        Con.skipnum = int(len(data.df['Close']) / 10)  # used to print progress
+        count += 1
+        if skip:
+            if skip_to == key:
+                skip = False
+                print('Skipping', key)
+                print('Ending Skipping')
+            else:
+                print('Skipping', key)
+        else:
+            print_str = 'Preparing ' + key + ' #' + str(count)
+            Con.print_header_level_1(print_str)
+            data = Con.stock_data[key]
+            # add in predictions
+            Con.skipnum = int(len(data.df['Close']) / 10)  # used to print progress
 
-        # run and evaluate all technical methods
-        for x in Con.technical_methods:
-            getattr(sys.modules[__name__], x)(data, x)
-            E.Evaluate_Prediction(data, x)
+            # run and evaluate all technical methods
+            for x in Con.technical_methods:
+                getattr(sys.modules[__name__], x)(data, x)
+                IS.connect_google_sheets()
+                E.Evaluate_Prediction(data, x)
 
-        # run and evaluate all Machine learning methods
-        for x in Con.ML_methods:
-            getattr(sys.modules[__name__], x)(data, x)
-            E.Evaluate_Prediction(data, x)
+            # run and evaluate all Machine learning methods
+            for x in Con.ML_methods:
+                getattr(sys.modules[__name__], x)(data, x)
+                IS.connect_google_sheets()
+                E.Evaluate_Prediction(data, x)
 
-        E.graph_model(data.df, key)
+            E.graph_model(data.df, key)
 
-        # run feature engineering methods
-        for x in Con.FE_methods:
-            getattr(sys.modules[__name__], x)(data, x)
+            # run feature engineering methods
+            for x in Con.FE_methods:
+                getattr(sys.modules[__name__], x)(data, x)
 
-        # Store stock
-        data.df.to_csv(str(Con.paths['Stocks'] / str(key + '.csv')), index=False)
+            # Store stock
+            data.df.to_csv(str(Con.paths['Stocks'] / str(key + '.csv')), index=False)
 
     return True
 

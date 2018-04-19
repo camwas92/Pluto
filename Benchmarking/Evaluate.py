@@ -16,7 +16,8 @@ def Evaluate(Simulation):
     # counts on actual trades
     trade_calculation(Simulation)
     # visualise performance
-    graph_performance(Simulation)
+
+    performance_points = graph_performance(Simulation)
 
     # record the paramters for the decision method
     O.store_metric('Parameters', Con.parameters_decision, 1)
@@ -25,7 +26,7 @@ def Evaluate(Simulation):
     O.print_data(1)
     O.save_data(1)  # 1 is simulation
 
-    store_actions(Simulation)
+    store_actions(Simulation, performance_points)
 
     return
 
@@ -181,6 +182,8 @@ def graph_performance(Simulation):
     plt.savefig(str(Con.paths['Output'] / 'Simulation.png'))
     if Con.display_graph:
         plt.show()
+    else:
+        plt.close('all')
 
     df['Series'] = 'Value'
     tempdf = df3
@@ -195,9 +198,8 @@ def graph_performance(Simulation):
     dfoutput['date'] = dfoutput.index
 
     # save all data points as output to be used by tableau
-    dfoutput.to_csv(Con.paths['Output'] / 'PerformancePoints.csv', index=False)
 
-    return
+    return dfoutput
 
 
 # visualisation of the prediction model
@@ -209,10 +211,12 @@ def graph_model(df, name):
     plt.savefig(str(Con.paths['Output'] / 'Model.png'))
     if Con.display_graph:
         plt.show()
+    else:
+        plt.close('all')
     return
 
 
-def store_actions(Simulation):
+def store_actions(Simulation, performance_points):
     actions = []
     for x in Simulation.portfolio:
         for y in x.actions:
@@ -223,4 +227,14 @@ def store_actions(Simulation):
     df = pd.DataFrame(
         {'date': date_list, 'action': action_list, 'stock': stock_list, 'value': value_list, 'outcome': outcome_list,
          'quantity': quantity_list, 'price': price_list})
-    df.to_csv(Con.paths['Output'] / 'Actions.csv', index=False)
+
+    sequence = (Con.output_dict_sim['Date'], Con.output_dict_sim['Time'], Con.output_dict_sim['Stock Options'],
+                Con.output_dict_sim['Decision Method'])
+    s = '-'
+    model_name = s.join(sequence)
+    df['model_name'] = model_name
+
+    performance_points['model_name'] = model_name
+
+    df.to_csv(Con.paths['Output'] / 'Actions.csv', mode='a', header=False, index=False)
+    performance_points.to_csv(Con.paths['Output'] / 'PerformancePoints.csv', mode='a', header=False, index=False)

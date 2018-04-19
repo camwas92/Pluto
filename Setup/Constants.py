@@ -1,13 +1,17 @@
-#  TODO fix the over 2 million issue
 # These are all the constants required for the project
 import calendar
 
 ##################
 # Online/Offline #
 ##################
-line = 'Online'
+line = 'Offline'
 model_refresh = False
 display_graph = False
+
+#############
+# Reference #
+#############
+debugging = False
 
 #################################
 # Parameters to run the program #
@@ -22,9 +26,9 @@ paths = []
 ####################
 # Decision Methods #
 ####################
-# decision_method = 'random_choice'  # name of the function
-decision_method = 'manual'
-parameters_decision = {'manual': 'ML_RF'}
+decision_method = 'random_choice'  # name of the function
+# decision_method = 'manual'
+parameters_decision = {'manual': 'tech_per_change'}
 
 ######################
 # Prediction Methods #
@@ -33,7 +37,7 @@ technical_methods = ['tech_per_change']
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = ['ML_RF']
+ML_methods = []
 # ML_methods = ['ML_LR','ML_RF','ML_NN']
 parameters_prediction = {}
 
@@ -49,11 +53,11 @@ now = False
 # stocks_for_simulation = 'Test'
 # stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
-# stocks_for_simulation = 'asx20'
+stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
-stocks_for_simulation = 'asx300'
+# stocks_for_simulation = 'asx300'
 
 ############
 # Trackers #
@@ -66,7 +70,7 @@ bad_period_count = 0
 actions = []
 skipnum = 0
 commision_current = 0
-num_to_load = 20
+num_to_load = 1
 
 #######################
 # Google Drive Output #

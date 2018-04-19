@@ -103,7 +103,8 @@ class Simulation:
 
         # BUY STOCK
         if action == 1:  # buy
-            print('Action', action, 'Stock', stock, 'Quantity', quantity)
+            if Con.debugging:
+                print('Action', action, 'Stock', stock, 'Quantity', quantity)
             # check any available cash and stock data available
             if self.temp_portfolio.cash_in_hand > 0 and self.available_stocks[stock].start_date <= self.current_date:
                 # find price
@@ -133,7 +134,8 @@ class Simulation:
 
         # SELL STOCK
         elif action == -1:  # sell
-            print('Action', action, 'Stock', stock, 'Quantity', quantity)
+            if Con.debugging:
+                print('Action', action, 'Stock', stock, 'Quantity', quantity)
             # check any available cash and stock data available
             if self.temp_portfolio.holdings[stock].quantity > 0 and self.available_stocks[
                 stock].start_date <= self.current_date:
@@ -163,7 +165,8 @@ class Simulation:
 
         # HOLD STOCK
         elif action == 0:  # hold
-            print('Action', action, 'Stock', stock, 'Quantity', quantity)
+            if Con.debugging:
+                print('Action', action, 'Stock', stock, 'Quantity', quantity)
             if self.available_stocks[stock].start_date <= self.current_date:
                 Con.hold_count += 1
                 Con.actions.append([action, stock, quantity, 'COMPLETED', quantity, 0])
@@ -171,7 +174,8 @@ class Simulation:
 
         # MOVE TO NEXT DAY
         else:
-            print('\n\nFINIHING DAY DAY', self.current_date, '\n\n')
+            if Con.debugging:
+                print('\n\nFINIHING DAY DAY', self.current_date, '\n\n')
             temp = self.temp_portfolio.assets
             self.temp_portfolio.assets = 0
 
