@@ -28,16 +28,17 @@ paths = []
 ####################
 decision_method = 'random_choice'  # name of the function
 # decision_method = 'manual'
-parameters_decision = {'manual': 'tech_per_change'}
+# todo make manual run on any prediction value
+parameters_decision = {'manual': 'ML_RF'}
 
 ######################
 # Prediction Methods #
 ######################
-technical_methods = ['tech_per_change']
+technical_methods = []
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = []
+ML_methods = ['ML_RF']
 # ML_methods = ['ML_LR','ML_RF','ML_NN']
 parameters_prediction = {}
 
@@ -50,10 +51,11 @@ now = False
 ###################
 # Data Parameters #
 ###################
+# todo set up industry lists
 # stocks_for_simulation = 'Test'
 # stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
-stocks_for_simulation = 'asx20'
+# stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'

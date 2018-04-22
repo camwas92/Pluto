@@ -4,12 +4,9 @@
     <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Benchmarking/Evaluate.py" afterPath="$PROJECT_DIR$/Benchmarking/Evaluate.py" />
-      <change beforePath="$PROJECT_DIR$/Benchmarking/TableauPrep.py" afterPath="$PROJECT_DIR$/Benchmarking/TableauPrep.py" />
-      <change beforePath="$PROJECT_DIR$/Classes/Simulation.py" afterPath="$PROJECT_DIR$/Classes/Simulation.py" />
-      <change beforePath="$PROJECT_DIR$/Classes/Stock.py" afterPath="$PROJECT_DIR$/Classes/Stock.py" />
+      <change beforePath="$PROJECT_DIR$/Pluto.py" afterPath="$PROJECT_DIR$/Pluto.py" />
       <change beforePath="$PROJECT_DIR$/Prediction/Prediction.py" afterPath="$PROJECT_DIR$/Prediction/Prediction.py" />
       <change beforePath="$PROJECT_DIR$/Setup/Constants.py" afterPath="$PROJECT_DIR$/Setup/Constants.py" />
-      <change beforePath="$PROJECT_DIR$/Setup/Init_Stock.py" afterPath="$PROJECT_DIR$/Setup/Init_Stock.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,9 +24,11 @@
       <file leaf-file-name="Evaluate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="241" column="0" lean-forward="true" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding>
+                <element signature="e#146#157#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,7 +36,7 @@
       <file leaf-file-name="Simulation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/Simulation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
+            <state relative-caret-position="17">
               <caret line="177" column="16" lean-forward="false" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="16" />
               <folding />
             </state>
@@ -47,8 +46,8 @@
       <file leaf-file-name="OutputFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Output/OutputFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="24" />
+            <state relative-caret-position="1547">
+              <caret line="94" column="24" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -57,8 +56,8 @@
       <file leaf-file-name="Pluto.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pluto.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,8 +66,8 @@
       <file leaf-file-name="TableauPrep.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Benchmarking/TableauPrep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+            <state relative-caret-position="289">
+              <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -77,19 +76,33 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="55" column="2" lean-forward="false" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Init_System.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Setup/Init_System.py">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../2018 - Semester 1/COMP5329 - Deep Learning/Assignment/Assignment 1 - Model From Scratch/Code/deep_learning/assignment 1/src/model.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-              <folding />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Decision.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding>
+                <element signature="e#57#68#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +110,8 @@
       <file leaf-file-name="Prediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="476">
+              <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="42" />
               <folding>
                 <element signature="e#53#74#0" expanded="true" />
               </folding>
@@ -106,26 +119,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stock.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/Stock.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Init_Stock.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
+            <state relative-caret-position="238">
               <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="51" />
               <folding>
-                <element signature="e#89#102#0" expanded="true" />
-                <element signature="e#6206#6461#0" expanded="false" />
-                <element signature="e#6525#6860#0" expanded="false" />
-                <element signature="e#6956#7456#0" expanded="false" />
+                <element signature="e#6198#6453#0" expanded="false" />
+                <element signature="e#6517#6852#0" expanded="false" />
+                <element signature="e#6948#7448#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,7 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stock</find>
       <find>asx</find>
       <find>S.</find>
       <find>s.</find>
@@ -172,6 +173,7 @@
       <find>Tableau</find>
       <find>tableau</find>
       <find>print</find>
+      <find>conn</find>
       <find>performancepoints</find>
     </findStrings>
   </component>
@@ -194,25 +196,25 @@
         <option value="$PROJECT_DIR$/Classes/Holding.py" />
         <option value="$PROJECT_DIR$/Setup/Init_System.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/Pluto.py" />
         <option value="$PROJECT_DIR$/Output/OutputFile.py" />
         <option value="$PROJECT_DIR$/Classes/Portfolio.py" />
         <option value="$PROJECT_DIR$/Decision/Decision.py" />
         <option value="$PROJECT_DIR$/Classes/Stock.py" />
         <option value="$PROJECT_DIR$/Setup/Init_Stock.py" />
-        <option value="$PROJECT_DIR$/Prediction/Prediction.py" />
         <option value="$PROJECT_DIR$/Benchmarking/TableauPrep.py" />
-        <option value="$PROJECT_DIR$/Benchmarking/Evaluate.py" />
         <option value="$PROJECT_DIR$/Classes/Simulation.py" />
+        <option value="$PROJECT_DIR$/Prediction/Prediction.py" />
+        <option value="$PROJECT_DIR$/Benchmarking/Evaluate.py" />
+        <option value="$PROJECT_DIR$/Pluto.py" />
         <option value="$PROJECT_DIR$/Setup/Constants.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
+    <option name="x" value="204" />
     <option name="y" value="-11" />
-    <option name="width" value="3022" />
-    <option name="height" value="2022" />
+    <option name="width" value="1932" />
+    <option name="height" value="1041" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -232,8 +234,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -664,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523874294558</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="can load all data, and run simple prediction as well as append results for analysis">
+      <created>1524174319458</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1524174319458</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -677,16 +686,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2902" height="1597" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1490334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14857745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32471263" sideWeight="0.4637437" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41235632" sideWeight="0.51528996" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283046" sideWeight="0.49284253" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760474" sideWeight="0.49520257" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3347701" sideWeight="0.48081023" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41235632" sideWeight="0.48471" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4113856" sideWeight="0.48471" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2868436" sideWeight="0.19696459" order="12" side_tool="true" content_ui="tabs" x="84" y="1020" width="3840" height="631" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -698,6 +706,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283046" sideWeight="0.49284253" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -717,7 +726,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added stock download" />
     <MESSAGE value="Developing simulation" />
     <MESSAGE value="Implemented day looping, progress output and some day validation" />
     <MESSAGE value="Intial Benchmarking Implemented" />
@@ -742,18 +750,14 @@
     <MESSAGE value="Updated Read me and todos" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="fixed load and implemented pop up" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed load and implemented pop up" />
+    <MESSAGE value="can load all data, and run simple prediction as well as append results for analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="can load all data, and run simple prediction as well as append results for analysis" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Decision/Decision.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Setup/Init_Stock.py</url>
           <line>58</line>
@@ -761,7 +765,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Setup/Init_Stock.py</url>
-          <line>133</line>
+          <line>132</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
@@ -780,16 +784,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/colorama/ansitowin32.py" />
     <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="37" lean-forward="false" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
           <folding>
-            <element signature="e#89#102#0" expanded="true" />
-            <element signature="e#6206#6461#0" expanded="false" />
-            <element signature="e#6525#6860#0" expanded="false" />
-            <element signature="e#6956#7456#0" expanded="false" />
+            <element signature="e#6198#6453#0" expanded="false" />
+            <element signature="e#6517#6852#0" expanded="false" />
+            <element signature="e#6948#7448#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -952,99 +954,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3050">
-          <caret line="122" column="64" lean-forward="false" selection-start-line="122" selection-start-column="64" selection-end-line="122" selection-end-column="64" />
-          <folding>
-            <element signature="e#57#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Init_System.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="e#53#74#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="187">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pluto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Benchmarking/TableauPrep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Output/OutputFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="24" />
+        <state relative-caret-position="1547">
+          <caret line="94" column="24" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
+        <state relative-caret-position="238">
           <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="51" />
           <folding>
-            <element signature="e#89#102#0" expanded="true" />
-            <element signature="e#6206#6461#0" expanded="false" />
-            <element signature="e#6525#6860#0" expanded="false" />
-            <element signature="e#6956#7456#0" expanded="false" />
+            <element signature="e#6198#6453#0" expanded="false" />
+            <element signature="e#6517#6852#0" expanded="false" />
+            <element signature="e#6948#7448#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="e#57#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <element signature="e#53#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../2018 - Semester 1/COMP5329 - Deep Learning/Assignment/Assignment 1 - Model From Scratch/Code/deep_learning/assignment 1/src/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Benchmarking/TableauPrep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Simulation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
+        <state relative-caret-position="17">
           <caret line="177" column="16" lean-forward="false" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pluto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="241" column="0" lean-forward="true" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="187">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#146#157#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="55" column="2" lean-forward="false" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
           <folding />
         </state>
       </provider>

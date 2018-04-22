@@ -7,10 +7,12 @@ import pandas as pd
 
 from Output import OutputFile as O
 from Setup import Constants as Con
+from Setup import Init_System as IS
 
 
 # Simulation evaluation main function used to call other evalutation functions
 def Evaluate(Simulation):
+    IS.connect_google_sheets()
     # performance evaluation
     calculate_profit(Simulation)
     # counts on actual trades
