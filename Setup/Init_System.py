@@ -21,8 +21,9 @@ def init_system():
 
 # collect paths
 def collect_paths():
+    input_1 = Path(__file__).parents[1]
     basePath = Path(__file__).parents[2]  # get base path
-    paths = {'Base': basePath, 'Input': (basePath / 'Input'), 'Output': (basePath / 'Output')}
+    paths = {'Base': basePath, 'Input': (input_1 / 'Input'), 'Output': (basePath / 'Output')}
     data = Path(__file__).parents[3]
     paths['Stocks'] = paths['Input'] / 'Stocks'
     paths['Storage'] = paths['Input'] / 'Storage'
