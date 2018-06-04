@@ -52,7 +52,7 @@ now = False
 # Data Parameters #
 ###################
 # todo set up industry lists
-# stocks_for_simulation = 'Test'
+stocks_for_simulation = 'Test'
 # stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'

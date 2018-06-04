@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Setup/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Constants.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Constants.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
+            <state relative-caret-position="85">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -35,14 +36,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Init_Stock.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Init_Stock.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="196" selection-start-line="196" selection-end-line="196" />
+            <state relative-caret-position="210">
+              <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
               <folding>
                 <element signature="e#89#110#0" expanded="true" />
-                <element signature="e#6198#6453#0" />
                 <element signature="e#6517#6852#0" />
               </folding>
             </state>
@@ -61,8 +61,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>asx</find>
-      <find>S.</find>
       <find>s.</find>
       <find>sheet</find>
       <find>dec</find>
@@ -91,6 +89,8 @@
       <find>print</find>
       <find>conn</find>
       <find>performancepoints</find>
+      <find>RemoteDataError</find>
+      <find>excel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,14 +115,14 @@
         <option value="$PROJECT_DIR$/Classes/Portfolio.py" />
         <option value="$PROJECT_DIR$/Decision/Decision.py" />
         <option value="$PROJECT_DIR$/Classes/Stock.py" />
-        <option value="$PROJECT_DIR$/Setup/Init_Stock.py" />
         <option value="$PROJECT_DIR$/Benchmarking/TableauPrep.py" />
         <option value="$PROJECT_DIR$/Classes/Simulation.py" />
         <option value="$PROJECT_DIR$/Prediction/Prediction.py" />
         <option value="$PROJECT_DIR$/Benchmarking/Evaluate.py" />
         <option value="$PROJECT_DIR$/Pluto.py" />
-        <option value="$PROJECT_DIR$/Setup/Constants.py" />
         <option value="$PROJECT_DIR$/Setup/Init_System.py" />
+        <option value="$PROJECT_DIR$/Setup/Init_Stock.py" />
+        <option value="$PROJECT_DIR$/Setup/Constants.py" />
       </list>
     </option>
   </component>
@@ -545,7 +545,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528013200514</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Remove unneeded stuff">
+      <created>1528112196797</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1528112196797</updated>
+    </task>
+    <task id="LOCAL-00041" summary="trying to get gspread permissions">
+      <created>1528114664630</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1528114664630</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -598,8 +612,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Implemented day looping, progress output and some day validation" />
-    <MESSAGE value="Intial Benchmarking Implemented" />
     <MESSAGE value="added comments and todo" />
     <MESSAGE value="added comments" />
     <MESSAGE value="Updating read me" />
@@ -623,7 +635,9 @@
     <MESSAGE value="fixed load and implemented pop up" />
     <MESSAGE value="can load all data, and run simple prediction as well as append results for analysis" />
     <MESSAGE value="Models for 300 down run for manual and random, all working correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Models for 300 down run for manual and random, all working correctly" />
+    <MESSAGE value="Remove unneeded stuff" />
+    <MESSAGE value="trying to get gspread permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to get gspread permissions" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -632,18 +646,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Setup/Init_Stock.py</url>
-          <line>58</line>
+          <line>56</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Setup/Init_Stock.py</url>
-          <line>132</line>
+          <line>130</line>
           <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Setup/Init_Stock.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="109" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -666,7 +675,6 @@
           <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
           <folding>
             <element signature="e#89#110#0" expanded="true" />
-            <element signature="e#6198#6453#0" />
             <element signature="e#6517#6852#0" />
           </folding>
         </state>
@@ -829,13 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pluto.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -845,13 +846,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        <state relative-caret-position="210">
+          <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
           <folding>
             <element signature="e#89#110#0" expanded="true" />
-            <element signature="e#6198#6453#0" />
             <element signature="e#6517#6852#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
