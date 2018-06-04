@@ -77,7 +77,8 @@ num_to_load = 1
 #######################
 # Google Drive Output #
 #######################
-scope = ['https://spreadsheets.google.com/feeds']
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
 outputfile = 'Portfolio Performance'
 creds = ''
 client = None
