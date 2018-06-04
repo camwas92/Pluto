@@ -3,8 +3,6 @@ import datetime as dt
 import time
 
 import pandas as pd
-import pandas_datareader.data as web
-from pandas_datareader._utils import RemoteDataError
 
 from Classes import Stock as S
 from Setup import Constants as Con
@@ -193,19 +191,18 @@ def load_stock_source(stock):
 
     return True
 
-
-# get the missing data
-def download_stock_prices(stock,start = dt.datetime(1980, 1, 1)):
-    start = start + dt.timedelta(days=1)
-    try:
-        df = web.DataReader(stock, 'morningstar', start, Con.now)
-    except RemoteDataError:
-        print(stock, 'could not be downloaded')
-        return False
-    df.reset_index(inplace=True)
-    if start != dt.datetime(1980, 1, 2):
-        df = pd.concat([Con.stock_data[stock].df,df])
-    Con.stock_data[stock] = S.Stock(stock,df)
-    df.to_csv(str(Con.paths['Stocks'] / str(stock+'.csv')),index=False)
-    print('Downloaded',stock)
-    return True
+# # get the missing data
+# def download_stock_prices(stock,start = dt.datetime(1980, 1, 1)):
+#     start = start + dt.timedelta(days=1)
+#     try:
+#         df = web.DataReader(stock, 'morningstar', start, Con.now)
+#     except RemoteDataError:
+#         print(stock, 'could not be downloaded')
+#         return False
+#     df.reset_index(inplace=True)
+#     if start != dt.datetime(1980, 1, 2):
+#         df = pd.concat([Con.stock_data[stock].df,df])
+#     Con.stock_data[stock] = S.Stock(stock,df)
+#     df.to_csv(str(Con.paths['Stocks'] / str(stock+'.csv')),index=False)
+#     print('Downloaded',stock)
+#     return True
