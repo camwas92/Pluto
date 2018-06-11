@@ -104,7 +104,7 @@ def calculate_profit(Simulation):
     profit = final - init
     profit_per = (profit / init) * 100
     length = Simulation.end_period - Simulation.start_period
-    length = (length / np.timedelta64(1, 'D')).astype(int)
+    length = int((length / np.timedelta64(1, 'D')))
     annual_profit = (profit_per / length) * 365
 
     O.store_metric('Profit', profit, 1)
