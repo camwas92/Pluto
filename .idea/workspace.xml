@@ -50,11 +50,8 @@
       <file leaf-file-name="Prediction.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="281" column="71" lean-forward="true" selection-start-line="281" selection-start-column="71" selection-end-line="281" selection-end-column="71" />
-              <folding>
-                <element signature="e#53#74#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="366">
+              <caret line="276" column="19" lean-forward="true" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -285,13 +282,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00001" summary="rearranging folder structure">
-      <created>1507458454992</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1507458454992</updated>
     </task>
     <task id="LOCAL-00002" summary="rearranging folder structure">
       <created>1509860289895</created>
@@ -622,7 +612,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528704106979</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="multi layer">
+      <created>1528704423158</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1528704423158</updated>
+    </task>
+    <task id="LOCAL-00050" summary="single layer">
+      <created>1528704612535</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1528704612537</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -636,19 +640,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805058" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4610116" weight="0.26910657" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.39567965" side_tool="true" visible="true" weight="0.28417653" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50632244" side_tool="true" visible="true" weight="0.32723358" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49209693" weight="0.32723358" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49420443" weight="0.32723358" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" visible="true" weight="0.32723358" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47945204" weight="0.33476856" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4805058" weight="0.4101184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5184405" side_tool="true" weight="0.4101184" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.60432035" visible="true" weight="0.28417653" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.54162276" weight="0.28417653" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -675,7 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="replace stock pull values" />
     <MESSAGE value="fixed evaluation, and debugged other issues" />
     <MESSAGE value="built out prediction and prediction evaluation frame work" />
     <MESSAGE value="built evaulation metrics" />
@@ -700,7 +702,8 @@
     <MESSAGE value="Implemented LSTM" />
     <MESSAGE value="Improved lstm performance" />
     <MESSAGE value="multi layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="multi layer" />
+    <MESSAGE value="single layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="single layer" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -916,11 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="281" column="71" lean-forward="true" selection-start-line="281" selection-start-column="71" selection-end-line="281" selection-end-column="71" />
-          <folding>
-            <element signature="e#53#74#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="366">
+          <caret line="276" column="19" lean-forward="true" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="19" />
         </state>
       </provider>
     </entry>
