@@ -257,11 +257,11 @@ def ML_NN(data, method):
 def ML_LSTM(data, method):
     Con.print_header_level_2('LSTM')
     # store parameters
-    Con.parameters_prediction = {'hidden_layer_sizes1': 50,
-                                 'hidden_layer_sizes2': 50,
+    Con.parameters_prediction = {'hidden_layer_sizes1': 100,
+                                 'hidden_layer_sizes2': 0,
                                  'loss': 'mae',
                                  'solver': 'adam',
-                                 'epochs': 20,
+                                 'epochs': 40,
                                  'batch_size': 36,
                                  'activation': 'relu'
                                  }
@@ -280,8 +280,8 @@ def ML_LSTM(data, method):
     model = Sequential()
     model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes1'], return_sequences=True, input_shape=(1, 1),
                    activation=Con.parameters_prediction['activation']))
-    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes2'],
-                   activation=Con.parameters_prediction['activation']))
+    # model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes2'],
+    #                activation=Con.parameters_prediction['activation']))
     model.add(Dense(1))
     model.compile(loss=Con.parameters_prediction['loss'], optimizer=Con.parameters_prediction['solver'])
 
