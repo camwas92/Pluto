@@ -302,7 +302,7 @@ def ML_LSTM(data, method):
         # train model
         model.fit(x, y, epochs=Con.parameters_prediction['epochs'],
                   batch_size=Con.parameters_prediction['batch_size'],
-                  verbose=2, shuffle=False)
+                  verbose=0, shuffle=False)
 
         # predict next day
         pred = np.array(len(history) + 1)
