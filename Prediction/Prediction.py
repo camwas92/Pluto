@@ -241,7 +241,9 @@ def ML_NN(data, method):
         # print progress
         if num > 100:
             if t % int(Con.skipnum) == 0:
-                print(t, 'of', num, 'periods')
+                string = ' '.join([str(t), 'of', str(num), 'periods'])
+                Con.clear_lines(10)
+                Con.print_header_level_2(string)
 
     df = pd.DataFrame({'Prediction': predictions})
 
@@ -255,7 +257,7 @@ def ML_NN(data, method):
 def ML_LSTM(data, method):
     Con.print_header_level_2('LSTM')
     # store parameters
-    Con.parameters_prediction = {'hidden_layer_sizes': 50,
+    Con.parameters_prediction = {'hidden_layer_sizes': 70,
                                  'loss': 'mae',
                                  'solver': 'adam',
                                  'epochs': 50,
@@ -272,6 +274,15 @@ def ML_LSTM(data, method):
     history = [x for x in train]
     predictions = list()
     num = len(test)
+
+    # Build model
+    model = Sequential()
+    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes'], input_shape=(1, 1),
+                   activation=Con.parameters_prediction['activation']))
+    model.add(Dense(1))
+    model.compile(loss=Con.parameters_prediction['loss'], optimizer=Con.parameters_prediction['solver'])
+
+
     # run through each day
     for t in range(num):
         # build model framework
@@ -281,11 +292,10 @@ def ML_LSTM(data, method):
         y = np.asarray(history)
         y = y.reshape(len(y), )
 
-        model = Sequential()
-        model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes'], input_shape=(x.shape[1], x.shape[2]),
-                       activation=Con.parameters_prediction['activation']))
-        model.add(Dense(1))
-        model.compile(loss=Con.parameters_prediction['loss'], optimizer=Con.parameters_prediction['solver'])
+        # reset model
+        model.reset_states()
+
+
 
         # train model
         model.fit(x, y, epochs=Con.parameters_prediction['epochs'],
@@ -296,19 +306,17 @@ def ML_LSTM(data, method):
         pred = np.array(len(history) + 1)
         pred = pred.reshape(1, 1, 1)
         yhat = model.predict(pred)
-        yhat = yhat[0][0]
 
-        model.reset_states()
-
-        predictions.append(float(yhat))
-
+        predictions.append(float(yhat[0][0]))
         obs = test[t]
         history.append(obs)
 
         # print progress
-        if num > 100:
+        if num > 10:
             if t % int(Con.skipnum) == 0:
-                print(t, 'of', num, 'periods')
+                string = ' '.join([str(t), 'of', str(num), 'periods'])
+                Con.clear_lines(10)
+                Con.print_header_level_2(string)
 
     df = pd.DataFrame({'Prediction': predictions})
 

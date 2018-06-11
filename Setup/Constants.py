@@ -6,7 +6,7 @@ import calendar
 ##################
 line = 'Offline'
 model_refresh = True
-display_graph = True
+display_graph = False
 
 #############
 # Reference #
@@ -156,4 +156,9 @@ def print_error_message(text=None):
         print('ERROR OCCURED!!!!!!!!')
     else:
         print(text)
+    return
+
+
+def clear_lines(num=5):
+    print('\n' * num)
     return
