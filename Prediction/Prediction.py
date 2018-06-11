@@ -278,10 +278,9 @@ def ML_LSTM(data, method):
 
     # Build model
     model = Sequential()
-    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes1'], return_sequences=True, input_shape=(1, 1),
+    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes1'], input_shape=(1, 1),
                    activation=Con.parameters_prediction['activation']))
-    # model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes2'],
-    #                activation=Con.parameters_prediction['activation']))
+
     model.add(Dense(1))
     model.compile(loss=Con.parameters_prediction['loss'], optimizer=Con.parameters_prediction['solver'])
 
