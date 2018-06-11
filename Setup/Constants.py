@@ -5,8 +5,8 @@ import calendar
 # Online/Offline #
 ##################
 line = 'Offline'
-model_refresh = False
-display_graph = False
+model_refresh = True
+display_graph = True
 
 #############
 # Reference #
@@ -38,8 +38,8 @@ technical_methods = []
 # technical_methods = ['tech_per_change']
 FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = ['ML_RF']
-# ML_methods = ['ML_LR','ML_RF','ML_NN']
+ML_methods = ['ML_LSTM']
+# ML_methods = ['ML_LR','ML_RF','ML_NN','ML_LSTM']
 parameters_prediction = {}
 
 ###################
@@ -52,8 +52,8 @@ now = False
 # Data Parameters #
 ###################
 # todo set up industry lists
-stocks_for_simulation = 'Test'
-# stocks_for_simulation = 'Model-Testing'
+# stocks_for_simulation = 'Test'
+stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'

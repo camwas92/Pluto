@@ -68,7 +68,7 @@ def write_row(option, line):
     elif option == 2:
         Con.sheet_model.insert_row(line, 2)
     elif option == 3:
-        Con.sheet.trade.insert_row(line, 2)
+        Con.sheet_trade.insert_row(line, 2)
     return
 
 

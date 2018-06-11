@@ -4,6 +4,9 @@ import sys
 
 import numpy as np
 import pandas as pd
+from keras.layers import Dense
+from keras.layers import LSTM
+from keras.models import Sequential
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.neural_network import MLPRegressor
 from statsmodels.tsa.arima_model import ARIMA
@@ -229,6 +232,73 @@ def ML_NN(data, method):
 
         # predict next day
         yhat = model.predict(len(history) + 1)
+
+        predictions.append(float(yhat))
+
+        obs = test[t]
+        history.append(obs)
+
+        # print progress
+        if num > 100:
+            if t % int(Con.skipnum) == 0:
+                print(t, 'of', num, 'periods')
+
+    df = pd.DataFrame({'Prediction': predictions})
+
+    # store data set
+    data.df[method] = df
+    data.df[method] = data.df[method].shift(+size)
+    return True
+
+
+# Neural Network
+def ML_LSTM(data, method):
+    Con.print_header_level_2('LSTM')
+    # store parameters
+    Con.parameters_prediction = {'hidden_layer_sizes': 50,
+                                 'loss': 'mae',
+                                 'solver': 'adam',
+                                 'epochs': 50,
+                                 'batch_size': 72,
+                                 'activation': 'relu'
+                                 }
+
+    # get price data
+    X = list(data.df['Close'])
+    size = int(len(X) * 0.05)
+
+    # split data so only training on historic
+    train, test = X[0:size], X[size:len(X)]
+    history = [x for x in train]
+    predictions = list()
+    num = len(test)
+    # run through each day
+    for t in range(num):
+        # build model framework
+        # prepare data
+        x = np.asarray(list(range(0, len(history))))
+        x = x.reshape(len(x), 1, 1)
+        y = np.asarray(history)
+        y = y.reshape(len(y), )
+
+        model = Sequential()
+        model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes'], input_shape=(x.shape[1], x.shape[2]),
+                       activation=Con.parameters_prediction['activation']))
+        model.add(Dense(1))
+        model.compile(loss=Con.parameters_prediction['loss'], optimizer=Con.parameters_prediction['solver'])
+
+        # train model
+        model.fit(x, y, epochs=Con.parameters_prediction['epochs'],
+                  batch_size=Con.parameters_prediction['batch_size'],
+                  verbose=2, shuffle=False)
+
+        # predict next day
+        pred = np.array(len(history) + 1)
+        pred = pred.reshape(1, 1, 1)
+        yhat = model.predict(pred)
+        yhat = yhat[0][0]
+
+        model.reset_states()
 
         predictions.append(float(yhat))
 
