@@ -35,7 +35,7 @@ def run_predictions():
             Con.print_header_level_1(print_str)
             data = Con.stock_data[key]
             # add in predictions
-            Con.skipnum = int(len(data.df['Close']) / 10)  # used to print progress
+            Con.skipnum = int(len(data.df['Close']) / 100)  # used to print progress
 
             # run and evaluate all technical methods
             for x in Con.technical_methods:
@@ -317,7 +317,7 @@ def ML_LSTM(data, method):
         if num > 10:
             if t % int(Con.skipnum) == 0:
                 string = ' '.join([str(t), 'of', str(num), 'periods'])
-                Con.clear_lines(10)
+                Con.clear_lines(1)
                 Con.print_header_level_2(string)
 
     df = pd.DataFrame({'Prediction': predictions})

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prediction/Prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction/Prediction.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +21,8 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="161" column="4" lean-forward="true" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="22" />
+            <state relative-caret-position="378">
+              <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -50,8 +51,11 @@
       <file leaf-file-name="Prediction.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="276" column="19" lean-forward="true" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="19" />
+            <state relative-caret-position="340">
+              <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+              <folding>
+                <element signature="e#53#74#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sheet</find>
-      <find>dec</find>
       <find>random</find>
       <find>holding</find>
       <find>con.stock</find>
@@ -119,6 +121,8 @@
       <find>RemoteDataError</find>
       <find>excel</find>
       <find>import matplot</find>
+      <find>skipnum</find>
+      <find>Con.skipnum</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -282,20 +286,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00002" summary="rearranging folder structure">
-      <created>1509860289895</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1509860289895</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added stock download">
-      <created>1509879322955</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1509879322955</updated>
     </task>
     <task id="LOCAL-00004" summary="added stock download">
       <created>1511868334806</created>
@@ -626,7 +616,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528704612537</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="300 to be run">
+      <created>1528707370100</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1528707370101</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Stop output printing">
+      <created>1528708303151</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1528708303151</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -640,14 +644,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805058" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4610116" weight="0.26910657" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50632244" side_tool="true" visible="true" weight="0.32723358" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49209693" weight="0.32723358" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" visible="true" weight="0.32723358" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50842994" side_tool="true" visible="true" weight="0.32723358" />
+      <window_info active="true" anchor="bottom" id="Find" order="2" sideWeight="0.4915701" visible="true" weight="0.32723358" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" weight="0.32723358" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47945204" weight="0.33476856" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4805058" weight="0.4101184" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.47997892" weight="0.4101184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5184405" side_tool="true" weight="0.4101184" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -673,13 +678,37 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixed evaluation, and debugged other issues" />
-    <MESSAGE value="built out prediction and prediction evaluation frame work" />
     <MESSAGE value="built evaulation metrics" />
     <MESSAGE value="developed predictions" />
     <MESSAGE value="replaced data load function" />
@@ -703,7 +732,9 @@
     <MESSAGE value="Improved lstm performance" />
     <MESSAGE value="multi layer" />
     <MESSAGE value="single layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="single layer" />
+    <MESSAGE value="300 to be run" />
+    <MESSAGE value="Stop output printing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stop output printing" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -893,13 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="161" column="4" lean-forward="true" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2927">
@@ -907,6 +931,13 @@
           <folding>
             <element signature="e#146#157#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -919,8 +950,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="276" column="19" lean-forward="true" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="19" />
+        <state relative-caret-position="340">
+          <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+          <folding>
+            <element signature="e#53#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
