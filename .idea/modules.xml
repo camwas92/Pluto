@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../2018 - Semester 1/COMP5329 - Deep Learning/Assignment/Assignment 2 - Competition/Code/DL_Competition/.idea/DL_Competition.iml" filepath="$PROJECT_DIR$/../../../2018 - Semester 1/COMP5329 - Deep Learning/Assignment/Assignment 2 - Competition/Code/DL_Competition/.idea/DL_Competition.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Pluto.iml" filepath="$PROJECT_DIR$/.idea/Pluto.iml" />
     </modules>
   </component>
