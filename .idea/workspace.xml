@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="Multilayer and predict and train on all">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prediction/Prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction/Prediction.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +18,7 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="1020">
               <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
             </state>
           </provider>
@@ -30,7 +27,7 @@
       <file leaf-file-name="Evaluate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
+            <state relative-caret-position="442">
               <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
               <folding>
                 <element signature="e#146#157#0" expanded="true" />
@@ -51,11 +48,8 @@
       <file leaf-file-name="Prediction.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-335">
-              <caret line="269" column="30" lean-forward="true" selection-start-line="269" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
-              <folding>
-                <element signature="e#53#74#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="515">
+              <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
             </state>
           </provider>
         </entry>
@@ -72,7 +66,7 @@
       <file leaf-file-name="Init_Stock.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1921">
+            <state relative-caret-position="2040">
               <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
               <folding>
                 <element signature="e#89#110#0" expanded="true" />
@@ -129,7 +123,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="testing" />
       </map>
     </option>
   </component>
@@ -291,20 +285,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Developing simulation">
-      <created>1513408428686</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1513408428688</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Developing simulation">
-      <created>1513409815487</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1513409815487</updated>
     </task>
     <task id="LOCAL-00007" summary="Implemented day looping, progress output and some day validation">
       <created>1513488511958</created>
@@ -635,7 +615,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528708628482</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Multilayer and predict and train on all">
+      <created>1528879473401</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1528879473401</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Multilayer and predict and train on all">
+      <created>1528879544063</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1528879544063</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -652,14 +646,14 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805058" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4610116" weight="0.26910657" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.459431" side_tool="true" visible="true" weight="0.28417653" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" weight="0.32723358" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5068493" side_tool="true" visible="true" weight="0.32723358" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.49315068" visible="true" weight="0.32723358" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47945204" weight="0.33476856" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.47945204" weight="0.4101184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5184405" side_tool="true" weight="0.4101184" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.540569" visible="true" weight="0.28417653" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.540569" weight="0.28417653" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" weight="0.32723358" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805058" />
@@ -723,7 +717,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="developed predictions" />
     <MESSAGE value="replaced data load function" />
     <MESSAGE value="Format files and prevent overwrite" />
     <MESSAGE value="All predictions implemented" />
@@ -748,7 +741,8 @@
     <MESSAGE value="300 to be run" />
     <MESSAGE value="Stop output printing" />
     <MESSAGE value="Fix output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix output" />
+    <MESSAGE value="Multilayer and predict and train on all" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multilayer and predict and train on all" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -759,6 +753,11 @@
           <url>file://$PROJECT_DIR$/Setup/Init_Stock.py</url>
           <line>56</line>
           <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Prediction/Prediction.py</url>
+          <line>318</line>
+          <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Prediction/Prediction.py</url>
@@ -926,19 +925,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pluto.py">
+    <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="1020">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
+    <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
+        <state relative-caret-position="442">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
           <folding>
-            <element signature="e#89#110#0" expanded="true" />
+            <element signature="e#146#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -950,30 +949,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
+    <entry file="file://$PROJECT_DIR$/Pluto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        <state relative-caret-position="374">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
+    <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+        <state relative-caret-position="2040">
+          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
           <folding>
-            <element signature="e#146#157#0" expanded="true" />
+            <element signature="e#89#110#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="269" column="30" lean-forward="true" selection-start-line="269" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
-          <folding>
-            <element signature="e#53#74#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="515">
+          <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
         </state>
       </provider>
     </entry>
