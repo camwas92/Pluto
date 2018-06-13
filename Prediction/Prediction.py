@@ -257,12 +257,12 @@ def ML_NN(data, method):
 def ML_LSTM(data, method):
     Con.print_header_level_2('LSTM')
     # store parameters
-    Con.parameters_prediction = {'hidden_layer_sizes1': 70,
+    Con.parameters_prediction = {'hidden_layer_sizes1': 50,
                                  'hidden_layer_sizes2': 10,
                                  'loss': 'mae',
                                  'solver': 'adam',
-                                 'epochs': 100,
-                                 'batch_size': 36,
+                                 'epochs': 60,
+                                 'batch_size': 8,
                                  'activation': 'relu'
                                  }
 
