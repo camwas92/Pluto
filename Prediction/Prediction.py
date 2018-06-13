@@ -257,8 +257,8 @@ def ML_NN(data, method):
 def ML_LSTM(data, method):
     Con.print_header_level_2('LSTM')
     # store parameters
-    Con.parameters_prediction = {'hidden_layer_sizes1': 100,
-                                 'hidden_layer_sizes2': 100,
+    Con.parameters_prediction = {'hidden_layer_sizes1': 70,
+                                 'hidden_layer_sizes2': 10,
                                  'loss': 'mae',
                                  'solver': 'adam',
                                  'epochs': 100,
