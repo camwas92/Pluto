@@ -262,7 +262,7 @@ def ML_LSTM(data, method):
                                  'loss': 'mae',
                                  'solver': 'adam',
                                  'epochs': 60,
-                                 'batch_size': 8,
+                                 'batch_size': 32,
                                  'activation': 'relu'
                                  }
 
