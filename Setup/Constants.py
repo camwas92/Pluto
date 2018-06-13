@@ -53,13 +53,13 @@ now = False
 ###################
 # todo set up industry lists
 # stocks_for_simulation = 'Test'
-# stocks_for_simulation = 'Model-Testing'
+stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
-stocks_for_simulation = 'asx300'
+# stocks_for_simulation = 'asx300'
 
 ############
 # Trackers #

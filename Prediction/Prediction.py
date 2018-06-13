@@ -258,17 +258,17 @@ def ML_LSTM(data, method):
     Con.print_header_level_2('LSTM')
     # store parameters
     Con.parameters_prediction = {'hidden_layer_sizes1': 100,
-                                 'hidden_layer_sizes2': 0,
+                                 'hidden_layer_sizes2': 100,
                                  'loss': 'mae',
                                  'solver': 'adam',
-                                 'epochs': 40,
+                                 'epochs': 100,
                                  'batch_size': 36,
                                  'activation': 'relu'
                                  }
 
     # get price data
     X = list(data.df['Close'])
-    size = int(len(X) * 0.05)
+    size = int(len(X) * 1)
 
     # split data so only training on historic
     train, test = X[0:size], X[size:len(X)]
@@ -278,47 +278,39 @@ def ML_LSTM(data, method):
 
     # Build model
     model = Sequential()
-    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes1'], input_shape=(1, 1),
+    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes1'], return_sequences=True, input_shape=(1, 1),
                    activation=Con.parameters_prediction['activation']))
-
+    model.add(LSTM(Con.parameters_prediction['hidden_layer_sizes2'],
+                   activation=Con.parameters_prediction['activation']))
     model.add(Dense(1))
     model.compile(loss=Con.parameters_prediction['loss'], optimizer=Con.parameters_prediction['solver'])
 
 
     # run through each day
-    for t in range(num):
-        # build model framework
-        # prepare data
-        x = np.asarray(list(range(0, len(history))))
-        x = x.reshape(len(x), 1, 1)
-        y = np.asarray(history)
-        y = y.reshape(len(y), )
 
-        # reset model
-        model.reset_states()
+    # build model framework
+    # prepare data
+    x = np.asarray(list(range(0, len(history))))
+    x = x.reshape(len(x), 1, 1)
+    y = np.asarray(history)
+    y = y.reshape(len(y), )
+
+    # reset model
+    model.reset_states()
+
+    # train model
+    model.fit(x, y, epochs=Con.parameters_prediction['epochs'],
+              batch_size=Con.parameters_prediction['batch_size'],
+              verbose=1, shuffle=False)
+
+    # predict next day
+    yhat = list(model.predict(x))
+
+    for i in yhat:
+        predictions.append(float(i[0]))
 
 
 
-        # train model
-        model.fit(x, y, epochs=Con.parameters_prediction['epochs'],
-                  batch_size=Con.parameters_prediction['batch_size'],
-                  verbose=0, shuffle=False)
-
-        # predict next day
-        pred = np.array(len(history) + 1)
-        pred = pred.reshape(1, 1, 1)
-        yhat = model.predict(pred)
-
-        predictions.append(float(yhat[0][0]))
-        obs = test[t]
-        history.append(obs)
-
-        # print progress
-        if num > 10:
-            if t % int(Con.skipnum) == 0:
-                string = ' '.join([str(t), 'of', str(num), 'periods'])
-                Con.clear_lines(1)
-                Con.print_header_level_2(string)
 
     df = pd.DataFrame({'Prediction': predictions})
 
