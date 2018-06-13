@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
+    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="Multilayer and predict and train on all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prediction/Prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction/Prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Setup/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Constants.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +51,11 @@
       <file leaf-file-name="Prediction.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+            <state relative-caret-position="-335">
+              <caret line="269" column="30" lean-forward="true" selection-start-line="269" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
+              <folding>
+                <element signature="e#53#74#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,6 +127,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -642,28 +649,37 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805058" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4610116" weight="0.26910657" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.45890412" side_tool="true" visible="true" weight="0.28417653" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.459431" side_tool="true" visible="true" weight="0.28417653" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" weight="0.32723358" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47945204" weight="0.33476856" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.47997892" weight="0.4101184" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.47945204" weight="0.4101184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5184405" side_tool="true" weight="0.4101184" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.5410959" visible="true" weight="0.28417653" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.540569" visible="true" weight="0.28417653" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49367756" weight="0.32723358" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805058" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4610116" weight="0.26910657" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.47997892" weight="0.4101184" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.3297414" />
       <window_info anchor="right" id="Data View" order="3" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.5410959" visible="true" weight="0.28417653" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4978678" weight="0.32976446" />
       <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.45890412" side_tool="true" visible="true" weight="0.28417653" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Find" order="2" sideWeight="0.4915701" visible="true" weight="0.32723358" />
+      <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5184405" side_tool="true" weight="0.4101184" />
+      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47945204" weight="0.33476856" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -746,8 +762,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Prediction/Prediction.py</url>
-          <line>303</line>
-          <option name="timeStamp" value="115" />
+          <line>301</line>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -760,7 +776,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="116" />
+      <option name="time" value="118" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -953,8 +969,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+        <state relative-caret-position="-335">
+          <caret line="269" column="30" lean-forward="true" selection-start-line="269" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
+          <folding>
+            <element signature="e#53#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
