@@ -61,7 +61,7 @@ now = False
 # stocks_for_simulation = 'asx200'
 stocks_for_simulation = 'asx300'
 
-############
+############git.
 # Trackers #
 ############
 buy_count = 0

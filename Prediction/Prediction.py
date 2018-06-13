@@ -19,8 +19,8 @@ from Setup import Init_System as IS
 # run all predictions
 def run_predictions():
     count = 0
-    skip = False
-    skip_to = 'SAR'
+    skip = True
+    skip_to = 'GTY'
     for key in Con.stock_data:
         count += 1
         if skip:
