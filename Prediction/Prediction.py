@@ -20,7 +20,7 @@ from Setup import Init_System as IS
 def run_predictions():
     count = 0
     skip = True
-    skip_to = 'GTY'
+    skip_to = 'MFG'
     for key in Con.stock_data:
         count += 1
         if skip:
