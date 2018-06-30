@@ -1,5 +1,6 @@
 # called at the beginning of the program to start a simulation and build all required foundations
 import datetime as dt
+import logging
 from pathlib import Path
 
 import gspread
@@ -16,6 +17,7 @@ def init_system():
     Con.now = get_date()
     IS.load_stock(Con.line)  # true load new stock data, false load only from file
     # "Online" loads data from sheets, "Offline" loads data from source
+    create_logging_file()
     return
 
 
@@ -29,6 +31,13 @@ def collect_paths():
     paths['Storage'] = paths['Input'] / 'Storage'
     return paths
 
+
+def create_logging_file():
+    logging.basicConfig(filename=str(Con.paths['Output'] / 'Pluto.log'),
+                        level=logging.DEBUG,
+                        format='%(asctime)s %(message)s',
+                        filemode='w')
+    logging.info('Pluto Initiated')
 
 # get most recent date
 def get_date():

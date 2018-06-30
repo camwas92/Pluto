@@ -116,6 +116,7 @@ def manual(Simulation):
     return
 
 
+# todo deep q learning
 # do the required action
 def run_action_list(list, Simulation):
     for x in list:

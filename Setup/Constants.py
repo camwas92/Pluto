@@ -1,11 +1,14 @@
 # These are all the constants required for the project
 import calendar
+import logging
 
 ##################
 # Online/Offline #
 ##################
+
+
 line = 'Offline'
-model_refresh = True
+model_refresh = False
 display_graph = False
 
 #############
@@ -52,14 +55,14 @@ now = False
 # Data Parameters #
 ###################
 # todo set up industry lists
-# stocks_for_simulation = 'Test'
+stocks_for_simulation = 'Test'
 # stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
-stocks_for_simulation = 'asx300'
+# stocks_for_simulation = 'asx300'
 
 ############git.
 # Trackers #
@@ -113,49 +116,71 @@ sheet_stock = None
 ###################
 # Print Functions #
 ###################
+def send_telegram_message(text):
+    import telegram
+    bot = telegram.Bot(token='604417883:AAEd4tS3VGgKhnRhXPYpNEWte4_JiRahxA8')
+    bot.send_message(chat_id=612638372, text=text)
+    logging.info(text)
+    return
+
 def print_header_level_1(text):
     length = len(text)
     print ('\n\n'+length*'-')
     print (text)
     print(length*'-')
+    send_telegram_message(text)
     return
+
 
 def print_header_level_2(text):
     length = len(text)
     print('\n')
     print(text)
     print(length * '-')
+    send_telegram_message(text)
     return
 
 def print_sucess_message(text=None):
     if text is None:
-        print('PROCESS COMPLETE - NO ERRORS\n')
+        text = 'PROCESS COMPLETE - NO ERRORS\n'
+        print(text)
     else:
-        print(text.upper()+' COMPLETE - NO ERRORS\n')
+        text = text.upper() + ' COMPLETE - NO ERRORS\n'
+        print(text)
+    send_telegram_message(text)
     return
 
+
 def print_state(Portfolio,current_date):
-    print('=====================',)
-    print(str(current_date.year), str(current_date.month), str(current_date.day), ':',
-          calendar.day_name[current_date.weekday()])
-    print('\n     Value = $'+str(Portfolio.value),
-          '\n=====================',
-            '\n     C I H = $' + str(Portfolio.cash_in_hand),
-          '\n           +             ',
-            '\n     Asset = $' + str(Portfolio.assets))
-    print('=====================\n\n\n', )
+    line = ' '.join([str(current_date.year), str(current_date.month), str(current_date.day), ':',
+                     calendar.day_name[current_date.weekday()]])
+    line2 = ' '.join(['     C I H = $', str(Portfolio.cash_in_hand)])
+    line3 = ' '.join(['     Asset = $', str(Portfolio.assets)])
+    text = '\n'.join(['=====================', line, '     Value = $' + str(Portfolio.value),
+                      '=====================',
+                      line2,
+                      '           +             ',
+                      line3, '=====================\n\n\n'])
+    print(text)
+    send_telegram_message(text)
     return
+
 
 
 def print_progress(current, end):
-    print(current, '')
+    text = ' '.join([current, ''])
+    print(text)
+    send_telegram_message(text)
+    return
 
 
 def print_error_message(text=None):
     if text is None:
-        print('ERROR OCCURED!!!!!!!!')
+        text = 'ERROR OCCURED!!!!!!!!'
+        print(text)
     else:
         print(text)
+    send_telegram_message(text)
     return
 
 
