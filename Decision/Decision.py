@@ -117,6 +117,44 @@ def manual(Simulation):
 
 
 # todo deep q learning
+def deep_q_learning(Simulation):
+    df = format_data_for_dl(Simulation)
+
+    actions = None
+    sellactions, buyactions, holdactions = format_actions_for_dl(actions)
+    # run actions
+    run_action_list(sellactions, Simulation)
+    run_action_list(buyactions, Simulation)
+    if len(holdactions) > 0:
+        run_action_list(holdactions, Simulation)
+
+    # print('Sell', sell, '\nbuy', buy, '\nhold', hold)
+
+    # end day
+    Simulation.complete_transaction(2, 'ERR', -1)
+
+    return
+
+
+def format_data_for_dl(Simulation):
+    # add column for the encoded number, then all the other fields then concat
+    # only the one day
+    df = None
+    return df
+
+
+def format_actions_for_dl(actions):
+    sell = None
+    buy = None
+    hold = None
+
+    # convert actions to list
+    sellactions = sell[['action', 'stock', 'quantity']].values.tolist()
+    buyactions = buy[['action', 'stock', 'quantity']].values.tolist()
+    holdactions = hold[['action', 'stock', 'quantity']].values.tolist()
+
+    return sellactions, buyactions, holdactions
+
 # do the required action
 def run_action_list(list, Simulation):
     for x in list:

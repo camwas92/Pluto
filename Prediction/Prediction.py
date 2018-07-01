@@ -19,7 +19,7 @@ from Setup import Init_System as IS
 # run all predictions
 def run_predictions():
     count = 0
-    skip = True
+    skip = False
     skip_to = 'TWE'
     for key in Con.stock_data:
         count += 1
@@ -98,6 +98,41 @@ def FE_MACD(data, method):
 def FE_gradient(data, method):
     # placeholder
     data.df[method] = 0
+    return True
+
+
+def window_x(data, num_days):
+    Con.print_header_level_2('Windowed {0} days'.format(num_days))
+    return data.df.Close.rolling(num_days).mean()
+
+
+def FE_window_7d(data, method):
+    data.df[method] = window_x(data, 7)
+    return True
+
+
+def FE_window_14d(data, method):
+    data.df[method] = window_x(data, 14)
+    return True
+
+
+def FE_window_30d(data, method):
+    data.df[method] = window_x(data, 30)
+    return True
+
+
+def FE_window_60d(data, method):
+    data.df[method] = window_x(data, 60)
+    return True
+
+
+def FE_window_90d(data, method):
+    data.df[method] = window_x(data, 90)
+    return True
+
+
+def FE_window_360d(data, method):
+    data.df[method] = window_x(data, 360)
     return True
 
 

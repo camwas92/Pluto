@@ -47,8 +47,8 @@ def sheets_download_stock():
 def sheets_refresh_stock():
     # add
 
-    skip = True
-    skip_to = 'OSH'
+    skip = False
+    skip_to = ''
     placeholder_stock_list = Con.stock_list
     chunked_stock_list = list(chunks(Con.stock_list, Con.num_to_load))
     count = 0
@@ -129,6 +129,7 @@ def sheets_load_stock():
 
     print('Stocks with no data -> ', no_data)
     Con.stock_list = [x for x in Con.stock_list if x not in no_data]
+    # todo define encoded dictionary
 
     return True
 

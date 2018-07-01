@@ -2,19 +2,22 @@
 import calendar
 import logging
 
+import telegram
+
 ##################
 # Online/Offline #
 ##################
 
 
 line = 'Offline'
-model_refresh = False
+model_refresh = True
 display_graph = False
 
 #############
 # Reference #
 #############
 debugging = False
+tableau_output = False
 
 #################################
 # Parameters to run the program #
@@ -39,9 +42,9 @@ parameters_decision = {'manual': 'ML_RF'}
 ######################
 technical_methods = []
 # technical_methods = ['tech_per_change']
-FE_methods = []
-# technical_methods = ['FE_momentum','FE_MACD','FE_gradient']
-ML_methods = ['ML_LSTM']
+FE_methods = ['FE_window_7d', 'FE_window_14d', 'FE_window_30d', 'FE_window_60d', 'FE_window_90d', 'FE_window_360d']
+# technical_methods = ['FE_momentum','FE_MACD','FE_gradient','FE_window_7d','FE_window_14d','FE_window_30d','FE_window_60d','FE_window_90d','FE_window_360d']
+ML_methods = []
 # ML_methods = ['ML_LR','ML_RF','ML_NN','ML_LSTM']
 parameters_prediction = {}
 
@@ -55,8 +58,8 @@ now = False
 # Data Parameters #
 ###################
 # todo set up industry lists
-stocks_for_simulation = 'Test'
-# stocks_for_simulation = 'Model-Testing'
+# stocks_for_simulation = 'Test'
+stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
 # stocks_for_simulation = 'asx20'
 # stocks_for_simulation = 'asx50'
@@ -117,10 +120,12 @@ sheet_stock = None
 # Print Functions #
 ###################
 def send_telegram_message(text):
-    import telegram
-    bot = telegram.Bot(token='604417883:AAEd4tS3VGgKhnRhXPYpNEWte4_JiRahxA8')
-    bot.send_message(chat_id=612638372, text=text)
-    logging.info(text)
+    if not debugging:
+        return
+    else:
+        bot = telegram.Bot(token='604417883:AAEd4tS3VGgKhnRhXPYpNEWte4_JiRahxA8')
+        bot.send_message(chat_id=612638372, text=text)
+        logging.info(text)
     return
 
 def print_header_level_1(text):

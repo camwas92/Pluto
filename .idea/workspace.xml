@@ -3,10 +3,311 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Benchmarking/TableauPrep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Benchmarking/TableauPrep.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Decision/Decision.py" beforeDir="false" afterPath="$PROJECT_DIR$/Decision/Decision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pluto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pluto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/A2M.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/A2M.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AAC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AAC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AAD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AAD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ABC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ABC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ABP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ABP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ACX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ACX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AGI.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AGI.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AGL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AGL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AHG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AHG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AHY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AHY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AIA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AIA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ALL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ALQ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ALQ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ALU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ALU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AMA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AMA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AMC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AMC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AMP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AMP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ANN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ANN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ANZ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ANZ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AOG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AOG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/APA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/APA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/API.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/API.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/APO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/APO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/APT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/APT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/APX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/APX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AQG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AQG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ARB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ARB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ARF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ARF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ASB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ASB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ASL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ASL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AST.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AST.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ASX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ASX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AVN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AVN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AWC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AWC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AWE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AWE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AYS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AYS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/AZJ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/AZJ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BAL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BAL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BAP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BAP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BBN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BBN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BDR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BDR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BEN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BEN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BGA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BGA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BHP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BHP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BIN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BIN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BKL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BKL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BKW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BKW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BLA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BLA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BLD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BLD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BOQ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BOQ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BPT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BPT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BRG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BRG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BSL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BSL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BTT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BTT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BWP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BWP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BWX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BWX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/BXB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/BXB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CAB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CAB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CAR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CAR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CBA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CBA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CCL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CCL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CCP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CCP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CDD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CDD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CGC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CGC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CGF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CGF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CHC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CHC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CIM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CIM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CIP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CIP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CKF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CKF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CL1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CL1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CLQ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CLQ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CLW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CLW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CMA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CMA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CMW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CMW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CNU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CNU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/COE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/COE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/COH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/COH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CPU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CPU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CQR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CQR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CSL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CSL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CSR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CSR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CTD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CTD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CTX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CTX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CWN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CWN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CWP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CWP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CWY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CWY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/CYB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/CYB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/DCN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/DCN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/DLX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/DLX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/DMP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/DMP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/DOW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/DOW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/DXS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/DXS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ECX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ECX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/EHE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/EHE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ELD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ELD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/EML.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/EML.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/EPW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/EPW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/EVN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/EVN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FAR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FAR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FBU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FBU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FET.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FET.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FLT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FLT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FMG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FMG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FNP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FNP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FPH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FPH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FXJ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FXJ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/FXL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/FXL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GBT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GBT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GDI.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GDI.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GEM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GEM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GMA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GMA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GMG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GMG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GNC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GNC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GOR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GOR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GOZ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GOZ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GPT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GPT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GTY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GTY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GUD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GUD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GWA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GWA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GXL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GXL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/GXY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/GXY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HFR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HFR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HPI.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HPI.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HSN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HSN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HSO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HSO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HT1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HT1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HUB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HUB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/HVN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/HVN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IAG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IAG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IDR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IDR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IEL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IEL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IFL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IFL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IFM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IFM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IFN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IFN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IGO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IGO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ILU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ILU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IMD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IMD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IMF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IMF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/INA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/INA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ING.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ING.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/INM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/INM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IOF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IOF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IPD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IPD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IPH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IPH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IPL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IPL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IRE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IRE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ISD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ISD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ISU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ISU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/IVC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/IVC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/JBH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/JBH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/JHC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/JHC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/JHG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/JHG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/JHX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/JHX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/KAR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/KAR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/LLC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/LLC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/LNG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/LNG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/LNK.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/LNK.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/LYC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/LYC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MFG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MFG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MGR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MGR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MIN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MIN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MLD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MLD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MLX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MLX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MMS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MMS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MND.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MND.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MNS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MNS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MOC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MOC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MPL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MPL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MQA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MQA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MQG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MQG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MSB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MSB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MTR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MTR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MTS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MTS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MVF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MVF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MYO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MYO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MYR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MYR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MYS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MYS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/MYX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/MYX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NAB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NAB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NAN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NAN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NCK.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NCK.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NCM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NCM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NEC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NEC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NHF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NHF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NSR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NSR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NST.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NST.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NTC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NTC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NUF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NUF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NVT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NVT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NWS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NWS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/NXT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/NXT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/OFX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/OFX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/OGC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/OGC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/OML.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/OML.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ORA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ORA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ORE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ORE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ORG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ORG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ORI.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ORI.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/OSH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/OSH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/OZL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/OZL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PGH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PGH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PLG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PLG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PLS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PLS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PMV.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PMV.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PPT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PPT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PRG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PRG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PRU.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PRU.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PRY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PRY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/PTM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/PTM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/QAN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/QAN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/QBE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/QBE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/QUB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/QUB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RCR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RCR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/REA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/REA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/REG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/REG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RFF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RFF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RFG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RFG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RHC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RHC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RIC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RIC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RIO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RIO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RMD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RMD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RRL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RRL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RSG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RSG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/RWC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/RWC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/S32.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/S32.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SAR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SAR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SBM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SBM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SCG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SCG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SCO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SCO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SCP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SCP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SDA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SDA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SDF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SDF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SEH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SEH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SEK.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SEK.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SFR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SFR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SGF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SGF.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SGM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SGM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SGP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SGP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SGR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SGR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SHL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SHL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SHV.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SHV.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SIG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SIG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SIQ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SIQ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SIV.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SIV.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SKC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SKC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SKI.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SKI.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SKT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SKT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SLC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SLC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SLK.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SLK.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SLR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SLR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SOL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SOL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SPK.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SPK.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SPL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SPL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SRV.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SRV.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SRX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SRX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SSM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SSM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/STO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/STO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SUL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SUL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SUN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SUN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SVW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SVW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SWM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SWM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SXL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SXL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SXY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SXY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SYD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SYD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/SYR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/SYR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TAH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TAH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TCL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TCL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TGA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TGA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TGR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TGR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TLS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TLS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TME.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TME.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TNE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TNE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TOX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TOX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TPM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TPM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TTS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TTS.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/TWE.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/TWE.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VCX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VCX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VLW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VLW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VOC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VOC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VRL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VRL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VRT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VRT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VTG.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VTG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/VVR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/VVR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WBA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WBA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WBC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WBC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WEB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WEB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WES.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WES.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WFD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WFD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WGX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WGX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WHC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WHC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WOR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WOR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WOW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WOW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WPL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WPL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WPP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WPP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WSA.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WSA.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/WTC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/WTC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/XRO.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/XRO.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/XXX.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/XXX.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/YYY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/YYY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/Stocks/ZZZ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Input/Stocks/ZZZ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prediction/Prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction/Prediction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Setup/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Setup/Init_System.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Init_System.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Setup/Init_Stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Init_Stock.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +325,8 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="68">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="e#55#70#0" expanded="true" />
               </folding>
@@ -42,53 +343,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Evaluate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
-              <folding>
-                <element signature="e#146#157#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutputFile.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Output/OutputFile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Prediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pluto.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pluto.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#55#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Init_System.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Setup/Init_System.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+            <state relative-caret-position="577">
+              <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -96,17 +355,22 @@
       <file leaf-file-name="Decision.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="117" column="21" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
+            <state relative-caret-position="487">
+              <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+              <folding>
+                <element signature="e#202#807#0" />
+                <element signature="e#4153#4279#0" />
+                <element signature="e#4355#4509#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Init_Stock.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Init_Stock.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
+            <state relative-caret-position="595">
+              <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
               <folding>
                 <element signature="e#89#110#0" expanded="true" />
               </folding>
@@ -186,22 +450,22 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Classes/Portfolio.py" />
         <option value="$PROJECT_DIR$/Classes/Stock.py" />
-        <option value="$PROJECT_DIR$/Benchmarking/TableauPrep.py" />
-        <option value="$PROJECT_DIR$/Setup/Init_Stock.py" />
         <option value="$PROJECT_DIR$/Benchmarking/Evaluate.py" />
         <option value="$PROJECT_DIR$/Output/OutputFile.py" />
-        <option value="$PROJECT_DIR$/Prediction/Prediction.py" />
         <option value="$PROJECT_DIR$/Classes/Simulation.py" />
-        <option value="$PROJECT_DIR$/Decision/Decision.py" />
         <option value="$PROJECT_DIR$/Pluto.py" />
-        <option value="$PROJECT_DIR$/Setup/Constants.py" />
         <option value="$PROJECT_DIR$/Setup/Init_System.py" />
+        <option value="$PROJECT_DIR$/Benchmarking/TableauPrep.py" />
+        <option value="$PROJECT_DIR$/Prediction/Prediction.py" />
+        <option value="$PROJECT_DIR$/Setup/Constants.py" />
+        <option value="$PROJECT_DIR$/Decision/Decision.py" />
+        <option value="$PROJECT_DIR$/Setup/Init_Stock.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="949" />
-    <option name="y" value="-11" />
+    <option name="x" value="948" />
+    <option name="y" value="-12" />
     <option name="width" value="1932" />
     <option name="height" value="1041" />
   </component>
@@ -213,7 +477,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,7 +492,7 @@
             <path>
               <item name="Pluto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pluto" type="462c0819:PsiDirectoryNode" />
-              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="Decision" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pluto" type="b2602c69:ProjectViewProjectNode" />
@@ -245,6 +508,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,13 +591,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00015" summary="included output and added random decision">
-      <created>1517481203216</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1517481203216</updated>
     </task>
     <task id="LOCAL-00016" summary="included output and added random decision">
       <created>1517481979742</created>
@@ -671,7 +928,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529008431455</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Add text notification">
+      <created>1530402233703</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1530402233704</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView">
@@ -687,17 +951,16 @@
     <frame x="-7" y="-7" width="2015" height="1317" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1471183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1471183" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4610116" weight="0.26841658" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.52107483" side_tool="true" weight="0.33476856" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4915701" weight="0.32723358" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.48998946" weight="0.3259949" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5222447" side_tool="true" visible="true" weight="0.3742591" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.48382205" weight="0.3259949" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47826087" weight="0.3344623" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.47826087" visible="true" weight="0.3742591" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4777553" visible="true" weight="0.3742591" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5217391" side_tool="true" weight="0.3344623" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5410959" weight="0.2836579" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5404449" weight="0.2836579" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -707,6 +970,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4915701" weight="0.32723358" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -750,7 +1014,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="All predictions implemented" />
     <MESSAGE value="Add in manual actions" />
     <MESSAGE value="Ensured could load all files from google drive source" />
     <MESSAGE value="Added Images" />
@@ -775,19 +1038,13 @@
     <MESSAGE value="Multilayer and predict and train on all" />
     <MESSAGE value="All 300" />
     <MESSAGE value="Add Skip" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Skip" />
+    <MESSAGE value="Add text notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add text notification" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Setup/Init_System.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -798,7 +1055,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="119" />
+      <option name="time" value="121" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -920,10 +1177,47 @@
     <entry file="file://$PROJECT_DIR$/../../../2018 - Semester 1/COMP5329 - Deep Learning/Assignment/Assignment 1 - Model From Scratch/Code/deep_learning/assignment 1/src/model.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pluto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#55#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Output/OutputFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <folding>
+            <element signature="e#146#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Setup/Init_System.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#98#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Benchmarking/TableauPrep.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+        <state relative-caret-position="544">
+          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -934,71 +1228,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
+    <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="117" column="21" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pluto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#55#93#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="577">
+          <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="68">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="e#55#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Output/OutputFile.py">
+    <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Benchmarking/Evaluate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="487">
+          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
           <folding>
-            <element signature="e#146#157#0" expanded="true" />
+            <element signature="e#202#807#0" />
+            <element signature="e#4153#4279#0" />
+            <element signature="e#4355#4509#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction/Prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Init_Stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
+        <state relative-caret-position="595">
+          <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
           <folding>
             <element signature="e#89#110#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Setup/Init_System.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
         </state>
       </provider>
     </entry>
