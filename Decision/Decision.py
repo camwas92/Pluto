@@ -5,8 +5,20 @@ import random as rd
 import numpy as np
 import pandas as pd
 
+from Decision import Agent
 from Setup import Constants as Con
 
+
+def take_actions(Simulation, buyactions, holdactions, sellactions):
+    # run actions
+    run_action_list(sellactions, Simulation)
+    run_action_list(buyactions, Simulation)
+    if len(holdactions) > 0:
+        run_action_list(holdactions, Simulation)
+    if Con.debugging:
+        print('Sell', sellactions, '\nBuy', buyactions)
+    # end day
+    Simulation.complete_transaction(2, 'ERR', -1)
 
 def random_choice(Simulation):
     # set variable for storing actions
@@ -52,13 +64,13 @@ def manual(Simulation):
         else:
             buy_price.append(float(close_value[0]))
 
-        current_value = list(predict_prices.ML_RF[current_value].values)
+        current_value = list(predict_prices[Con.parameters_decision['manual']].loc[current_value].values)
         if len(current_value) < 1:
             current_value = np.nan
         else:
             current_value = current_value[0]
 
-        next_value = list(predict_prices.ML_RF[next_value].values)
+        next_value = list(predict_prices[Con.parameters_decision['manual']].loc[next_value].values)
         if len(next_value) < 1:
             next_value = np.nan
         else:
@@ -101,52 +113,39 @@ def manual(Simulation):
     buyactions = buy[['action', 'stock', 'quantity']].values.tolist()
     holdactions = hold[['action', 'stock', 'quantity']].values.tolist()
 
-    # run actions
-    run_action_list(sellactions, Simulation)
-    run_action_list(buyactions, Simulation)
-    if len(holdactions) > 0:
-        run_action_list(holdactions, Simulation)
-
-
-    # print('Sell', sell, '\nbuy', buy, '\nhold', hold)
-
-    # end day
-    Simulation.complete_transaction(2, 'ERR', -1)
+    take_actions(Simulation, buyactions, holdactions, sellactions)
 
     return
 
 
 # todo deep q learning
 def deep_q_learning(Simulation):
+    # calculate environment
     environment_array = get_environment(Simulation)
 
-    actions = None
+    # find actions
+    actions = Agent.take_action(environment_array)
+
+    # format actions
     sellactions, buyactions, holdactions = format_actions_for_dl(actions)
-    # run actions
-    run_action_list(sellactions, Simulation)
-    run_action_list(buyactions, Simulation)
-    if len(holdactions) > 0:
-        run_action_list(holdactions, Simulation)
 
-    # print('Sell', sell, '\nbuy', buy, '\nhold', hold)
-
-    # end day
-    Simulation.complete_transaction(2, 'ERR', -1)
-
+    # complete actions
+    take_actions(Simulation, buyactions, holdactions, sellactions)
     return
 
 
 def get_environment(Simulation):
     stock_states = []
-    for key in Con.stock_encoded:
+    for key in Con.stock_encode:
         # get id
-        id = Con.stock_encoded[key]
+        id = Con.stock_encode[key]
         # get quantity
         quantity = Simulation.portfolio[-1].holdings[key].quantity
         # get data
         try:
-            data = Simulation.available_stocks[key].df.loc[
-                       Simulation.available_stocks[key].df['Date'] == Simulation.current_date].iloc[0, 1:].tolist()
+            temp = Simulation.available_stocks[key].df.loc[
+                Simulation.available_stocks[key].df['Date'] == Simulation.current_date]
+            data = temp[Con.columns_used].iloc[0, 1:].tolist()
             # get value
             value = data[0] * quantity
         except IndexError:
@@ -160,14 +159,20 @@ def get_environment(Simulation):
 
 
 def format_actions_for_dl(actions):
-    sell = None
-    buy = None
-    hold = None
+    sellactions = []
+    buyactions = []
+    holdactions = []
+    actions = list(actions)
 
-    # convert actions to list
-    sellactions = sell[['action', 'stock', 'quantity']].values.tolist()
-    buyactions = buy[['action', 'stock', 'quantity']].values.tolist()
-    holdactions = hold[['action', 'stock', 'quantity']].values.tolist()
+    for i, value in enumerate(actions):
+        if value > 0:
+            buyactions.append([1, Con.stock_decode[i], abs(value)])
+        elif value < 0:
+            sellactions.append([-1, Con.stock_decode[i], abs(value)])
+        else:
+            holdactions.append([0, Con.stock_decode[i], abs(value)])
+
+
 
     return sellactions, buyactions, holdactions
 

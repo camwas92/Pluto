@@ -1,5 +1,3 @@
-# this is the main function
-# todo remove dodgy stocks
 from Benchmarking import Evaluate as E
 from Benchmarking import TableauPrep as TP
 from Classes import Simulation as Sim

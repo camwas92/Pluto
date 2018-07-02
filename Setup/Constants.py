@@ -34,10 +34,10 @@ paths = []
 ####################
 # decision_method = 'random_choice'  # name of the function
 # decision_method = 'manual'
+# parameters_decision = {'manual': 'ML_LSTM'} #options 'ML_RF', 'ML_LSTM'
 decision_method = 'deep_q_learning'
-# todo make manual run on any prediction value
-parameters_decision = {'manual': 'ML_RF'}
-
+parameters_decision = {}
+#
 ######################
 # Prediction Methods #
 ######################
@@ -58,7 +58,6 @@ now = False
 ###################
 # Data Parameters #
 ###################
-# todo set up industry lists
 # stocks_for_simulation = 'Test'
 stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx5'
@@ -67,6 +66,18 @@ stocks_for_simulation = 'Model-Testing'
 # stocks_for_simulation = 'asx100'
 # stocks_for_simulation = 'asx200'
 # stocks_for_simulation = 'asx300'
+# stocks_for_simulation = 'Telcom'
+# stocks_for_simulation = 'Consumer Staples'
+# stocks_for_simulation = 'Consumer Discretionary'
+# stocks_for_simulation = 'Materials'
+# stocks_for_simulation = 'Real Estate'
+# stocks_for_simulation = 'Information Technology'
+# stocks_for_simulation = 'Utilities'
+# stocks_for_simulation = 'Industrials'
+# stocks_for_simulation = 'Financials'
+# stocks_for_simulation = 'Health Care'
+# stocks_for_simulation = 'Energy'
+
 
 ############git.
 # Trackers #
@@ -81,8 +92,10 @@ skipnum = 0
 commision_current = 0
 num_to_load = 1
 num_of_stocks = 0
-stock_encoded = None
+stock_encode = None
+stock_decode = None
 num_columns = 0
+columns_used = None
 
 #######################
 # Google Drive Output #

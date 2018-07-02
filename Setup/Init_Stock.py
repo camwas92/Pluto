@@ -113,12 +113,20 @@ def chunks(l, n):
 
 def test_stock_columns():
     lenths = []
+    stock_and_length = {}
     for key in Con.stock_data:
-        lenths.append(len(Con.stock_data[key].df.columns))
-    Con.num_columns = len(set(lenths))
+        temp = len(Con.stock_data[key].df.columns)
+        lenths.append(temp)
+        stock_and_length[key] = temp
+    Con.num_columns = list(set(lenths))[0]
     check = len(set(lenths)) == 1
     if not check:
+        print(stock_and_length)
         raise TypeError('There are different number of columns in the dfs {0}'.format(set(lenths)))
+    else:
+        Con.columns_used = list(Con.stock_data[next(iter(Con.stock_data))].df.columns)
+        Con.columns_used.remove('Date')
+    return
 
 
 
@@ -142,7 +150,9 @@ def sheets_load_stock():
     print('Stocks with no data -> ', no_data)
     Con.stock_list = [x for x in Con.stock_list if x not in no_data]
     Con.num_of_stocks = len(Con.stock_list)
-    Con.stock_encoded = {k: v for v, k in enumerate(Con.stock_list)}
+    Con.stock_encode = {k: v for v, k in enumerate(Con.stock_list)}
+    Con.stock_decode = {v: k for v, k in enumerate(Con.stock_list)}
+    test_stock_columns()
 
 
     return True

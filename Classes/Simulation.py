@@ -103,8 +103,6 @@ class Simulation:
 
         # BUY STOCK
         if action == 1:  # buy
-            if Con.debugging:
-                print('Action', action, 'Stock', stock, 'Quantity', quantity)
             # check any available cash and stock data available
             if self.temp_portfolio.cash_in_hand > 0 and self.available_stocks[stock].start_date <= self.current_date:
                 # find price
@@ -126,6 +124,8 @@ class Simulation:
                     Con.commision_current += self.commision
                     Con.actions.append([action, stock, -(price * quantity), 'COMPLETED', quantity, price])
                     Con.buy_count += 1
+                    if Con.debugging:
+                        print('Action', action, 'Stock', stock, 'Quantity', quantity)
                 else:
                     Con.actions.append([action, stock, 0, 'NO PRICE', quantity, 0])
             else:
@@ -134,8 +134,6 @@ class Simulation:
 
         # SELL STOCK
         elif action == -1:  # sell
-            if Con.debugging:
-                print('Action', action, 'Stock', stock, 'Quantity', quantity)
             # check any available cash and stock data available
             if self.temp_portfolio.holdings[stock].quantity > 0 and self.available_stocks[
                 stock].start_date <= self.current_date:
@@ -157,6 +155,8 @@ class Simulation:
                     Con.commision_current += self.commision
                     Con.actions.append([action, stock, (price * quantity), 'COMPLETED', quantity, price])
                     Con.sell_count += 1
+                    if Con.debugging:
+                        print('Action', action, 'Stock', stock, 'Quantity', quantity)
                 else:
                     Con.actions.append([action, stock, 0, 'NO PRICE', quantity, 0])
             else:
@@ -165,8 +165,6 @@ class Simulation:
 
         # HOLD STOCK
         elif action == 0:  # hold
-            if Con.debugging:
-                print('Action', action, 'Stock', stock, 'Quantity', quantity)
             if self.available_stocks[stock].start_date <= self.current_date:
                 Con.hold_count += 1
                 Con.actions.append([action, stock, quantity, 'COMPLETED', quantity, 0])
