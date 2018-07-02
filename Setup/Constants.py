@@ -10,13 +10,13 @@ import telegram
 
 
 line = 'Offline'
-model_refresh = True
+model_refresh = False
 display_graph = False
 
 #############
 # Reference #
 #############
-debugging = False
+debugging = True
 tableau_output = False
 
 #################################
@@ -32,8 +32,9 @@ paths = []
 ####################
 # Decision Methods #
 ####################
-decision_method = 'random_choice'  # name of the function
+# decision_method = 'random_choice'  # name of the function
 # decision_method = 'manual'
+decision_method = 'deep_q_learning'
 # todo make manual run on any prediction value
 parameters_decision = {'manual': 'ML_RF'}
 
@@ -42,7 +43,7 @@ parameters_decision = {'manual': 'ML_RF'}
 ######################
 technical_methods = []
 # technical_methods = ['tech_per_change']
-FE_methods = ['FE_window_7d', 'FE_window_14d', 'FE_window_30d', 'FE_window_60d', 'FE_window_90d', 'FE_window_360d']
+FE_methods = []
 # technical_methods = ['FE_momentum','FE_MACD','FE_gradient','FE_window_7d','FE_window_14d','FE_window_30d','FE_window_60d','FE_window_90d','FE_window_360d']
 ML_methods = []
 # ML_methods = ['ML_LR','ML_RF','ML_NN','ML_LSTM']
@@ -79,6 +80,9 @@ actions = []
 skipnum = 0
 commision_current = 0
 num_to_load = 1
+num_of_stocks = 0
+stock_encoded = None
+num_columns = 0
 
 #######################
 # Google Drive Output #

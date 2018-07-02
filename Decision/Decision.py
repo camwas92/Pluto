@@ -118,7 +118,7 @@ def manual(Simulation):
 
 # todo deep q learning
 def deep_q_learning(Simulation):
-    df = format_data_for_dl(Simulation)
+    environment_array = get_environment(Simulation)
 
     actions = None
     sellactions, buyactions, holdactions = format_actions_for_dl(actions)
@@ -136,11 +136,27 @@ def deep_q_learning(Simulation):
     return
 
 
-def format_data_for_dl(Simulation):
-    # add column for the encoded number, then all the other fields then concat
-    # only the one day
-    df = None
-    return df
+def get_environment(Simulation):
+    stock_states = []
+    for key in Con.stock_encoded:
+        # get id
+        id = Con.stock_encoded[key]
+        # get quantity
+        quantity = Simulation.portfolio[-1].holdings[key].quantity
+        # get data
+        try:
+            data = Simulation.available_stocks[key].df.loc[
+                       Simulation.available_stocks[key].df['Date'] == Simulation.current_date].iloc[0, 1:].tolist()
+            # get value
+            value = data[0] * quantity
+        except IndexError:
+            data = list([0] * (Con.num_columns - 1))
+            # get value
+            value = data[0] * quantity
+        state = [id, quantity, value]
+        stock_states.append(state + data)
+    stock_states_array = np.nan_to_num(np.asarray(stock_states), copy=False)
+    return stock_states_array
 
 
 def format_actions_for_dl(actions):
