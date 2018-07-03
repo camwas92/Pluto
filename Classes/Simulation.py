@@ -1,10 +1,10 @@
 # the simulation class defines the parameters and settings for the simulation. The portfolio will track the
 # history through time and benchmark calculated once concluded
 import datetime as dt
-import random
 
 from Classes import Holding as H
 from Classes import Portfolio as Port
+from Decision import Agent
 from Decision import Decision as D
 from Output import OutputFile as O
 from Setup import Constants as Con
@@ -20,6 +20,7 @@ class Simulation:
     temp_portfolio = None
     benchmark = False # Bench Marking Values
     init_investment = 0
+    agent = None
 
     #initialise the simulation class
     def __init__(self, commision=0, start_period=None, end_period=None, current_date=None,
@@ -31,7 +32,6 @@ class Simulation:
             end_period = max(available_stocks[x].end_date for x in available_stocks)
         if current_date is None:
             current_date = start_period
-        random.seed(123)
 
         # set initial variables
         self.commision = commision
@@ -54,8 +54,17 @@ class Simulation:
         O.create_output_dict_sim(start_period, end_period, commision, init_investment)
         O.create_output_dict_trade()
 
-        return
+        D.deep_q_learning.has_been_called = False
+        # create agent
+        if Con.current_episode == 0:
+            if Con.decision_method == 'deep_q_learning':
+                state_size = Con.num_of_stocks * (len(Con.columns_used) + 2)
+                action_size = Con.num_of_stocks
+                self.agent = Agent.DQNAgent(state_size, action_size)
+        else:
+            self.agent = Con.agent
 
+        return
 
     # run simulations
     def run(self):

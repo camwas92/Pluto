@@ -5,7 +5,6 @@ import random as rd
 import numpy as np
 import pandas as pd
 
-from Decision import Agent
 from Setup import Constants as Con
 
 
@@ -17,6 +16,9 @@ def take_actions(Simulation, buyactions, holdactions, sellactions):
         run_action_list(holdactions, Simulation)
     if Con.debugging:
         print('Sell', sellactions, '\nBuy', buyactions)
+        if Con.decision_method == 'deep_q_learning':
+            print('Exploring', Simulation.agent.random_value < Simulation.agent.epsilon)
+
     # end day
     Simulation.complete_transaction(2, 'ERR', -1)
 
@@ -98,6 +100,7 @@ def manual(Simulation):
     pd.options.mode.chained_assignment = None
     buy_total = buy.per_changes / buy.per_changes.sum()
     buy['Per_Total'] = buy_total
+    # can only buy if you have cash in hand, therefore don't get the money from a sale first
     cash_in_hand = Simulation.temp_portfolio.cash_in_hand
     buy['cash_in_hand'] = cash_in_hand
     dollar_value = buy['Per_Total'] * buy['cash_in_hand']
@@ -118,61 +121,102 @@ def manual(Simulation):
     return
 
 
-# todo deep q learning
 def deep_q_learning(Simulation):
-    # calculate environment
-    environment_array = get_environment(Simulation)
-
-    # find actions
-    actions = Agent.take_action(environment_array)
-
-    # format actions
-    sellactions, buyactions, holdactions = format_actions_for_dl(actions)
-
-    # complete actions
-    take_actions(Simulation, buyactions, holdactions, sellactions)
+    # run the first day of actions
+    if not deep_q_learning.has_been_called:
+        state = get_environment(Simulation, current=True)  # shape = Con.num_of_stocks*(len(Con.columns_used)+2)
+        # get actions
+        calcualte_and_do_actions(Simulation, state)
+    else:
+        next_state = get_environment(Simulation, current=True)
+        Simulation.agent.remember(Con.state, Con.action, Simulation.portfolio[-1].value, next_state, False)
+        state = next_state
+        # train the agent
+        Simulation.agent.replay(32)
+        calcualte_and_do_actions(Simulation, state)
+    deep_q_learning.has_been_called = True
     return
 
 
-def get_environment(Simulation):
+def calcualte_and_do_actions(Simulation, state):
+    actions = Simulation.agent.act(state)
+    # format actions and complete
+    sellactions, buyactions, holdactions = format_actions_for_dl(actions, Simulation)
+    take_actions(Simulation, buyactions, holdactions, sellactions)
+    Con.state = state
+    Con.action = actions
+    return
+
+
+def get_environment(Simulation, current=None, previous=None):
     stock_states = []
+    if current:
+        selection = -1
+    elif previous:
+        selection = -2
+    else:
+        raise ValueError('No Available Date')
+
     for key in Con.stock_encode:
         # get id
         id = Con.stock_encode[key]
         # get quantity
-        quantity = Simulation.portfolio[-1].holdings[key].quantity
+        quantity = Simulation.portfolio[selection].holdings[key].quantity
         # get data
         try:
             temp = Simulation.available_stocks[key].df.loc[
-                Simulation.available_stocks[key].df['Date'] == Simulation.current_date]
+                Simulation.available_stocks[key].df['Date'] == Simulation.portfolio[selection].day]
             data = temp[Con.columns_used].iloc[0, 1:].tolist()
             # get value
             value = data[0] * quantity
         except IndexError:
-            data = list([0] * (Con.num_columns - 1))
+            data = list([0] * (len(Con.columns_used) - 1))
             # get value
             value = data[0] * quantity
         state = [id, quantity, value]
         stock_states.append(state + data)
-    stock_states_array = np.nan_to_num(np.asarray(stock_states), copy=False)
-    return stock_states_array
+    temp = np.asarray(stock_states)
+    stock_states_array = np.nan_to_num(temp)
+    return stock_states_array.reshape(1, Con.num_of_stocks * (len(Con.columns_used) + 2))
 
 
-def format_actions_for_dl(actions):
+def format_actions_for_dl(actions, Simulation):
     sellactions = []
     buyactions = []
     holdactions = []
     actions = list(actions)
 
+    threshold_sell = -.1
+    threshold_buy = .1
+
     for i, value in enumerate(actions):
-        if value > 0:
+        if value > threshold_buy:
             buyactions.append([1, Con.stock_decode[i], abs(value)])
-        elif value < 0:
-            sellactions.append([-1, Con.stock_decode[i], abs(value)])
+        elif value < threshold_sell:
+            sellactions.append([-1, Con.stock_decode[i], -1])  # sell all
         else:
             holdactions.append([0, Con.stock_decode[i], abs(value)])
 
+    # calculate quantities
+    today = Simulation.current_date
+    cash_in_hand = Simulation.portfolio[-1].cash_in_hand
+    buy_df = pd.DataFrame((buyactions), columns=['Action', 'Stock', 'Value'])
+    prices = []
+    for x in buy_df['Stock'].tolist():
+        try:
+            price = Simulation.available_stocks[x].df.loc[
+                Simulation.available_stocks[x].df.Date == today, 'Close'].values[0]
+        except IndexError:
+            price = 0
+        prices.append(price)
 
+    # format buy to be a proportion of available cash
+    buy_df['BuyPrice'] = prices
+    buy_df['Prop'] = np.where(buy_df['BuyPrice'] == 0, 0, buy_df['Value'])
+    buy_df['Spend'] = (buy_df.Prop / buy_df.Prop.sum()) * cash_in_hand
+    buy_df['Quantity'] = buy_df['Spend'] / buy_df['BuyPrice']
+    buy_df.fillna(0, inplace=True)
+    buyactions = buy_df[['Action', 'Stock', 'Quantity']].values.tolist()
 
     return sellactions, buyactions, holdactions
 

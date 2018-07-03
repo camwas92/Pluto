@@ -25,6 +25,8 @@ def Evaluate(Simulation):
 
     # record the paramters for the decision method
     O.store_metric('Parameters', Con.parameters_decision, 1)
+    episode_text = 'Episode: {0}/{1}'.format(Con.current_episode, Con.episodes)
+    O.store_metric('Episode', episode_text, 1)
 
     # store final output
     O.print_data(1)

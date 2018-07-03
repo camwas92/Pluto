@@ -1,5 +1,4 @@
 # These functions are used to load the required stock values as well as the missing data
-import datetime as dt
 import time
 
 import pandas as pd
@@ -158,6 +157,17 @@ def sheets_load_stock():
     return True
 
 
+# gets list of stocks to be loaded for this simulation
+# True returns the list of stocks, false returns the details on the stock
+def get_stock_list(flag):
+    print('Retreiving Stock List')
+    xl = pd.ExcelFile(Con.paths['Input'] / 'StockList.xlsx')
+    sheets = xl.sheet_names
+    sheet_name = [s for s in sheets if Con.stocks_for_simulation in s]
+    temp = xl.parse(sheet_name[0])
+    return list(temp['Code'])
+
+
 #########################################
 #                                       #
 #    ###############################    #
@@ -179,29 +189,9 @@ def load_stock(flag="Offline"):
         sheets_load_stock()
         return
     else:
-
-        for x in Con.stock_list:
-            # load data for stock
-            if load_stock_source(x) and flag:
-                # refresh stock if not the newest
-                if not Con.stock_data[x].df['Date'].iloc[-1] == Con.now:
-                    try:
-                        start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]), '%Y-%m-%d %H:%M:%S')
-                    except ValueError:
-                        start = dt.datetime.strptime(str(Con.stock_data[x].df['Date'].iloc[-1]), '%Y-%m-%d')
-                    download_stock_prices(x, start)
+        raise ValueError('Can\'t load')
     return
 
-
-# gets list of stocks to be loaded for this simulation
-# True returns the list of stocks, false returns the details on the stock
-def get_stock_list(flag):
-    print('Retreiving Stock List')
-    xl = pd.ExcelFile(Con.paths['Input'] / 'StockList.xlsx')
-    sheets = xl.sheet_names
-    sheet_name = [s for s in sheets if Con.stocks_for_simulation in s]
-    temp = xl.parse(sheet_name[0])
-    return list(temp['Code'])
 
 # check if a file for stock
 def load_stock_source(stock):

@@ -93,7 +93,7 @@ def create_output_dict_sim(start_period, end_period, commision, init_investment)
         'Time': now.strftime('%H:%M'),
         'Stock Options': Con.stocks_for_simulation,
         'Decision Method': Con.decision_method,
-        'Inputs': None,
+        'Episode': None,
         'Initial Investment': init_investment,
         'Commision': commision,
         'Start Date': start_period.strftime('%Y-%m-%d'),

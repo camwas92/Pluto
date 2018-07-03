@@ -2,8 +2,6 @@
 import calendar
 import logging
 
-import telegram
-
 ##################
 # Online/Offline #
 ##################
@@ -16,7 +14,7 @@ display_graph = False
 #############
 # Reference #
 #############
-debugging = True
+debugging = False
 tableau_output = False
 
 #################################
@@ -26,18 +24,19 @@ stock_list = []
 stock_data = {}
 commision = 0
 slipage = 0
-init_investment = 10000
+init_investment = 1000
 paths = []
 
 ####################
 # Decision Methods #
 ####################
-# decision_method = 'random_choice'  # name of the function
+decision_method = 'random_choice'  # name of the function
 # decision_method = 'manual'
 # parameters_decision = {'manual': 'ML_LSTM'} #options 'ML_RF', 'ML_LSTM'
-decision_method = 'deep_q_learning'
-parameters_decision = {}
-#
+# decision_method = 'deep_q_learning'
+# parameters_decision = {}
+episodes = 10
+
 ######################
 # Prediction Methods #
 ######################
@@ -58,25 +57,26 @@ now = False
 ###################
 # Data Parameters #
 ###################
-# stocks_for_simulation = 'Test'
-stocks_for_simulation = 'Model-Testing'
-# stocks_for_simulation = 'asx5'
-# stocks_for_simulation = 'asx20'
-# stocks_for_simulation = 'asx50'
-# stocks_for_simulation = 'asx100'
-# stocks_for_simulation = 'asx200'
-# stocks_for_simulation = 'asx300'
-# stocks_for_simulation = 'Telcom'
-# stocks_for_simulation = 'Consumer Staples'
-# stocks_for_simulation = 'Consumer Discretionary'
-# stocks_for_simulation = 'Materials'
-# stocks_for_simulation = 'Real Estate'
-# stocks_for_simulation = 'Information Technology'
-# stocks_for_simulation = 'Utilities'
-# stocks_for_simulation = 'Industrials'
-# stocks_for_simulation = 'Financials'
-# stocks_for_simulation = 'Health Care'
-# stocks_for_simulation = 'Energy'
+stocks_for_simulation = None
+
+list_of_stocks = ['Model-Testing'  # 0
+    , 'asx5'  # 1
+    , 'asx20'  # 2
+    , 'asx50'  # 3
+    , 'asx100'  # 4
+    , 'asx200'  # 5
+    , 'asx300'  # 6
+    , 'Telcom'  # 7
+    , 'Consumer Staples'  # 8
+    , 'Consumer Discretionary'  # 9
+    , 'Materials'  # 10
+    , 'Real Estate'  # 11
+    , 'Information Technology'  # 12
+    , 'Utilities'  # 13
+    , 'Industrials'  # 14
+    , 'Financials'  # 15
+    , 'Health Care'  # 16
+    , 'Energy']  # 17
 
 
 ############git.
@@ -96,7 +96,12 @@ stock_encode = None
 stock_decode = None
 num_columns = 0
 columns_used = None
+current_episode = 0
 
+# Q Learning States #
+state = None
+action = None
+agent = None
 #######################
 # Google Drive Output #
 #######################
@@ -140,8 +145,8 @@ def send_telegram_message(text):
     if not debugging:
         return
     else:
-        bot = telegram.Bot(token='604417883:AAEd4tS3VGgKhnRhXPYpNEWte4_JiRahxA8')
-        bot.send_message(chat_id=612638372, text=text)
+        # bot = telegram.Bot(token='604417883:AAEd4tS3VGgKhnRhXPYpNEWte4_JiRahxA8')
+        # bot.send_message(chat_id=612638372, text=text)
         logging.info(text)
     return
 
