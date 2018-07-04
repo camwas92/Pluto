@@ -66,6 +66,15 @@ class Simulation:
 
         return
 
+    def save_agent(self):
+        Con.print_header_level_1('Saving Model')
+        file_name = '_'.join([Con.stocks_for_simulation, str(Con.current_episode),
+                              dt.datetime.now().strftime('%Y%m%d%H%M')]) + '.pkl'
+        file_loc = str(Con.paths['Output'] / 'Models' / file_name)
+        self.agent.model.save(file_loc)
+        return
+
+
     # run simulations
     def run(self):
 
@@ -87,7 +96,7 @@ class Simulation:
                                self.temp_portfolio.assets, Con.actions))
             Con.actions = []
             # increment performance counts
-            if self.portfolio[-1].value >= self.portfolio[-2].value:
+            if self.portfolio[-1].value > self.portfolio[-2].value:
                 Con.good_period_count += 1
             else:
                 Con.bad_period_count += 1

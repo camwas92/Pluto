@@ -242,5 +242,6 @@ def store_actions(Simulation, performance_points):
 
     performance_points['model_name'] = model_name
 
-    df.to_csv(Con.paths['Output'] / 'Actions.csv', mode='a', header=False, index=False)
-    performance_points.to_csv(Con.paths['Output'] / 'PerformancePoints.csv', mode='a', header=False, index=False)
+    df.to_csv(Con.paths['Output'] / 'Actions.csv', header=True, index=False)  # add mode = 'a' to append
+    performance_points.to_csv(Con.paths['Output'] / 'PerformancePoints.csv', header=True,
+                              index=False)  # add mode = 'a' to append

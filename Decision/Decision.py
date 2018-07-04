@@ -185,7 +185,6 @@ def format_actions_for_dl(actions, Simulation):
     buyactions = []
     holdactions = []
     actions = list(actions)
-
     threshold_sell = -.1
     threshold_buy = .1
 
