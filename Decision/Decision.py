@@ -16,7 +16,7 @@ def take_actions(Simulation, buyactions, holdactions, sellactions):
         run_action_list(holdactions, Simulation)
     if Con.debugging:
         print('Sell', sellactions, '\nBuy', buyactions)
-        if Con.decision_method == 'deep_q_learning':
+        if Con.deep_learning:
             print('Exploring', Simulation.agent.random_value < Simulation.agent.epsilon)
 
     # end day
@@ -38,6 +38,17 @@ def random_choice(Simulation):
 
     return
 
+
+def deep_q_learning_exploration(Simulation):
+    Simulation.agent.epsilon = 100
+    deep_q_learning(Simulation)
+    return
+
+
+def deep_q_learned(Simulation):
+    Simulation.agent.epsilon = -100
+    deep_q_learning(Simulation)
+    return
 
 # buy proportion when predicted to go up, sell all when predicted to go down
 def manual(Simulation):
@@ -129,10 +140,12 @@ def deep_q_learning(Simulation):
         calcualte_and_do_actions(Simulation, state)
     else:
         next_state = get_environment(Simulation, current=True)
-        Simulation.agent.remember(Con.state, Con.action, Simulation.portfolio[-1].value, next_state, False)
+        if Simulation.agent.epsilon < 99 and Simulation.agent.epsilon > 0:
+            Simulation.agent.remember(Con.state, Con.action, Simulation.portfolio[-1].value, next_state, False)
         state = next_state
         # train the agent
-        Simulation.agent.replay(32)
+        if Simulation.agent.epsilon < 99 and Simulation.agent.epsilon > 0:
+            Simulation.agent.replay(32)
         calcualte_and_do_actions(Simulation, state)
     deep_q_learning.has_been_called = True
     return

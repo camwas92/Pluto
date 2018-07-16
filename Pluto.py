@@ -59,5 +59,5 @@ else:
         Con.print_header_level_1('Episode: {0}/{1}'.format(Con.current_episode, Con.episodes))
         run_full_simulation()
 
-if Con.decision_method == 'deep_q_learning':
+if Con.deep_learning and Con.decision_method == 'deep_q_learning':
     Simulation.save_agent()

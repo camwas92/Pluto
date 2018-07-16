@@ -10,6 +10,7 @@ import logging
 line = 'Offline'
 model_refresh = False
 display_graph = False
+deep_learning = True
 
 #############
 # Reference #
@@ -34,6 +35,7 @@ paths = []
 # decision_method = 'manual'
 # parameters_decision = {
 #   'manual': 'ML_LSTM'}  # options 'ML_RF', 'ML_LSTM', 'tech_per_change', 'ML_NN', 'FE_window_7d', 'FE_window_14d'
+# decision_method = 'deep_q_learning_exploration'
 decision_method = 'deep_q_learning'
 parameters_decision = {'gamma': 0.05,
                        # aka decay or discount rate, to calculate the future discounted reward.  #default 0.95
@@ -44,11 +46,13 @@ parameters_decision = {'gamma': 0.05,
                        # we want to decrease the number of explorations as it gets good at playing games. # default 0.995
                        'learning_rate': 0.001,
                        # Determines how much neural net learns in each iteration. # default 0.001
-                       'reward_function': 'reward + self.gamma *(scaled_predition)',
+                       'reward_function': 'reward + self.gamma *(scaled_predition) - batchsize|64',
                        'num_layers': 2,
                        'model_shape': '24d,24d',  # numnode(type),
                        'drop_out': 0  # fraction of input units to drop
                        }
+# decision_method = 'deep_q_learned'
+
 episodes = 100
 
 ######################

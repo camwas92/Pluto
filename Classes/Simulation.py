@@ -1,6 +1,9 @@
 # the simulation class defines the parameters and settings for the simulation. The portfolio will track the
 # history through time and benchmark calculated once concluded
 import datetime as dt
+import os
+
+from keras.models import load_model
 
 from Classes import Holding as H
 from Classes import Portfolio as Port
@@ -57,10 +60,12 @@ class Simulation:
         D.deep_q_learning.has_been_called = False
         # create agent
         if Con.current_episode == 0:
-            if Con.decision_method == 'deep_q_learning':
+            if Con.deep_learning:
                 state_size = Con.num_of_stocks * (len(Con.columns_used) + 2)
                 action_size = Con.num_of_stocks
                 self.agent = Agent.DQNAgent(state_size, action_size)
+                if Con.decision_method == 'deep_q_learned':
+                    self.load_agent()
         else:
             self.agent = Con.agent
 
@@ -73,6 +78,13 @@ class Simulation:
         file_loc = str(Con.paths['Output'] / 'Models' / file_name)
         self.agent.model.save(file_loc)
         return
+
+    def load_agent(self):
+        directory = Con.paths['Output'] / 'Models' / 'To Load'
+        for file in os.listdir(str(directory)):
+            if Con.stocks_for_simulation in file:
+                file_loc = str(directory / file)
+        self.agent.model = load_model(file_loc)
 
 
     # run simulations

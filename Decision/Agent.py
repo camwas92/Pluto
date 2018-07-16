@@ -49,7 +49,7 @@ class DQNAgent:
 
     def act(self, state):
         self.random_value = np.random.rand()
-        if self.random_value < self.epsilon:
+        if self.random_value < self.epsilon and self.epsilon > 0:
             act_values = np.random.uniform(low=-1, high=1, size=(self.action_size,))
         else:
             act_values = self.model.predict(state)[0]
