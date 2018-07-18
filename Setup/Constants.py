@@ -35,8 +35,8 @@ paths = []
 # decision_method = 'manual'
 # parameters_decision = {
 #   'manual': 'ML_LSTM'}  # options 'ML_RF', 'ML_LSTM', 'tech_per_change', 'ML_NN', 'FE_window_7d', 'FE_window_14d'
-# decision_method = 'deep_q_learning_exploration'
-decision_method = 'deep_q_learning'
+decision_method = 'deep_q_learning_exploration'
+# decision_method = 'deep_q_learning'
 parameters_decision = {'gamma': 0.05,
                        # aka decay or discount rate, to calculate the future discounted reward.  #default 0.95
                        'epsilon': 1.0,

@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decision/Agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Decision/Agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decision/Decision.py" beforeDir="false" afterPath="$PROJECT_DIR$/Decision/Decision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pluto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pluto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Setup/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Constants.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +21,8 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="-68">
+              <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -35,10 +31,7 @@
         <entry file="file://$PROJECT_DIR$/Classes/Simulation.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
-              <folding>
-                <element signature="e#171#192#0" expanded="true" />
-              </folding>
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
             </state>
           </provider>
         </entry>
@@ -56,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="145" column="39" lean-forward="true" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
+              <caret line="147" column="39" lean-forward="true" selection-start-line="147" selection-start-column="39" selection-end-line="147" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -345,13 +338,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00023" summary="built evaulation metrics">
-      <created>1520899925277</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1520899925277</updated>
     </task>
     <task id="LOCAL-00024" summary="built evaulation metrics">
       <created>1520899933085</created>
@@ -689,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531559816245</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="added load and proper random">
+      <created>1531740595995</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1531740595995</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView">
@@ -767,7 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixed load and implemented pop up" />
     <MESSAGE value="can load all data, and run simple prediction as well as append results for analysis" />
     <MESSAGE value="Models for 300 down run for manual and random, all working correctly" />
     <MESSAGE value="Remove unneeded stuff" />
@@ -792,7 +784,8 @@
     <MESSAGE value="implemented DQL, episodes and run different stocks" />
     <MESSAGE value="Tested new models" />
     <MESSAGE value="RL model" />
-    <option name="LAST_COMMIT_MESSAGE" value="RL model" />
+    <MESSAGE value="added load and proper random" />
+    <option name="LAST_COMMIT_MESSAGE" value="added load and proper random" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1022,24 +1015,21 @@
     <entry file="file://$PROJECT_DIR$/Decision/Decision.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="145" column="39" lean-forward="true" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
+          <caret line="147" column="39" lean-forward="true" selection-start-line="147" selection-start-column="39" selection-end-line="147" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Simulation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#171#192#0" expanded="true" />
-          </folding>
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="-68">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
         </state>
       </provider>
     </entry>
