@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Setup/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Constants.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +18,8 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            <state relative-caret-position="442">
+              <caret line="69" column="19" lean-forward="true" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -338,13 +335,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00024" summary="built evaulation metrics">
-      <created>1520899933085</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1520899933085</updated>
     </task>
     <task id="LOCAL-00025" summary="developed predictions">
       <created>1521027034183</created>
@@ -682,7 +672,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531740595995</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="updated work">
+      <created>1531901010882</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1531901010882</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView">
@@ -696,6 +693,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.15331928" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4573235" weight="0.26803014" />
@@ -703,7 +701,7 @@
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4889357" weight="0.32723358" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.48208642" weight="0.32508072" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47734457" weight="0.33369213" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.45890412" visible="true" weight="0.32831" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.45890412" weight="0.32831" />
       <window_info id="Structure" order="1" sideWeight="0.5007257" side_tool="true" weight="0.15331928" />
       <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5410959" side_tool="true" visible="true" weight="0.32831" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -760,7 +758,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="can load all data, and run simple prediction as well as append results for analysis" />
     <MESSAGE value="Models for 300 down run for manual and random, all working correctly" />
     <MESSAGE value="Remove unneeded stuff" />
     <MESSAGE value="trying to get gspread permissions" />
@@ -785,7 +782,8 @@
     <MESSAGE value="Tested new models" />
     <MESSAGE value="RL model" />
     <MESSAGE value="added load and proper random" />
-    <option name="LAST_COMMIT_MESSAGE" value="added load and proper random" />
+    <MESSAGE value="updated work" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated work" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -793,12 +791,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Decision/Agent.py</url>
+          <url />
           <line>52</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Decision/Agent.py</url>
+          <url />
           <line>58</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
@@ -1028,8 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        <state relative-caret-position="442">
+          <caret line="69" column="19" lean-forward="true" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
         </state>
       </provider>
     </entry>
