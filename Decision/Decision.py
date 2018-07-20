@@ -145,7 +145,7 @@ def deep_q_learning(Simulation):
         state = next_state
         # train the agent
         if Simulation.agent.epsilon < 99 and Simulation.agent.epsilon > 0:
-            Simulation.agent.replay(320)
+            Simulation.agent.replay(32)
         calcualte_and_do_actions(Simulation, state)
     deep_q_learning.has_been_called = True
     return
