@@ -7,7 +7,7 @@ from keras.models import load_model
 
 from Classes import Holding as H
 from Classes import Portfolio as Port
-from Decision import Agent
+from Decision import Agent as Agent
 from Decision import Decision as D
 from Output import OutputFile as O
 from Setup import Constants as Con
@@ -64,6 +64,8 @@ class Simulation:
                 state_size = Con.num_of_stocks * (len(Con.columns_used) + 2)
                 action_size = Con.num_of_stocks
                 self.agent = Agent.DQNAgent(state_size, action_size)
+                for l in self.agent.model.layers:
+                    print(l.input_shape)  # single is (None, 51) when 1 then (None, 51, 1) # when 5 then  (None, 51, 5)
                 if Con.decision_method == 'deep_q_learned':
                     self.load_agent()
         else:

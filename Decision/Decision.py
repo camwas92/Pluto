@@ -170,27 +170,33 @@ def get_environment(Simulation, current=None, previous=None):
     else:
         raise ValueError('No Available Date')
 
-    for key in Con.stock_encode:
-        # get id
-        id = Con.stock_encode[key]
-        # get quantity
-        quantity = Simulation.portfolio[selection].holdings[key].quantity
-        # get data
-        try:
-            temp = Simulation.available_stocks[key].df.loc[
-                Simulation.available_stocks[key].df['Date'] == Simulation.portfolio[selection].day]
-            data = temp[Con.columns_used].iloc[0, 1:].tolist()
-            # get value
-            value = data[0] * quantity
-        except IndexError:
-            data = list([0] * (len(Con.columns_used) - 1))
-            # get value
-            value = data[0] * quantity
-        state = [id, quantity, value]
-        stock_states.append(state + data)
-    temp = np.asarray(stock_states)
-    stock_states_array = np.nan_to_num(temp)
-    return stock_states_array.reshape(1, Con.num_of_stocks * (len(Con.columns_used) + 2))
+    data_colection = -Con.parameters_decision['data_depth'] + selection
+
+    for x in range(data_colection, selection + 1):
+        for key in Con.stock_encode:
+            # get id
+            id = Con.stock_encode[key]
+            # get quantity
+            # get data
+            try:
+                quantity = Simulation.portfolio[x].holdings[key].quantity
+                temp = Simulation.available_stocks[key].df.loc[
+                    Simulation.available_stocks[key].df['Date'] == Simulation.portfolio[x].day]
+                data = temp[Con.columns_used].iloc[0, 1:].tolist()
+                # get value
+                value = data[0] * quantity
+            except IndexError:
+                quantity = 0
+                data = list([0] * (len(Con.columns_used) - 1))
+                # get value
+                value = data[0] * quantity
+            state = [id, quantity, value]
+            stock_states.append(state + data)
+        temp = np.asarray(stock_states)
+        stock_states_array = np.nan_to_num(temp)
+    stock_return = stock_states_array.reshape(Con.parameters_decision['data_depth'] + 1,
+                                              Con.num_of_stocks * (len(Con.columns_used) + 2))
+    return stock_return
 
 
 def format_actions_for_dl(actions, Simulation):

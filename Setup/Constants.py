@@ -37,6 +37,7 @@ paths = []
 #   'manual': 'ML_LSTM'}  # options 'ML_RF', 'ML_LSTM', 'tech_per_change', 'ML_NN', 'FE_window_7d', 'FE_window_14d'
 # decision_method = 'deep_q_learning_exploration'
 decision_method = 'deep_q_learning'
+
 parameters_decision = {'gamma': 0.05,
                        # aka decay or discount rate, to calculate the future discounted reward.  #default 0.95
                        'epsilon': 1.0,
@@ -49,7 +50,8 @@ parameters_decision = {'gamma': 0.05,
                        'reward_function': 'reward * (self.gamma *(scaled_predition)) - batchsize|32',
                        'num_layers': 2,
                        'model_shape': '24d,24d',  # numnode(type),
-                       'drop_out': 0  # fraction of input units to drop
+                       'drop_out': 0,  # fraction of input units to drop
+                       'data_depth': 9  # 1 more than what it actualy is, 0 is current day, 1 is including one day back
                        }
 # decision_method = 'deep_q_learned'
 
