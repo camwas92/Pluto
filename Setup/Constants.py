@@ -47,11 +47,11 @@ parameters_decision = {'gamma': 0.05,
                        # we want to decrease the number of explorations as it gets good at playing games. # default 0.995
                        'learning_rate': 0.001,
                        # Determines how much neural net learns in each iteration. # default 0.001
-                       'reward_function': 'reward * (self.gamma *(scaled_predition)) - batchsize|32',
+                       'reward_function': 'reward + (self.gamma *(scaled_predition)) - batchsize|32',
                        'num_layers': 2,
                        'model_shape': '24d,24d',  # numnode(type),
                        'drop_out': 0,  # fraction of input units to drop
-                       'data_depth': 9  # 1 more than what it actualy is, 0 is current day, 1 is including one day back
+                       'data_depth': 29  # 1 more than what it actualy is, 0 is current day, 1 is including one day back
                        }
 # decision_method = 'deep_q_learned'
 
