@@ -20,8 +20,8 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+            <state relative-caret-position="-595">
+              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -74,8 +74,11 @@
       <file leaf-file-name="Agent.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Decision/Agent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="-86">
+              <caret line="35" column="74" lean-forward="true" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,19 +180,19 @@
         <option value="$PROJECT_DIR$/Setup/Init_Stock.py" />
         <option value="$PROJECT_DIR$/Benchmarking/Evaluate.py" />
         <option value="$PROJECT_DIR$/Pluto.py" />
-        <option value="$PROJECT_DIR$/Decision/Agent.py" />
         <option value="$PROJECT_DIR$/Decision/Agent3D.py" />
         <option value="$PROJECT_DIR$/Classes/Simulation.py" />
         <option value="$PROJECT_DIR$/Decision/Decision.py" />
         <option value="$PROJECT_DIR$/Setup/Constants.py" />
+        <option value="$PROJECT_DIR$/Decision/Agent.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1290" />
-    <option name="height" value="696" />
+    <option name="x" value="-7" />
+    <option name="y" value="-7" />
+    <option name="width" value="860" />
+    <option name="height" value="464" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -289,7 +292,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pluto.py" />
-      <option name="PARAMETERS" value="0 1" />
+      <option name="PARAMETERS" value="0 10" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -332,13 +335,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Add in manual actions">
-      <created>1521723447297</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1521723447297</updated>
     </task>
     <task id="LOCAL-00030" summary="Ensured could load all files from google drive source">
       <created>1521872635122</created>
@@ -676,7 +672,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532259202645</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="running more data">
+      <created>1532299637977</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1532299637977</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TodoView">
@@ -689,16 +692,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2015" height="1317" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.15318504" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.13804004" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4573235" weight="0.26803014" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.47049525" side_tool="true" weight="0.3692142" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.48208642" weight="0.32508072" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47734457" weight="0.33369213" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4570273" weight="0.3276884" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.45626977" visible="true" weight="0.32723358" />
       <window_info id="Structure" order="1" sideWeight="0.5007257" side_tool="true" weight="0.15331928" />
-      <window_info active="true" anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5429727" side_tool="true" visible="true" weight="0.3276884" />
+      <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.54373026" side_tool="true" visible="true" weight="0.32723358" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5247725" weight="0.36917865" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -754,7 +758,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Test Set Up" />
     <MESSAGE value="Fixed Int" />
     <MESSAGE value="Fixed Matplotlib" />
     <MESSAGE value="Implemented LSTM" />
@@ -779,7 +782,8 @@
     <MESSAGE value="batch size increase 10 fold" />
     <MESSAGE value="change reward function" />
     <MESSAGE value="add data depth" />
-    <option name="LAST_COMMIT_MESSAGE" value="add data depth" />
+    <MESSAGE value="running more data" />
+    <option name="LAST_COMMIT_MESSAGE" value="running more data" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -985,13 +989,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Decision/Agent3D.py" />
-    <entry file="file://$PROJECT_DIR$/Decision/Agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Simulation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1006,10 +1003,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Decision/Agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="35" column="74" lean-forward="true" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+        <state relative-caret-position="-595">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
         </state>
       </provider>
     </entry>
