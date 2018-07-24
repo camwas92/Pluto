@@ -10,7 +10,7 @@ import logging
 line = 'Offline'
 model_refresh = False
 display_graph = False
-deep_learning = False
+deep_learning = True
 
 #############
 # Reference #
