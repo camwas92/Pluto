@@ -64,7 +64,12 @@ def print_data(option):
 # add data to google sheet
 def write_row(option, line):
     if option == 1:
-        Con.sheet_sim.insert_row(line, 2)
+        file_loc = str(Con.paths['Output'] / str(Con.stocks_for_simulation + '.txt'))
+        f = open(file_loc, "a+")
+        f.write(str(line) + '\n')
+        f.close()
+        # Con.sheet_sim.insert_row(line, 2)
+
     elif option == 2:
         Con.sheet_model.insert_row(line, 2)
     elif option == 3:
@@ -87,6 +92,7 @@ def save_data(option):
 
 # Create sim dictionary
 def create_output_dict_sim(start_period, end_period, commision, init_investment):
+
     now = datetime.datetime.now()
     Con.output_dict_sim = {
         'Date': now.strftime('%Y-%m-%d'),
