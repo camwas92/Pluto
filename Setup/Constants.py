@@ -32,27 +32,27 @@ paths = []
 # Decision Methods #
 ####################
 # decision_method = 'random_choice'  # name of the function
-decision_method = 'manual'
-parameters_decision = {
-    'manual': 'ML_LSTM'}  # options 'ML_RF', 'ML_LSTM', 'tech_per_change', 'ML_NN', 'FE_window_7d', 'FE_window_14d'
+# decision_method = 'manual'
+# parameters_decision = {
+#     'manual': 'ML_LSTM'}  # options 'ML_RF', 'ML_LSTM', 'tech_per_change', 'ML_NN', 'FE_window_7d', 'FE_window_14d'
 # decision_method = 'deep_q_learning_exploration'
-# decision_method = 'deep_q_learning'
+decision_method = 'deep_q_learning'
 
-# parameters_decision = {'gamma': 0.05,
-#                        # aka decay or discount rate, to calculate the future discounted reward.  #default 0.95
-#                        'epsilon': 1.0,
-#                        # aka exploration rate, this is the rate in which an agent randomly decides its action rather than prediction. # default 1
-#                        'epsilon_min': 0.05,  # we want the agent to explore at least this amount. # default 0.01
-#                        'epsilon_decay': 0.995,
-#                        # we want to decrease the number of explorations as it gets good at playing games. # default 0.995
-#                        'learning_rate': 0.001,
-#                        # Determines how much neural net learns in each iteration. # default 0.001
-#                        'reward_function': 'reward * (self.gamma *(scaled_predition)) - batchsize|32',
-#                        'num_layers': 2,
-#                        'model_shape': '24d,24d',  # numnode(type),
-#                        'drop_out': 0,  # fraction of input units to drop
-#                        'data_depth': 0  # 1 more than what it actualy is, 0 is current day, 1 is including one day back
-#                        }
+parameters_decision = {'gamma': 0.05,
+                       # aka decay or discount rate, to calculate the future discounted reward.  #default 0.95
+                       'epsilon': 1.0,
+                       # aka exploration rate, this is the rate in which an agent randomly decides its action rather than prediction. # default 1
+                       'epsilon_min': 0.05,  # we want the agent to explore at least this amount. # default 0.01
+                       'epsilon_decay': 0.995,
+                       # we want to decrease the number of explorations as it gets good at playing games. # default 0.995
+                       'learning_rate': 0.001,
+                       # Determines how much neural net learns in each iteration. # default 0.001
+                       'reward_function': 'reward * (self.gamma *(scaled_predition)) - batchsize|32',
+                       'num_layers': 2,
+                       'model_shape': '24d,24d',  # numnode(type),
+                       'drop_out': 0,  # fraction of input units to drop
+                       'data_depth': 0  # 1 more than what it actualy is, 0 is current day, 1 is including one day back
+                       }
 # decision_method = 'deep_q_learned'
 
 episodes = 100
