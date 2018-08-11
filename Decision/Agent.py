@@ -61,7 +61,7 @@ class DQNAgent:
         minibatch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in minibatch:
             scaled_predition = scale_range(self.model.predict(next_state), -1, 1)
-            target = reward + (self.gamma * (scaled_predition))
+            target = reward * (self.gamma * (scaled_predition))
 
             self.model.fit(state, target, epochs=1, verbose=0)
         if self.epsilon > self.epsilon_min:
