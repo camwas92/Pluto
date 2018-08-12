@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Input/To Combine/Prepare_Data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decision/Agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Decision/Agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Setup/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setup/Constants.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d9c69e3-5e8c-4a25-8d47-9333f9a2f26d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +18,7 @@
       <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="935">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
@@ -33,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/Input/To Combine/Prepare_Data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -43,9 +38,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -132,9 +124,9 @@
         <option value="$PROJECT_DIR$/Classes/Simulation.py" />
         <option value="$PROJECT_DIR$/Decision/Decision.py" />
         <option value="$PROJECT_DIR$/Output/OutputFile.py" />
-        <option value="$PROJECT_DIR$/Decision/Agent.py" />
         <option value="$PROJECT_DIR$/Input/To Combine/Prepare_Data.py" />
         <option value="$PROJECT_DIR$/Setup/Constants.py" />
+        <option value="$PROJECT_DIR$/Decision/Agent.py" />
       </list>
     </option>
   </component>
@@ -307,13 +299,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505195881770</updated>
-    </task>
-    <task id="LOCAL-00035" summary="fixed bugs">
-      <created>1522324463671</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1522324463671</updated>
     </task>
     <task id="LOCAL-00036" summary="fixed load and implemented pop up">
       <created>1523874294557</created>
@@ -651,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532423416321</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Completed Code">
+      <created>1533954297193</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1533954297198</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TodoView">
@@ -665,7 +657,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.13804004" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4573235" weight="0.26803014" />
@@ -674,7 +665,7 @@
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.47734457" weight="0.33369213" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4536354" weight="0.32723358" />
       <window_info id="Structure" order="1" sideWeight="0.5007257" side_tool="true" weight="0.15331928" />
-      <window_info anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5463646" side_tool="true" visible="true" weight="0.32723358" />
+      <window_info active="true" anchor="bottom" x="84" y="1020" width="3840" height="631" id="Terminal" order="12" sideWeight="0.5463646" side_tool="true" visible="true" weight="0.32723358" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.5237092" weight="0.36813778" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -730,7 +721,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Implemented LSTM" />
     <MESSAGE value="Improved lstm performance" />
     <MESSAGE value="multi layer" />
     <MESSAGE value="single layer" />
@@ -755,7 +745,8 @@
     <MESSAGE value="running more data" />
     <MESSAGE value="removed google sheets storage" />
     <MESSAGE value="updated code" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated code" />
+    <MESSAGE value="Completed Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed Code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -974,7 +965,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Setup/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="935">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
@@ -982,7 +973,7 @@
     <entry file="file://$PROJECT_DIR$/Input/To Combine/Prepare_Data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -990,9 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

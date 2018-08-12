@@ -176,8 +176,6 @@ def send_telegram_message(text):
     if not debugging:
         return
     else:
-        # bot = telegram.Bot(token='604417883:AAEd4tS3VGgKhnRhXPYpNEWte4_JiRahxA8')
-        # bot.send_message(chat_id=612638372, text=text)
         logging.info(text)
     return
 
